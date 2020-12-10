@@ -21,7 +21,7 @@ const StyledCover = styled(motion.div)`
       background-image: url(${cover});
       background-repeat: no-repeat;
       background-size: 100% 500px;
-      height: 500px;
+      min-height: 500px;
       width: 100%;
       margin-top: 5rem;
       display: flex;

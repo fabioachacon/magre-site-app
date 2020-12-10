@@ -49,15 +49,15 @@ const StyledCover = styled(motion.div)`
    justify-content: center;
    align-items: center;
    margin-top: 1em;
-   height: 500px;
+   min-height: 600px;
    background-image: url(${pill_bg});
    background-repeat: no-repeat;
-   background-size: 100% 510px;
+   background-size: 100vw 500px;
    .pill{
        z-index: 1;
        position: absolute;
-       margin-top: -27rem;
-       margin-left: 0rem;
+       top: 100px;
+
    }
    img{
        width: 65%;
@@ -68,11 +68,10 @@ const Icons = styled(motion.div)`
     position: relative;
     width: 550px;
     display: flex;
-    margin-left: 3rem;
+    margin-left: 5px;
     z-index: 4;
-    min-height: 80vh;
+    min-height: 500px;
     justify-content: space-between;
-  
     img {
         width: 70%;
     }
@@ -90,27 +89,29 @@ const Icons = styled(motion.div)`
         align-items: center;
     }
     .icon1{
-        margin-top: 10rem;
-        margin-right: 9rem;
+        margin-top: 90px;
+        margin-right: 6rem;
         opacity: 1;
         width: 60%;
         
     }
     .icon2{
-        opacity: 01;
-        margin-right: 3rem;
+        opacity: 1;
+        margin-right: 0rem;
+        margin-bottom: 30px;
 
     }
     .icon3{
         opacity: 1;
-        margin-right: 22rem;
-        margin-top: 1rem;
+        margin-right: 14rem;
+        margin-top: -50px;
         width: 34%;
     }
     .icon4{
         opacity: 1;
-        margin-left: 12rem;
-        margin-bottom: 3rem;
+        margin-left: 15rem;
+        margin-bottom: 40px;
+        width: 40%;
     }
 
 
