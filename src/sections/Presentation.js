@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
+import {useScroll} from '../components/useScroll';
 
 //Images
 import pill_bg from '../img/pill_bg.png';
@@ -12,32 +13,59 @@ import icon2 from '../img/icon2.png';
 import icon3 from '../img/icon3.png';
 import icon4 from '../img/icon4.png';
 
+//Animations 
+import {iconAnim} from '../animations';
+
 
 const Presentation = () => {
+
+    const [element, controls] = useScroll();
+
     return (
-        <StyledCover id='presentation'>
+        <StyledCover ref={element} inherit='hidden' animate={controls} id='presentation'>
            <div className="circle">
                 <Icons>
-                    <div className="row-1">
-                        <div className="icon1">
-                            <img src={icon1} alt="icon1"/>
-                        </div>
-                        <div className="icon2">
-                            <img src={icon2} alt="icon2"/>
-                        </div>
-                    </div>
-                    <div className="row-2">
-                        <div className="icon3">
+                    <motion.div className="row-1">
+                        <motion.div variants={iconAnim}  className="icon1">
+                            <div className="text">
+                                <p>PROPRIEDADES</p>
+                                <p>TERAPEUTICAS</p>
+                                <p>LAXATIVAS</p>
+                            </div>
+                            <div>
+                              <img src={icon1} alt="icon1"/>
+                            </div>
+                        </motion.div>
+                        <motion.div variants={iconAnim} className="icon2">
+                            <div className="text">
+                                <p>AUXILIA NO</p>
+                                <p>EMAGRECIMENTO</p>
+                            </div>
+                            <div>
+                              <img src={icon2} alt="icon2"/>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                    <motion.div className="row-2">
+                        <motion.div variants={iconAnim} className="icon3">
+                           <div className="text">
+                                <p>AUXILIA NO</p>
+                                <p>EMAGRECIMENTO</p>
+                            </div>
                             <img src={icon3} alt="icon3"/>
-                        </div>
-                        <div className="icon4">
+                        </motion.div>
+                        <motion.div variants={iconAnim} className="icon4">
+                            <div className="text">
+                                <p>AUXILIA NO</p>
+                                <p>EMAGRECIMENTO</p>
+                            </div>
                             <img src={icon4} alt="icon4"/>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </Icons>
-                <div className="pill">
+                <motion.div className="pill">
                     <img src={pill} alt=""/>
-                </div>
+                </motion.div>
            </div>
         </StyledCover>
     )
@@ -49,7 +77,7 @@ const StyledCover = styled(motion.div)`
    justify-content: center;
    align-items: center;
    margin-top: 1em;
-   min-height: 600px;
+   min-height: 500px;
    background-image: url(${pill_bg});
    background-repeat: no-repeat;
    background-size: 100vw 500px;
@@ -61,6 +89,15 @@ const StyledCover = styled(motion.div)`
    }
    img{
        width: 65%;
+   }
+
+   p{ 
+       font-size: 0.7rem;
+       text-align: right;
+       color:  rgba(97, 97, 97, 255);
+   }
+   .text{
+       margin-right: 0.2rem;
    }
 `;
 
@@ -89,29 +126,51 @@ const Icons = styled(motion.div)`
         align-items: center;
     }
     .icon1{
+        align-items: center;
+        display: flex;
         margin-top: 90px;
-        margin-right: 6rem;
+        margin-right: 25rem;
         opacity: 1;
-        width: 60%;
+        width: 50%;
+        img{
+            width: 60%;
+        }
         
     }
     .icon2{
+        display: flex;
+        align-items: center;
         opacity: 1;
-        margin-right: 0rem;
+        margin-right: 10rem;
         margin-bottom: 30px;
+        width: 90%;
 
     }
     .icon3{
+        position: relative;
+        right: 22rem;
+        display: flex;
+        align-items: center;
         opacity: 1;
-        margin-right: 14rem;
         margin-top: -50px;
-        width: 34%;
+        width: 90%;
+        img{
+            width: 100%;
+        }
+    
     }
     .icon4{
+        position: relative;
+        display: flex;
+        align-items: center;
         opacity: 1;
-        margin-left: 15rem;
-        margin-bottom: 40px;
-        width: 40%;
+        top: 30px;
+        right: 8rem;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+
     }
 
 

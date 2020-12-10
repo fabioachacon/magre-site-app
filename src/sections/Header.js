@@ -8,7 +8,7 @@ import Cover from '../components/Cover';
 const Header = () => {
     return (
         <div>
-            <Cover />
+          <Cover />
         </div>
     )
 }

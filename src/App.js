@@ -3,6 +3,7 @@ import {GlobalStyle} from './GlobalStyle';
 import Nav from './components/Nav';
 import Header from './sections/Header';
 import Presentation from './sections/Presentation';
+import Action from './sections/Action';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Nav />
       <Header />
       <Presentation />
+      <Action />
     </div>
   );
 }
