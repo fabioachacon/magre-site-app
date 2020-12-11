@@ -34,14 +34,16 @@ const StyledAction = styled(motion.div)`
     align-items: center;
     justify-content: center;
     .man{
-        margin-right: 5rem;
+        margin-right: 1rem;
         min-width: 500px;
         min-height: 300px;
+        height: 500px;
         justify-content: flex-end;
         display: flex;
         img {
-        width: 80%;
-    }
+        width: 500px;
+        height: 100%;
+      } 
     }
     .inside{
         overflow-y: scroll;
