@@ -10,8 +10,8 @@ const Cover = () => {
     return (
         <StyledCover>
             <Text>
-                <h1>Tomar <span>duas</span></h1>
-                <h1>Capsulas ao dia</h1>
+                {/* <h1>Tomar <span>duas</span></h1>
+                <h1>Capsulas ao dia</h1> */}
             </Text>
         </StyledCover>
     )

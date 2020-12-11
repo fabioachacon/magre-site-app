@@ -84,11 +84,12 @@ const StyledCover = styled(motion.div)`
    .pill{
        z-index: 1;
        position: absolute;
-       top: 100px;
+       top: 80px;
 
    }
    img{
        width: 65%;
+       object-fit: cover;
    }
 
    p{ 
@@ -133,15 +134,15 @@ const Icons = styled(motion.div)`
         opacity: 1;
         width: 50%;
         img{
-            width: 60%;
+            width: 55%;
+            object-fit: cover;
         }
         
     }
     .icon2{
         display: flex;
         align-items: center;
-        opacity: 1;
-        margin-right: 10rem;
+        margin-right: 13rem;
         margin-bottom: 30px;
         width: 90%;
 
@@ -155,7 +156,8 @@ const Icons = styled(motion.div)`
         margin-top: -50px;
         width: 90%;
         img{
-            width: 100%;
+            width: 88%;
+            object-fit: cover;
         }
     
     }

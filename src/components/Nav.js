@@ -1,24 +1,52 @@
 import React from 'react'
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
+import {Link} from 'react-scroll';
+import {animateScroll as scroll} from 'react-scroll';
+import {useLocation} from 'react-router-dom';
+
 
 //Images
 import logo from '../img/magre-logo.png';
 import wtapp from '../img/wtapp.png';
 
+
 const Nav = () => {
+    const logoClickHandler = () => {
+        scroll.scrollToTop();
+    }
+    
     return (
         <div className='mainNav'>
             <StyledNav>
-                <div className="logo">
-                    <img src={logo} alt=""/>
+                <div className="logo" onClick={logoClickHandler}>
+                    <motion.img whileHover={{scale: 1.1, transition: {duration: 0.5}}} src={logo} alt=""/>
                 </div>
                 <ul>
-                    <li>SENE EXTRATO SECO</li>
-                    <li>ATUAÇÃO</li>
-                    <li>CONTRAINDICAÇÃO</li>
-                    <li>COMPOSIÇÃO</li>
-                    <li>CONTATO</li>
+                    <li>
+                     <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
+                     <Line 
+                     transition={{duration: 0.75}} 
+                     initial={{width: "0%"}}
+                     animate={{width: "100%"}}
+                      />
+                    </li>
+                    <li>
+                     <Link to="action" smooth={true} offset={-80} duration={900}>ATUAÇÃO</Link>
+                     <Line />
+                     </li>
+                    <li>
+                      <Link to="">CONTRAINDICAÇÃO</Link>
+                      <Line />
+                    </li>
+                    <li>
+                      <Link to="content-table" smooth={true} offset={-80} duration={900}>COMPOSIÇÃO</Link>
+                      <Line />
+                    </li>
+                    <li>
+                      <Link>CONTATO</Link>
+                      <Line />
+                    </li>
                 </ul>
                 <div className="wp-button">
                     <button>
@@ -45,14 +73,19 @@ const StyledNav = styled(motion.nav)`
     z-index: 1000;
     .logo{
         margin-left: 3rem;
-    
+        cursor: pointer;
+        img {
+            margin-left: 5rem;
+            width: 55%;
+
+        }
     }
     .wp-button{
         margin-right: 6rem;
         button {
             display: flex;
             align-items: center;
-            padding: 0.5rem 1.3rem;
+            padding: 0.5rem 1.5rem;
             background: #bcd24c;
             border: none;
             outline: none;
@@ -74,12 +107,27 @@ const StyledNav = styled(motion.nav)`
     li{
         list-style: none;
         margin-left: 2rem;
-        font-size: 0.8rem;
-        color:#616161;
-        cursor: pointer;
-
+        font-size: 0.7rem;
+        color:  rgba(97, 97, 97, 255);
+        font-family: Helvetica, sans-serif;
+        transition: all 0.5s ease-in-out;
+        &:hover{
+           opacity: 0.8;
+        }
     }
+    a{
+        text-decoration: none;
+        color:  rgba(97, 97, 97, 255);
+        cursor: pointer;
+    }
+`;
 
+const Line = styled(motion.div)`
+   height: 0.1rem;
+   background: #bcd24c;
+   position: relative;
+   top: 2px;
+   width: 0%;
 `;
 
 

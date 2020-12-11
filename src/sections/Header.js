@@ -7,7 +7,7 @@ import Cover from '../components/Cover';
 
 const Header = () => {
     return (
-        <div>
+        <div id='header'>
           <Cover />
         </div>
     )
