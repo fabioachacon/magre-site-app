@@ -76,7 +76,7 @@ const StyledCover = styled(motion.div)`
    position: relative;
    justify-content: center;
    align-items: center;
-   margin-top: 1em;
+   margin-top: 0.7em;
    min-height: 500px;
    background-image: url(${pill_bg});
    background-repeat: no-repeat;
