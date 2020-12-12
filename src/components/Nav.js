@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import {Link} from 'react-scroll';
 import {animateScroll as scroll} from 'react-scroll';
-import {useLocation} from 'react-router-dom';
+import {Link as RouterLink} from 'react-router-dom';
+
 
 
 //Images
@@ -12,9 +13,19 @@ import wtapp from '../img/wtapp.png';
 
 
 const Nav = () => {
+
+    const listRef = useRef();
+    
     const logoClickHandler = () => {
         scroll.scrollToTop();
     }
+
+    const hoverHandler  = (e) => {
+        
+    }
+
+    console.log(listRef.current);
+
     
     return (
         <div className='mainNav'>
@@ -23,35 +34,31 @@ const Nav = () => {
                     <motion.img whileHover={{scale: 1.1, transition: {duration: 0.5}}} src={logo} alt=""/>
                 </div>
                 <ul>
-                    <li>
+                    <li ref={listRef} onMouseEnter={hoverHandler} >
                      <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
-                     <Line 
-                     transition={{duration: 0.75}} 
-                     initial={{width: "0%"}}
-                     animate={{width: "100%"}}
-                      />
+                     <Line className='line' />
                     </li>
                     <li>
                      <Link to="action" smooth={true} offset={-80} duration={900}>ATUAÇÃO</Link>
-                     <Line />
+                     <Line className='line' />
                      </li>
                     <li>
                       <Link to="">CONTRAINDICAÇÃO</Link>
-                      <Line />
+                      <Line className='line' />
                     </li>
                     <li>
                       <Link to="content-table" smooth={true} offset={-80} duration={900}>COMPOSIÇÃO</Link>
-                      <Line />
+                      <Line className='line' />
                     </li>
-                    <li>
+                    {/* <li>
                       <Link>CONTATO</Link>
                       <Line />
-                    </li>
+                    </li> */}
                 </ul>
                 <div className="wp-button">
                     <button>
                     <img src={wtapp} alt="icon"/>
-                     whatsapp
+                      <a href="https://duckduckgo.com/">whatsapp</a>
                     </button>
                 </div>
             </StyledNav>
@@ -93,6 +100,10 @@ const StyledNav = styled(motion.nav)`
             color: white;
             font-weight: bold;
             font-family: sans-serif;
+            cursor: pointer;
+            a {
+                color: white;
+            }
         }
         img{
             margin-right: 10px;
@@ -115,11 +126,28 @@ const StyledNav = styled(motion.nav)`
            opacity: 0.8;
         }
     }
+    li:after{
+        background: none repeat scroll 0 0 transparent;
+        content: "";
+        display: block;
+        height: 2px;
+        top: 0.5px;
+        position: relative;
+        background: #bcd24c;
+        transition: width 0.5s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    li:hover:after {
+        width: 100%;
+        left: 0;
+
+    }
     a{
         text-decoration: none;
         color:  rgba(97, 97, 97, 255);
         cursor: pointer;
     }
+ 
 `;
 
 const Line = styled(motion.div)`

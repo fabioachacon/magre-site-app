@@ -7,4 +7,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
    }
+
+   html {
+      @media (max-width: 756px) {
+         font-size: 50%;
+      }
+   }
+
 `;

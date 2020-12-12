@@ -56,6 +56,8 @@ const StyledAction = styled(motion.div)`
         justify-content: flex-end;
         display: flex;
         img {
+        position: relative;
+        top: 5px;
         width: 500px;
         height: 100%;
       }
