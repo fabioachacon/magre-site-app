@@ -8,6 +8,7 @@ import Articles from './sections/Articles';
 import Table from './sections/Contents';
 import Contents from './sections/Contents';
 import Footer from './sections/Footer';
+import SideEffects from './sections/SideEffects';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Presentation />
       <Action />
       {/* <Articles /> */}
+      <SideEffects />
       <Contents />
       <Footer />
     </div>

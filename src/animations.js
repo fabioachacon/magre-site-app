@@ -29,7 +29,7 @@ export const FadeScale = {
         opacity: 1, 
         transition: { 
             ease: 'easeOut', 
-            duration: 0.67,
+            duration: 0.75,
             delay: 0.3
         }
     }
@@ -46,7 +46,37 @@ export const Fade = {
         opacity: 1, 
         transition: { 
             ease: 'easeOut', 
-            duration: 0.67
+            duration: 0.7
         }
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.75
+        }   
+    }
+}
+
+export const FadePoint = {
+    hidden: { 
+        opacity: 0,
+        transition: {
+            duration: 0.75
+        }   
+     },
+    show: {
+        opacity: 1, 
+        transition: { 
+            ease: 'easeOut', 
+            duration: 0.75,
+            delay: 1
+        
+        }
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.75
+        }   
     }
 }

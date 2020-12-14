@@ -1,38 +1,75 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {motion, AnimatePresence} from 'framer-motion';
+import {motion, AnimatePresence, AnimateSharedLayout} from 'framer-motion';
 import man from '../img/man.png';
-import point from '../img/point.png';
 import {FadeScale} from '../animations';
 import {Fade} from '../animations';
 import {useScroll} from '../components/useScroll';
+import AnimatedPoint from '../components/AnimatedPoint';
+import Dot from '../components/Dot';
+
 
 const Action = () => {
 
+    const InfoList = [
+      {
+        id: 1,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque quae asperiores officiis nemo ratione repudiandae, unde nisi! A, assumenda?",
+        active: true
+      },
+      {
+        id: 2,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quis eius, sed sapiente laboriosam labore obcaecati vel blanditiis, itaque ea recusandae praesentium deleniti magnam perferendis nemo aspernatur natus ab. Et!",
+        active: false
+      },
+      {
+        id: 3,
+        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere minima tempore corporis ducimus natus, vero, officiis et beatae tempora quo! Asperiores explicabo eum accusamus nulla iure libero quam iusto laudantium qui minus ad similique corrupti, expedita distinctio tempore, eos ullam sit! Velit sint quo odio praesentium quas obcaecati cupiditate id excepturi accusamus? Laudantium quibusdam praesentium voluptatem natus dolores soluta nisi earum magnam nulla. Maxime maiores reiciendis iste vero deleniti laudantium modi, facere voluptatibus voluptatem iure incidunt eaque voluptas porro consequuntur! Explicabo consequuntur ducimus, eos dolor aliquam numquam excepturi iure, modi, labore sed cum nihil repudiandae assumenda dicta ad! Impedit? ",
+        active: false
+      },
+      {
+        id: 4,
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque quae asperiores officiis nemo ratione repudiandae, unde nisi! A, assumenda?",
+        active: false
+      }
+  ]
+
+    const [data, setData] = useState(InfoList);
+    const [currentActive, setCurrentActive] = useState(data.find((info) =>  info.active));
     const [element, controls] = useScroll();
 
+    useEffect(() => {
+      setCurrentActive(data.find((info) =>  info.active));
+    }, [data]);
+
+  
     return (
         <StyledAction id='action'>
           <motion.div ref={element} initial='hidden' animate={controls} className="manImage">
              <motion.h3 variants={Fade}>ATUAÇÃO</motion.h3>
              <motion.img variants={FadeScale} src={man} alt=""/>
-             {/* <div className="points">
-                <img src={point} alt=""/>
-             </div> */}
+             <Points>
+               <AnimatePresence>
+                 {data.map((info, i) => <AnimatedPoint info={info}  id={i} key={i}/>)}
+               </AnimatePresence>
+             </Points>
           </motion.div>
           <motion.div className="text">
               <div className="inside">
-                <AnimatePresence>
-                  <motion.div className="content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ullam repellat quas, deleniti accusantium qui eius cupiditate repudiandae? Ipsum vero necessitatibus magnam possimus nemo, sed non omnis earum exercitationem accusamus deleniti cupiditate eos laudantium dicta sapiente ut beatae quis et dolorum soluta nisi ducimus. Recusandae, dolores? Voluptatem quam, modi, in incidunt laborum, impedit architecto numquam expedita officia neque optio magnam consequuntur natus et. Accusamus ipsum ea hic commodi harum earum culpa consequatur! Vero enim magnam tempore, quidem voluptatem odit porro libero molestias non ducimus! Totam ratione consequuntur beatae repellendus illum iusto aspernatur magnam eveniet natus, quisquam assumenda rerum aliquid earum voluptates, debitis nam possimus delectus doloremque nobis unde cumque? Error molestias quas, nulla totam impedit quos. Molestias illum amet molestiae provident nostrum debitis repellat neque expedita quasi repellendus! Neque voluptates, amet fugiat vitae harum sit nulla esse perspiciatis voluptate fugit asperiores praesentium quae tenetur accusamus maiores culpa nihil autem repellat nostrum commodi laboriosam vero non nisi facilis. Odio eum, quos quasi laborum sed dicta quibusdam ratione suscipit neque enim nemo, harum pariatur? Veniam quo quas explicabo suscipit pariatur consequatur, mollitia architecto, sit ad esse dolorum odio soluta ipsam in dolore blanditiis odit adipisci ex. Consectetur voluptate laudantium nemo tempora unde.
+                <AnimatePresence exitBeforeEnter>
+                  <motion.div variants={Fade} initial='hidden' animate='show' exit='exit' className="content">
+                    {currentActive.text}
                   </motion.div>
                 </AnimatePresence>
               </div>
               <Dots>
-                <Dot></Dot>
-                <Dot></Dot>
-                <Dot></Dot>
-                <Dot></Dot>
+                {data.map((info, i) => <Dot 
+                   setData={setData}
+                   data={data}
+                   info={info}
+                   currentActive={currentActive}
+                   key={i}
+                    />)}
               </Dots>
           </motion.div>
         </StyledAction>
@@ -51,22 +88,13 @@ const StyledAction = styled(motion.div)`
         position: absolute;
         margin-right: 40rem;
         min-width: 500px;
-        min-height: 300px;
-        height: 500px;
-        justify-content: flex-end;
+        height: 100%;
         display: flex;
         img {
         position: relative;
-        top: 5px;
         width: 500px;
-        height: 100%;
+        min-height: 100%;
       }
-      .points{
-          img{
-            width: 50px;
-            height: 10%;
-          }
-      } 
     }
     .inside{
         overflow-y: scroll;
@@ -96,7 +124,6 @@ const StyledAction = styled(motion.div)`
         display: flex;
         flex-direction: column;
         align-items:center;
-
         font-family: 'Montserrat', sans-serif;
     }
     h3{
@@ -116,17 +143,24 @@ const Dots = styled(motion.div)`
    margin-top: 2rem;
 `;
 
-const Dot = styled(motion.div)`
-    border-radius: 50%;
-    border: 1.5px solid gray;
-    width: 0.5rem;
-    height: 0.5rem;
-    background: white;
-    margin-left: 0.7rem;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out; 
-    &:hover{
-        background: #415740;
+
+const Points = styled(motion.div)`
+       position: absolute;
+       justify-self: center;
+       align-self: center;
+       display: flex;
+       flex-direction: column;
+       height: 100%;
+       width: 100%;
+       opacity: 1;
+       justify-content: center;
+       align-items: center;
+       margin-left: 50px;
+       .point{
+         img {
+         width: 75px;
+         height: 100%;
+      }
     }
 `;
 

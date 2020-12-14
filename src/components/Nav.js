@@ -23,9 +23,6 @@ const Nav = () => {
     const hoverHandler  = (e) => {
         
     }
-
-    console.log(listRef.current);
-
     
     return (
         <div className='mainNav'>
