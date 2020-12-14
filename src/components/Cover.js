@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 
 //Images
 import cover from '../img/cover.png';
+import cover_bg from '../img/cover_bg.png'
 import caps from '../img/flask_caps.png';
 
 //Animation
@@ -16,11 +17,10 @@ const Cover = () => {
     const [element, controls] = useScroll();
 
     return (
-        <StyledCover  ref={element} initial='hidden' animate={controls} >
+        <StyledCover ref={element} initial='hidden' animate={controls} >
             <Text>
-               <motion.h2>O <span>SENE</span></motion.h2>
-               <motion.h2><span>EXTRATO SECO</span></motion.h2>
-               <motion.h2>QUE RESOLVE</motion.h2>
+               <h2>TOMAR <span>DUAS</span></h2>
+               <h2>  AO DIA</h2>
             </Text>
             <Caps variants={FadeScaleCaps} >
                 <img src={caps} alt=""/>
@@ -30,10 +30,10 @@ const Cover = () => {
 }
 
 const StyledCover = styled(motion.div)`
-      background-image: url(${cover});
+      background-image: url(${cover_bg});
       background-repeat: no-repeat;
-      background-size: 100% 500px;
-      min-height: 500px;
+      background-size: 100vw 90vh;
+      min-height: 550px;
       width: 100%;
       margin-top: 5rem;
       display: flex;
@@ -44,11 +44,11 @@ const StyledCover = styled(motion.div)`
 const Text = styled(motion.div)`
      font-size: 0.8rem;
      margin-right: 10rem;
-     text-align: right;
+     text-align: left;
      font-family: 'Montserrat', sans-serif;
      margin-right: 15rem;
      margin-bottom: 10rem;
-     h2{
+     h2 {
          font-weight: lighter;
          color: #415740;
          font-size: 1.5rem;
@@ -62,11 +62,11 @@ const Text = styled(motion.div)`
 
 const Caps = styled(motion.div)`
      position: absolute;
-     margin-top: 330px;
-     margin-right: 250px;
+     margin-top: 350px;
+     margin-right: 300px;
      z-index: 1;
-     img{ 
-         width: 74%;
+     img { 
+         width: 75%;
      }
 `;
 

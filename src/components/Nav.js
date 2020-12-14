@@ -5,12 +5,13 @@ import {Link} from 'react-scroll';
 import {animateScroll as scroll} from 'react-scroll';
 import {Link as RouterLink} from 'react-router-dom';
 
-
-
 //Images
 import logo from '../img/magre-logo.png';
 import wtapp from '../img/wtapp.png';
+import logo_color from '../img/logo-color.png';
 
+//Animations
+import {buttonAnim} from '../animations';
 
 const Nav = () => {
 
@@ -28,7 +29,7 @@ const Nav = () => {
         <div className='mainNav'>
             <StyledNav>
                 <div className="logo" onClick={logoClickHandler}>
-                    <motion.img whileHover={{scale: 1.1, transition: {duration: 0.5}}} src={logo} alt=""/>
+                    <motion.img whileHover={{scale: 1.1, transition: {duration: 0.5}}} src={logo_color} alt=""/>
                 </div>
                 <ul>
                     <li ref={listRef} onMouseEnter={hoverHandler} >
@@ -40,7 +41,7 @@ const Nav = () => {
                      <Line className='line' />
                      </li>
                     <li>
-                      <Link to="">CONTRAINDICAÇÃO</Link>
+                      <Link to="side-effects" smooth={true} offset={-100} duration={900}>CONTRAINDICAÇÃO</Link>
                       <Line className='line' />
                     </li>
                     <li>
@@ -52,12 +53,12 @@ const Nav = () => {
                       <Line />
                     </li> */}
                 </ul>
-                <div className="wp-button">
+                <motion.div variants={buttonAnim} whileHover='hover' className="wp-button">
                     <button>
-                    <img src={wtapp} alt="icon"/>
+                      <img src={wtapp} alt="icon"/>
                       <a href="https://duckduckgo.com/">whatsapp</a>
                     </button>
-                </div>
+                </motion.div>
             </StyledNav>
         </div>
     )
@@ -76,27 +77,28 @@ const StyledNav = styled(motion.nav)`
     align-items: center;
     z-index: 1000;
     .logo{
-        margin-left: 3rem;
+        margin-left: 5rem;
         cursor: pointer;
         img {
             margin-left: 5rem;
-            width: 55%;
+            width: 65%;
 
         }
     }
     .wp-button{
-        margin-right: 6rem;
+        margin-right: 10rem;
         button {
             display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 0.5rem 1.5rem;
+            padding: 0.5rem 2rem;
             background: #bcd24c;
             border: none;
             outline: none;
             border-radius: 1rem;
             color: white;
             font-weight: bold;
-            font-family: sans-serif;
+            font-family: Helvetica, sans-serif;
             cursor: pointer;
             a {
                 color: white;
@@ -104,13 +106,15 @@ const StyledNav = styled(motion.nav)`
         }
         img{
             margin-right: 10px;
-            width: 20%;
+            width: 25%;
         }
     }
 
     ul{
-        margin-right: 3rem;
+        margin-left: 5rem;
         display: flex;
+        width: 100%;
+        align-items: center;
     }
     li{
         list-style: none;
@@ -119,6 +123,7 @@ const StyledNav = styled(motion.nav)`
         color:  rgba(97, 97, 97, 255);
         font-family: Helvetica, sans-serif;
         transition: all 0.5s ease-in-out;
+    
         &:hover{
            opacity: 0.8;
         }

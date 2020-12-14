@@ -40,7 +40,7 @@ export const FadeScaleCaps = {
         opacity: 0,
         scale: 1.1,
         transition: {
-            duration: 0.75,
+            duration: 0.55,
             delay: .2
             
         }   
@@ -112,6 +112,21 @@ export const TextAnim = {
         opacity: 1,
         transiton: {
             duration: 0.75
+        }
+    }
+}
+
+export const buttonAnim = {
+    visible: {
+        opacity: 1
+    },
+    hover: {
+        x: [0, 15, -15, 15, -15, 0],
+        transition: {
+            delay: 0.1,
+            duration: 0.55,
+            ease: 'easeOut',
+
         }
     }
 }

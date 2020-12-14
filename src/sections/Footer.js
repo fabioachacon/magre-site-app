@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 
-import logo from '../img/magre-logo.png';
 import whatsapp from '../img/wtapp.png';
+import logo from '../img/logo-color.png';
 
 const Footer = () => {
     return (
@@ -13,7 +13,7 @@ const Footer = () => {
                 <button>
                   <img src={whatsapp} alt="icon"/>
                   <p>whatsapp</p>
-                  </button>
+                </button>
               </Social>
             </div>
             <TextLogo>

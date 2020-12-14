@@ -76,11 +76,11 @@ const StyledCover = styled(motion.div)`
    position: relative;
    justify-content: center;
    align-items: center;
-   margin-top: 0.7em;
+   margin-top: 0.5em;
    min-height: 500px;
    background-image: url(${pill_bg});
    background-repeat: no-repeat;
-   background-size: 100vw 500px;
+   background-size: 100vw 80vh;
    .pill{
        z-index: 1;
        position: absolute;
@@ -153,7 +153,7 @@ const Icons = styled(motion.div)`
         display: flex;
         align-items: center;
         opacity: 1;
-        margin-top: -50px;
+        margin-top: -10px;
         width: 90%;
         img{
             width: 88%;

@@ -44,8 +44,8 @@ const Action = () => {
 
   
     return (
-        <StyledAction id='action'>
-          <motion.div ref={element} initial='hidden' animate={controls} className="manImage">
+        <StyledAction ref={element} initial='hidden' animate={controls} id='action'>
+          <motion.div  className="manImage">
              <motion.h3 variants={Fade}>ATUAÇÃO</motion.h3>
              <motion.img variants={FadeScale} src={man} alt=""/>
              <Points>
@@ -57,7 +57,7 @@ const Action = () => {
           <motion.div className="text">
               <div className="inside">
                 <AnimatePresence exitBeforeEnter>
-                  <motion.div variants={Fade} initial='hidden' animate='show' exit='exit' className="content">
+                  <motion.div variants={Fade} className="content">
                     {currentActive.text}
                   </motion.div>
                 </AnimatePresence>
@@ -104,15 +104,17 @@ const StyledAction = styled(motion.div)`
     
     &::-webkit-scrollbar{
        width: 0.1rem;
+       background-color: #415740
      }
     &::-webkit-scrollbar-thumb{
       background-color: #415740;
-      height: 5px;
+      height: 1px;
+
       
     }
     &::-webkit-scrollbar-track{
       background-color: white;
-      width: 0.1rem;
+      height: 1rem;
     }
  }
     .text{
@@ -158,8 +160,8 @@ const Points = styled(motion.div)`
        margin-left: 50px;
        .point{
          img {
-         width: 75px;
-         height: 100%;
+         width: 80px;
+         height: 90%;
       }
     }
 `;
