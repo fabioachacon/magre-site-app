@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import flask from '../img/flask.png';
 import table from '../img/table.png';
-import flask_bg  from '../img/flask_bg.png'
+import flask_bg  from '../img/flask_bg.png';
 
+ 
 const Contents = () => {
     return (
         <StyledTable id='content-table'>

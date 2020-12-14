@@ -35,6 +35,27 @@ export const FadeScale = {
     }
 }
 
+export const FadeScaleCaps = {
+    hidden: { 
+        opacity: 0,
+        scale: 1.1,
+        transition: {
+            duration: 0.75,
+            delay: .2
+            
+        }   
+     },
+    show: {
+        scale: 1,
+        opacity: 1, 
+        transition: { 
+            ease: 'easeOut', 
+            duration: 0.75,
+    
+        }
+    }
+}
+
 export const Fade = {
     hidden: { 
         opacity: 0,
@@ -80,3 +101,18 @@ export const FadePoint = {
         }   
     }
 }
+
+export const TextAnim = {
+    hidden: {
+        y: -100,
+        opacity: 0
+    },
+    show: {
+        y: 0, 
+        opacity: 1,
+        transiton: {
+            duration: 0.75
+        }
+    }
+}
+
