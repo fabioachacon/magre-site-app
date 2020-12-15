@@ -6,21 +6,11 @@ const Dot = ({info, data, setData}) => {
     
     const clickHandler = () => {
 
-        const toggleDots = data.map((state) => {
-            if (state.id === info.id){
-                return {
-                    ...state,
-                    active: true
-                }
-            }else{
-                return {
-                    ...state,
-                    active: false
-                }
-            }
+        const newState = data.map((state) => {
+          return state.id === info.id ? {...state, active: true} : {...state, active: false}
         });
 
-        setData(toggleDots);
+        setData(newState);
     }
 
     return (

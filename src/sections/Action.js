@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence, AnimateSharedLayout} from 'framer-motion';
 import man from '../img/man.png';
-import {FadeScale} from '../animations';
-import {Fade} from '../animations';
+import {FadePoint, TextFade, FadeScale, Fade, StaggerAnim} from '../animations';
 import {useScroll} from '../components/useScroll';
 import AnimatedPoint from '../components/AnimatedPoint';
 import Dot from '../components/Dot';
@@ -14,7 +13,7 @@ const Action = () => {
     const InfoList = [
       {
         id: 1,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque quae asperiores officiis nemo ratione repudiandae, unde nisi! A, assumenda?",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Consequatur doloremque quae asperiores officiis nemo ratione repudiandae, unde nisi! A, assumenda?",
         active: true
       },
       {
@@ -34,7 +33,7 @@ const Action = () => {
       }
   ]
 
-    const [data, setData] = useState(InfoList);
+    const [data, setData] = useState(() => InfoList);
     const [currentActive, setCurrentActive] = useState(data.find((info) =>  info.active));
     const [element, controls] = useScroll();
 
@@ -48,19 +47,32 @@ const Action = () => {
           <motion.div  className="manImage">
              <motion.h3 variants={Fade}>ATUAÇÃO</motion.h3>
              <motion.img variants={FadeScale} src={man} alt=""/>
-             <Points>
-               <AnimatePresence>
-                 {data.map((info, i) => <AnimatedPoint info={info}  id={i} key={i}/>)}
+             <Points variants={Fade}>
+               <AnimatePresence exitBeforeEnter>
+                 {data.map((info, i) => 
+                  info.active && (
+                  <AnimatedPoint info={info} key={i}/>)
+                 )}
                </AnimatePresence>
              </Points>
           </motion.div>
-          <motion.div className="text">
+          <motion.div variants={Fade} className="text">
               <div className="inside">
-                <AnimatePresence exitBeforeEnter>
-                  <motion.div variants={Fade} className="content">
-                    {currentActive.text}
-                  </motion.div>
-                </AnimatePresence>
+               <AnimatePresence exitBeforeEnter>
+                {data.map((state, i) => 
+                 state.active && (
+                 <motion.div 
+                  key={i} 
+                  variants={TextFade} 
+                  initial='hidden' 
+                  animate='show' 
+                  exit='exit'>
+
+                  {state.text}
+                </motion.div>
+                )
+              )}
+               </AnimatePresence>
               </div>
               <Dots>
                 {data.map((info, i) => <Dot 
@@ -163,6 +175,18 @@ const Points = styled(motion.div)`
          width: 80px;
          height: 90%;
       }
+    }
+    .point1{
+      margin-top: 5rem;
+    }
+    .point2{
+      margin-left: 10rem;
+    }
+    .point3{
+      margin-top: 5rem;
+    }
+    .point4{
+      margin-bottom: 5rem;
     }
 `;
 

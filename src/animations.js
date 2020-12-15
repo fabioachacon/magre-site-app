@@ -67,7 +67,9 @@ export const Fade = {
         opacity: 1, 
         transition: { 
             ease: 'easeOut', 
-            duration: 0.7
+            duration: 0.75,
+            delay: 0.8
+
         }
     },
     exit: {
@@ -78,27 +80,47 @@ export const Fade = {
     }
 }
 
-export const FadePoint = {
+export const TextFade = {
     hidden: { 
         opacity: 0,
         transition: {
-            duration: 0.75
+            duration: 0.35
         }   
      },
     show: {
         opacity: 1, 
         transition: { 
             ease: 'easeOut', 
-            duration: 0.75,
-            delay: 1
-        
+            duration: 0.35
         }
     },
     exit: {
         opacity: 0,
         transition: {
-            duration: 0.75
+            duration: 0.35
         }   
+    }
+}
+
+export const FadePoint = {
+    hidden: { 
+        opacity: 0,
+        scale: 0.9,
+        transition: {
+            duration: 0.56
+        }   
+     },
+    show: {
+        opacity: 1,
+        scale: 1.1, 
+        transition: { 
+            ease: 'easeOut', 
+            duration: 0.56,
+        
+        }
+    },
+    exit: {
+        opacity: 0,
     }
 }
 
@@ -127,6 +149,18 @@ export const buttonAnim = {
             duration: 0.55,
             ease: 'easeOut',
 
+        }
+    }
+}
+
+export const StaggerAnim = {
+    hidden: {
+        opacity: 1
+    },
+    show: {
+        opacity: 1,
+        transition: {
+            staggeerChildren: 0.75
         }
     }
 }
