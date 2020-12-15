@@ -1,46 +1,27 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-import {motion, AnimatePresence, AnimateSharedLayout} from 'framer-motion';
+import {motion, AnimatePresence} from 'framer-motion';
 import man from '../img/man.png';
-import {FadePoint, TextFade, FadeScale, Fade, StaggerAnim} from '../animations';
+import {TextFade, FadeScale, Fade} from '../animations';
 import {useScroll} from '../components/useScroll';
 import AnimatedPoint from '../components/AnimatedPoint';
-import Dot from '../components/Dot';
+import {InfoList} from '../info';
 
 
 const Action = () => {
+    
+  const clickHandler = (id) => {
 
-    const InfoList = [
-      {
-        id: 1,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Consequatur doloremque quae asperiores officiis nemo ratione repudiandae, unde nisi! A, assumenda?",
-        active: true
-      },
-      {
-        id: 2,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quis eius, sed sapiente laboriosam labore obcaecati vel blanditiis, itaque ea recusandae praesentium deleniti magnam perferendis nemo aspernatur natus ab. Et!",
-        active: false
-      },
-      {
-        id: 3,
-        text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere minima tempore corporis ducimus natus, vero, officiis et beatae tempora quo! Asperiores explicabo eum accusamus nulla iure libero quam iusto laudantium qui minus ad similique corrupti, expedita distinctio tempore, eos ullam sit! Velit sint quo odio praesentium quas obcaecati cupiditate id excepturi accusamus? Laudantium quibusdam praesentium voluptatem natus dolores soluta nisi earum magnam nulla. Maxime maiores reiciendis iste vero deleniti laudantium modi, facere voluptatibus voluptatem iure incidunt eaque voluptas porro consequuntur! Explicabo consequuntur ducimus, eos dolor aliquam numquam excepturi iure, modi, labore sed cum nihil repudiandae assumenda dicta ad! Impedit? ",
-        active: false
-      },
-      {
-        id: 4,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque quae asperiores officiis nemo ratione repudiandae, unde nisi! A, assumenda?",
-        active: false
-      }
-  ]
+    const newState = data.map((state) => {
+      return state.id === id ? {...state, active: true} : {...state, active: false}
+    });
+
+     setData(newState);
+}
 
     const [data, setData] = useState(() => InfoList);
-    const [currentActive, setCurrentActive] = useState(data.find((info) =>  info.active));
     const [element, controls] = useScroll();
-
-    useEffect(() => {
-      setCurrentActive(data.find((info) =>  info.active));
-    }, [data]);
-
+    console.log('Action Component', data);
   
     return (
         <StyledAction ref={element} initial='hidden' animate={controls} id='action'>
@@ -49,9 +30,9 @@ const Action = () => {
              <motion.img variants={FadeScale} src={man} alt=""/>
              <Points variants={Fade}>
                <AnimatePresence exitBeforeEnter>
-                 {data.map((info, i) => 
-                  info.active && (
-                  <AnimatedPoint info={info} key={i}/>)
+                 {data.map((state, i) => 
+                  state.active && (
+                  <AnimatedPoint info={state} key={i}/>)
                  )}
                </AnimatePresence>
              </Points>
@@ -75,12 +56,10 @@ const Action = () => {
                </AnimatePresence>
               </div>
               <Dots>
-                {data.map((info, i) => <Dot 
-                   setData={setData}
-                   data={data}
-                   info={info}
-                   currentActive={currentActive}
+                {data.map((state, i) => <Dot 
+                   onClick={() => clickHandler(i)}
                    key={i}
+                   style={state.active ? {'background': '#415740'} : {'background': 'white'}}
                     />)}
               </Dots>
           </motion.div>
@@ -157,6 +136,16 @@ const Dots = styled(motion.div)`
    margin-top: 2rem;
 `;
 
+const Dot = styled(motion.div)`
+    border-radius: 50%;
+    border: 1.5px solid gray; 
+    padding: 2.5px;
+    background: white;
+    margin-left: 0.7rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out; 
+`;
+
 
 const Points = styled(motion.div)`
        position: absolute;
@@ -177,10 +166,11 @@ const Points = styled(motion.div)`
       }
     }
     .point1{
-      margin-top: 5rem;
+      margin-bottom: 25rem;
+      margin-right: 0.5rem;
     }
     .point2{
-      margin-left: 10rem;
+      margin-right: 4rem;
     }
     .point3{
       margin-top: 5rem;

@@ -3,26 +3,23 @@ import styled from 'styled-components';
 import {motion} from 'framer-motion';
 
 //Images
-import cover from '../img/cover.png';
 import cover_bg from '../img/cover_bg.png'
 import caps from '../img/flask_caps.png';
 
 //Animation
 import {FadeScaleCaps} from '../animations';
-import {useScroll} from '../components/useScroll';
+
 
 
 const Cover = () => {
 
-    const [element, controls] = useScroll();
-
     return (
-        <StyledCover ref={element} initial='hidden' animate={controls} >
+        <StyledCover>
             <Text>
-               <h2>TOMAR <span>DUAS</span></h2>
+               <h2>TOMAR <span>DUAS</span> CAPSULAS</h2>
                <h2>  AO DIA</h2>
             </Text>
-            <Caps variants={FadeScaleCaps} >
+            <Caps variants={FadeScaleCaps} initial='hidden' animate='show' >
                 <img src={caps} alt=""/>
             </Caps>
         </StyledCover>

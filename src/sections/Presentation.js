@@ -80,7 +80,8 @@ const StyledCover = styled(motion.div)`
    min-height: 500px;
    background-image: url(${pill_bg});
    background-repeat: no-repeat;
-   background-size: 100vw 80vh;
+   background-size: cover;
+   background-position: top;
    .pill{
        z-index: 1;
        position: absolute;
