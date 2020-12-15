@@ -19,7 +19,7 @@ export const iconAnim = {
 export const FadeScale = {
     hidden: { 
         opacity: 0,
-        scale: 0.8,
+        scale: 1.1,
         transition: {
             duration: 0.75
         }   
@@ -30,7 +30,7 @@ export const FadeScale = {
         transition: { 
             ease: 'easeOut', 
             duration: 0.75,
-            delay: 0.3
+        
         }
     }
 }
@@ -60,7 +60,7 @@ export const Fade = {
     hidden: { 
         opacity: 0,
         transition: {
-            duration: 0.75
+            duration: 0.35
         }   
      },
     show: {
@@ -68,8 +68,6 @@ export const Fade = {
         transition: { 
             ease: 'easeOut', 
             duration: 0.75,
-            delay: 0.8
-
         }
     },
     exit: {
@@ -104,23 +102,25 @@ export const TextFade = {
 
 export const FadePoint = {
     hidden: { 
-        opacity: 0,
         scale: 0.9,
         transition: {
             duration: 0.56
         }   
      },
     show: {
-        opacity: 1,
-        scale: 1.1, 
-        transition: { 
+        scale: 1.1,
+        transition: {
             ease: 'easeOut', 
-            duration: 0.56,
+            duration: 0.7,
         
         }
     },
     exit: {
         opacity: 0,
+        transition: { 
+            ease: 'easeOut', 
+            duration: 0.3, 
+        }
     }
 }
 
@@ -160,7 +160,7 @@ export const StaggerAnim = {
     show: {
         opacity: 1,
         transition: {
-            staggeerChildren: 0.75
+            staggerChildren: 0.3
         }
     }
 }

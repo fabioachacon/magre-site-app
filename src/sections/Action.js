@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
 import man from '../img/man.png';
-import {TextFade, FadeScale, Fade} from '../animations';
+import {TextFade, FadeScale, Fade, StaggerAnim} from '../animations';
 import {useScroll} from '../components/useScroll';
 import AnimatedPoint from '../components/AnimatedPoint';
 import {InfoList} from '../info';
@@ -24,7 +24,7 @@ const Action = () => {
     console.log('Action Component', data);
   
     return (
-        <StyledAction ref={element} initial='hidden' animate={controls} id='action'>
+        <StyledAction variants={StaggerAnim} ref={element} initial='hidden' animate={controls} id='action'>
           <motion.div  className="manImage">
              <motion.h3 variants={Fade}>ATUAÇÃO</motion.h3>
              <motion.img variants={FadeScale} src={man} alt=""/>

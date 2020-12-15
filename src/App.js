@@ -9,6 +9,7 @@ import Table from './sections/Contents';
 import Contents from './sections/Contents';
 import Footer from './sections/Footer';
 import SideEffects from './sections/SideEffects';
+import Flask from './sections/Flask';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Header />
-      <Presentation />
+      {/* <Presentation /> */}
+      <Flask />
       <Action />
       {/* <Articles /> */}
       <SideEffects />

@@ -6,6 +6,7 @@ import {useScroll} from '../components/useScroll';
 //Images
 import pill_bg from '../img/pill_bg.png';
 import pill from '../img/pill.png';
+import pill_bg_2x from '../img/pill_bg_2x.png';
 
 //Icons
 import icon1 from '../img/icon1.png';
@@ -78,10 +79,10 @@ const StyledCover = styled(motion.div)`
    align-items: center;
    margin-top: 0.5em;
    min-height: 500px;
-   background-image: url(${pill_bg});
+   background-image: url(${pill_bg_2x});
    background-repeat: no-repeat;
-   background-size: cover;
-   background-position: top;
+   background-size: 100% 500px; 
+
    .pill{
        z-index: 1;
        position: absolute;
