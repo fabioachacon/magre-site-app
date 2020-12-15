@@ -16,8 +16,8 @@ const Cover = () => {
     return (
         <StyledCover>
             <Text>
-               <h2>TOMAR <span>DUAS</span> CAPSULAS</h2>
-               <h2>  AO DIA</h2>
+               {/* <h2>TOMAR <span>DUAS</span> CAPSULAS</h2>
+               <h2>  AO DIA</h2> */}
             </Text>
             <Caps variants={FadeScaleCaps} initial='hidden' animate='show' >
                 <img src={caps} alt=""/>
@@ -54,17 +54,34 @@ const Text = styled(motion.div)`
              font-weight: bold;
          }
      }
-
 `;
 
 const Caps = styled(motion.div)`
+     margin-right: 430px;
+     margin-top: 400px;
      position: absolute;
-     margin-top: 350px;
-     margin-right: 300px;
-     z-index: 1;
+     width: 800px;
      img { 
-         width: 75%;
+         width: 95%;
+        
      }
+
+     @media screen and (min-width: 1500px){
+        margin-left: 400px;
+        img{
+            width: 800px;
+            height: 700px;
+        }
+     }
+
+     @media screen and (min-width: 1500px){
+        margin-right: 1400px;
+        img{
+            width: 800px;
+            height: 700px;
+        }
+     }
+
 `;
 
 

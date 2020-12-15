@@ -84,7 +84,7 @@ const StyledAction = styled(motion.div)`
         img {
         position: relative;
         width: 500px;
-        min-height: 100%;
+        height: 100%;
       }
     }
     .inside{
