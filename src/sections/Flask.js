@@ -30,7 +30,7 @@ const Flask = () => {
 
     return (
         <FlaskBG variants={StaggerAnim} ref={element} initial='hidden' animate={controls} id='presentation'>
-           <Pill variants={FadeScale}>
+           <Pill variants={Fade}>
              <img src={pill} alt=""/>
            </Pill>
            <Icons>
@@ -87,16 +87,13 @@ const FlaskBG = styled(motion.div)`
 
 const Pill = styled(motion.div)`
     position: absolute;
-    width: 100%;
-    height: 580px;
     display: flex;
-    left: 10px;
-    overflow: hidden;
     justify-content: center;
     align-items: center;
     margin-top: 60px;
+    width: 100%;
     img {
-        width: 630px;
+        width: 600px;
     }
 `;
 
@@ -158,7 +155,6 @@ const Icon3 = styled(motion.div)`
    align-items: center;
    position: relative;
    margin-top: 90px;
-
    right: 10px;
    img{
        width: 100px;
@@ -172,11 +168,6 @@ const Icon4 = styled(motion.div)`
    margin-right: 120px;
    margin-top: 95px;
 `;
-
-
-
-
-
 
 
 export default Flask;

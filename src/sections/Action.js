@@ -81,6 +81,7 @@ const StyledAction = styled(motion.div)`
         min-width: 500px;
         height: 100%;
         display: flex;
+        
         img {
         position: relative;
         width: 500px;

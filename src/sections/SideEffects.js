@@ -22,7 +22,7 @@ const StyledBox = styled(motion.div)`
      display: flex;
      justify-content: center;
      h2{
-         margin-top: 1.5rem;
+         margin-top: 2rem;
          font-family: 'Montserrat';
          font-size: 1.4rem;
          color: rgba(65, 87, 64, 255);

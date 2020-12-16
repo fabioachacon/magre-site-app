@@ -20,7 +20,7 @@ function App() {
       {/* <Presentation /> */}
       <Flask />
       <Action />
-      {/* <Articles /> */}
+      <Articles />
       <SideEffects />
       <Contents />
       <Footer />
