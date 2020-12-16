@@ -84,6 +84,14 @@ const StyledNav = styled(motion.nav)`
             width: 65%;
 
         }
+        @media (min-width: 1500px){
+              position: relative;
+              left: 20rem;
+              img {
+                  width: 75%;
+              }
+        }
+        }
     }
     .wp-button{
         margin-right: 10rem;
@@ -108,6 +116,12 @@ const StyledNav = styled(motion.nav)`
             margin-right: 10px;
             width: 25%;
         }
+        @media (min-width: 1500px){
+            margin-right: 30rem;
+            button {
+                padding: 0.8rem 3rem;
+            }
+        }
     }
 
     ul{
@@ -115,6 +129,9 @@ const StyledNav = styled(motion.nav)`
         display: flex;
         width: 100%;
         align-items: center;
+        @media (min-width: 1500px){
+            margin-left: 500px;
+        }
     }
     li{
         list-style: none;
@@ -123,9 +140,11 @@ const StyledNav = styled(motion.nav)`
         color:  rgba(97, 97, 97, 255);
         font-family: Helvetica, sans-serif;
         transition: all 0.5s ease-in-out;
-    
         &:hover{
            opacity: 0.8;
+        }
+        @media (min-width: 1500px){
+            font-size: 1.4rem;
         }
     }
     li:after{

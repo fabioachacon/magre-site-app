@@ -62,17 +62,17 @@ const Caps = styled(motion.div)`
      position: absolute;
      width: 800px;
      img { 
-         width: 95%;
+         width: 90%;
         
      }
 
-     @media screen and (min-width: 1500px){
+     /* @media screen and (max-width: 1500px){
         margin-left: 400px;
         img{
             width: 800px;
             height: 700px;
         }
-     }
+     } */
 
      @media screen and (min-width: 1500px){
         margin-right: 1400px;
@@ -81,6 +81,14 @@ const Caps = styled(motion.div)`
             height: 700px;
         }
      }
+
+     /* @media screen and (max-width: 1600px){
+        margin-right: 700px;
+        img{
+            width: 800px;
+            height: 700px;
+        }
+     } */
 
 `;
 
