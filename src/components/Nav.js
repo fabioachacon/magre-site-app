@@ -85,12 +85,11 @@ const StyledNav = styled(motion.nav)`
 
         }
         @media (min-width: 1500px){
-              position: relative;
-              left: 20rem;
-              img {
-                  width: 75%;
-              }
-        }
+            position: relative;
+            left: 20rem;
+            img {
+                width: 90%;
+            }
         }
     }
     .wp-button{
@@ -118,8 +117,8 @@ const StyledNav = styled(motion.nav)`
         }
         @media (min-width: 1500px){
             margin-right: 30rem;
-            button {
-                padding: 0.8rem 3rem;
+            button{
+                padding: 0.8rem 2.9rem;
             }
         }
     }
