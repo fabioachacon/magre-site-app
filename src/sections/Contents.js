@@ -10,57 +10,65 @@ import flask_bg  from '../img/flask_bg.png';
 const Contents = () => {
     return (
         <StyledTable id='content-table'>
-            <Text>COMPOSIÇÃO</Text>
-            <Flask>
-                <img src={flask_bg} alt=""/>
-            </Flask>
-            <Table>
-                <img src={table} alt=""/>
-            </Table>
+             <Text>
+                 <h3>COMPOSIÇÃO</h3>
+             </Text>
+            <BoxCenter>
+               <Flask>
+                 <img src={flask_bg} alt=""/>
+               </Flask>
+               <Table>
+                  <img src={table} alt=""/>
+               </Table>
+            </BoxCenter>
         </StyledTable>
     )
 }
 
 const StyledTable = styled(motion.div)`
-    height: 70vh;
+    height: 530px;
     background: #f6f7f6;
     display: flex;
-    align-items: center;
-    z-index: -100;
+    justify-content: center;
+    align-items: flex-end;
+`;
+
+const BoxCenter = styled(motion.div)`
+     height: 430px;
+     width: 750px;
+     display: flex;
+     justify-content: space-around;
+     align-items: flex-end;
 `;
 
 const Flask = styled(motion.div)`
-    z-index: 2;
-    margin-left: 9rem;
-    img{
-        width: 550px;
-    }
-`;
-
-const Table = styled(motion.div)`
-     margin-left: 39rem;
-     position: absolute;
-     img {
-         width:70%;
+     z-index: 1;
+     img{
+         width: 130%;
+         height: 400px;
      }
 `;
 
-const Text = styled(motion.h2)`
-   position: relative;
-   left: 14rem;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: bold;
-   color: #415740;
-   font-size: 1.1rem;
+const Table = styled(motion.div)`
+    margin-bottom: 60px;
+    position: relative;
+    right: 70px;
+    img {
+        width: 110%;
 
+    }
 `;
 
-const Wrapper = styled(motion.div)`
-    display: flex;
-    width: 70%;
-    height: 100%;
-    align-items: flex-end;
-    margin-left: 15rem;
+const Text = styled(motion.div)`
+     font-family: 'Montserrat', sans-serif;
+     color: #415740;
+     align-self: center;
+     font-size: 1.1rem;
+     margin-top: 120px;
+     position: relative;
+     left: 60px;
 `;
+
+
 
 export default Contents;
