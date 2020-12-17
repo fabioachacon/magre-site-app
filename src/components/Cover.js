@@ -29,8 +29,8 @@ const Cover = () => {
 const StyledCover = styled(motion.div)`
       background-image: url(${cover_bg});
       background-repeat: no-repeat;
-      background-size: 100% 700px;
-      min-height: 550px;
+      background-size: 100% 35rem;
+      min-height: 35rem;
       width: 100%;
       margin-top: 5rem;
       display: flex;
@@ -57,30 +57,30 @@ const Text = styled(motion.div)`
 `;
 
 const Caps = styled(motion.div)`
-     margin-right: 430px;
-     margin-top: 400px;
+     margin-right: 50rem;
+     margin-top: 25rem;
      position: absolute;
-     width: 800px;
+     width: 30rem;
      img { 
-         width: 90%;
+         width: 40rem;
         
      }
 
-     /* @media screen and (max-width: 1500px){
-        margin-left: 400px;
+     @media (min-width: 2000px){
+        margin-right: 100rem;
         img{
-            width: 800px;
-            height: 700px;
+            width: 55rem;
+            height: 45rem;
         }
-     } */
+     }
 
-     @media screen and (min-width: 1500px){
+     /* @media screen and (min-width: 1500px){
         margin-right: 1400px;
         img{
             width: 800px;
             height: 700px;
         }
-     }
+     } */
 
      /* @media screen and (max-width: 1600px){
         margin-right: 700px;
