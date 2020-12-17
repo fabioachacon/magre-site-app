@@ -153,6 +153,23 @@ export const buttonAnim = {
     }
 }
 
+export const TableAnim = {
+    hidden: {
+        x: -190,
+        opacity: 0,
+        transition: {
+            duration: 0.75
+        }
+    },
+    show: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.75
+        }
+    }
+}
+
 export const StaggerAnim = {
     hidden: {
         opacity: 1

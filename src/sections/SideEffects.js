@@ -17,7 +17,7 @@ const SideEffects = () => {
 }
 
 const StyledBox = styled(motion.div)`
-     height: 80vh;
+     height: 30rem;
      background: #ffff;
      display: flex;
      justify-content: center;

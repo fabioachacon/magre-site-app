@@ -5,19 +5,23 @@ import {motion} from 'framer-motion';
 import flask from '../img/flask.png';
 import table from '../img/table.png';
 import flask_bg  from '../img/flask_bg.png';
-
+import {FadeScale, TableAnim, StaggerAnim} from '../animations';
+import {useScroll} from '../components/useScroll';
  
 const Contents = () => {
+
+    const [element, controls] = useScroll();
+
     return (
-        <StyledTable id='content-table'>
+        <StyledTable ref={element} variants={StaggerAnim} initial='hidden' animate={controls} id='content-table'>
              <Text>
                  <h3>COMPOSIÇÃO</h3>
              </Text>
             <BoxCenter>
-               <Flask>
+               <Flask variants={FadeScale}>
                  <img src={flask_bg} alt=""/>
                </Flask>
-               <Table>
+               <Table variants={TableAnim}>
                   <img src={table} alt=""/>
                </Table>
             </BoxCenter>
@@ -26,7 +30,7 @@ const Contents = () => {
 }
 
 const StyledTable = styled(motion.div)`
-    height: 530px;
+    height: 30rem;
     background: #f6f7f6;
     display: flex;
     justify-content: center;
@@ -34,8 +38,8 @@ const StyledTable = styled(motion.div)`
 `;
 
 const BoxCenter = styled(motion.div)`
-     height: 430px;
-     width: 750px;
+     height: 25rem;
+     width: 50rem;
      display: flex;
      justify-content: space-around;
      align-items: flex-end;
@@ -44,17 +48,17 @@ const BoxCenter = styled(motion.div)`
 const Flask = styled(motion.div)`
      z-index: 1;
      img{
-         width: 130%;
-         height: 400px;
+         width: 35rem;
+         height: 26rem;
      }
 `;
 
 const Table = styled(motion.div)`
-    margin-bottom: 60px;
+    margin-bottom: 4rem;
     position: relative;
-    right: 70px;
+    right: 12.7rem;
     img {
-        width: 110%;
+        width: 24rem;
 
     }
 `;
@@ -64,9 +68,9 @@ const Text = styled(motion.div)`
      color: #415740;
      align-self: center;
      font-size: 1.1rem;
-     margin-top: 120px;
+     margin-top: 5rem;
      position: relative;
-     left: 60px;
+     left: 1rem;
 `;
 
 

@@ -15,12 +15,12 @@ const Articles = () => {
             <BoxWrapper>
                <Stories>
                   <Circle>
-                     <OutSide>
-                       <Inside>
+                     <CircleOut>
+                       <CircleIn>
                          <p>28</p>
                          <p>Nov</p>
-                       </Inside>
-                     </OutSide>
+                       </CircleIn>
+                     </CircleOut>
                      <div className="text">
                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, beatae.</h3>
                      </div>
@@ -30,12 +30,12 @@ const Articles = () => {
                      </Arrow>
                   </Circle>
                   <Circle>
-                     <OutSide>
-                       <Inside>
+                     <CircleOut>
+                       <CircleIn>
                          <p>28</p>
                          <p>Nov</p>
-                       </Inside>
-                     </OutSide>
+                       </CircleIn>
+                     </CircleOut>
                      <div className="text">
                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, soluta?</h3>
                      </div>
@@ -45,12 +45,12 @@ const Articles = () => {
                      </Arrow>
                   </Circle>
                   <Circle>
-                     <OutSide>
-                       <Inside>
+                     <CircleOut>
+                       <CircleIn>
                           <p>28</p>
                           <p>Nov</p>
-                       </Inside>
-                     </OutSide>
+                       </CircleIn>
+                     </CircleOut>
                      <div className="text">
                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, commodi.</h3>
                      </div>
@@ -69,7 +69,7 @@ const Articles = () => {
 }
 
 const StyledArticles = styled(motion.div)`
-    min-height: 520px;
+    height: 32rem;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -78,32 +78,32 @@ const StyledArticles = styled(motion.div)`
 `;
 
 const BoxWrapper = styled(motion.div)`
-     height: 400px;
-     width: 900px;
+     height: 25rem;
+     width: 55rem;
      display: flex;
      justify-content: space-around;
      align-items: center;
 `;
 
-const OutSide = styled(motion.div)`
-    height: 90px;
-    width: 90px;
+const CircleOut = styled(motion.div)`
+    height: 6rem;
+    width: 6rem;
     border: 2px solid #c6d672;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    border-radius: 10rem;
  `;
 
- const Inside = styled(motion.div)`
-      height: 55px;
-      width: 55px;
+ const CircleIn = styled(motion.div)`
+      height: 3.5rem;
+      width: 3.5rem;
       background: #3f543e;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border-radius: 50%;
+      border-radius: 10rem;
       p:nth-child(1){
         font-weight: bolder;
         color: white;
@@ -119,11 +119,11 @@ const OutSide = styled(motion.div)`
  `;
 
  const Circle = styled(motion.div)`
-      width: 100%;
-      height: 100%;
+      width: 25rem;
+      height: 20rem;
       display: flex;
+      margin-top: 1rem;
       align-items: center;
-      margin-top: 30px;
       h3{
         left: 10px;
         font-size: 0.7rem;

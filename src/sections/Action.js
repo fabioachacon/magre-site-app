@@ -7,7 +7,8 @@ import man from '../img/man.png';
 import {
     TextFade, 
     FadeScale, 
-    Fade, 
+    Fade,
+    FadePoint, 
     StaggerAnim} from '../animations';
 
 //Custom Hooks
@@ -18,7 +19,7 @@ import {InfoList} from '../info';
 
 
 
-const Act = () => {
+const Action = () => {
 
    const [state, setState] = useState(InfoList);
    const [element, controls] = useScroll();
@@ -33,9 +34,9 @@ const Act = () => {
  }
 
     return (
-        <StyledAction variants={StaggerAnim} ref={element} initial='hidden' animate={controls}>
+        <StyledAction id='action' variants={StaggerAnim} ref={element} initial='hidden' animate={controls}>
              <Title variants={Fade}>
-                 <h2>ATUAÇÃO</h2>
+                 <h3>ATUAÇÃO</h3>
              </Title>
             <CenterBox>
                 <ManImage>
@@ -44,7 +45,7 @@ const Act = () => {
                       <AnimatePresence exitBeforeEnter>
                        {state.map((current, i) => 
                         current.active && (
-                        <AnimatedPoint key={i} info={current}/>))}
+                        <AnimatedPoint key={i} pointId={current.id}/>))}
                       </AnimatePresence>
                     </Points>
                 </ManImage>
@@ -165,11 +166,20 @@ const Points = styled(motion.div)`
       img {
           width: 5rem;
       }
+      .point0{
+          margin-bottom: 5rem;
+          margin-left: 1.8rem;
+      }
       .point1{
-          margin-bottom: 8rem;
+          margin-right: 4rem;
+          margin-top: 2rem;
       }
       .point2{
-          margin-left: 4rem;
+          margin-left: 3rem;
+      }
+      .point3{
+          margin-top: 13rem;
+          margin-left: 2rem;
       }
 `;
 
@@ -178,9 +188,9 @@ const Title = styled(motion.div)`
     position: relative;
     font-family: 'Montserrat', sans-serif;
     color: rgba(65, 87, 64, 255);
-    font-size: 0.78rem;
+    font-size: 1.1rem;
     margin-top: 3.5rem;
     left: 1rem;
 `;
 
-export default Act;
+export default Action;

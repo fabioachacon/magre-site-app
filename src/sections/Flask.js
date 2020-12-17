@@ -29,8 +29,8 @@ const Flask = () => {
    const [element, controls] = useScroll();
 
     return (
-        <FlaskBG variants={StaggerAnim} ref={element} initial='hidden' animate={controls} id='presentation'>
-           <Pill variants={Fade}>
+        <FlaskBG variants={StaggerAnim} initial='hidden' animate={controls} ref={element}  id='presentation'>
+           <Pill variants={FadeScale}>
              <img src={pill} alt=""/>
            </Pill>
            <Icons>
@@ -76,9 +76,9 @@ const Flask = () => {
 const FlaskBG = styled(motion.div)`
     background-image: url(${pill_bg});
     background-repeat: no-repeat;
-    background-size: 100% 500px;
-    height: 500px;
-    margin-top: 10px;
+    background-size: 100% 30rem;
+    height: 30rem;
+    margin-top: 0.9rem;
     z-index: -1000;
     display: flex;
     justify-content: center;
@@ -90,19 +90,18 @@ const Pill = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-    width: 100%;
+    margin-top: 5rem;
+    margin-left: 2rem;
     img {
-        width: 600px;
+        width: 40rem;
     }
 `;
 
 const Icons = styled(motion.div)`
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
-    height: 80%;
-    width: 700px;
+    height: 25rem;
+    width: 40rem;
     justify-content: space-between;
     align-items: center;
     z-index: 1;
@@ -119,10 +118,10 @@ const Row = styled(motion.div)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 200px;
-    width: 100%;
+    height: 20rem;
+    width: 40rem;
     img{
-        width: 90px;
+        width: 6rem;
     }
 `;
 
@@ -131,9 +130,10 @@ const Icon1 = styled(motion.div)`
    position: relative;
    align-items: center;
    align-self: flex-end;
-   right: 2.2rem;
+   right: 3rem;
+   top: 3rem;
    img {
-       width: 80px;
+       width: 5rem;
    }
 `;
 
@@ -142,11 +142,10 @@ const Icon2 = styled(motion.div)`
    display: flex;
    align-items: center;
    align-self: flex-start;
-   margin-right: 350px;
-   top: 15px;
-   right: 10px;
+   margin-right: 50rem;
+   top: 2rem;
    img{
-       width: 80px;
+       width: 4rem;
    }
 `;
 
@@ -154,10 +153,10 @@ const Icon3 = styled(motion.div)`
    display: flex;
    align-items: center;
    position: relative;
-   margin-top: 90px;
-   right: 10px;
+   margin-top: 9rem;
+   right: 2rem;
    img{
-       width: 100px;
+       width: 6rem;
    }
 
 `;
@@ -165,8 +164,8 @@ const Icon3 = styled(motion.div)`
 const Icon4 = styled(motion.div)`
    display: flex;
    align-items: center;
-   margin-right: 120px;
-   margin-top: 95px;
+   margin-right: 3rem;
+   margin-top: 8rem;
 `;
 
 
