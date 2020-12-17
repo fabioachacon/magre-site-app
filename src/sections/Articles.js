@@ -79,7 +79,7 @@ const StyledArticles = styled(motion.div)`
 
 const BoxWrapper = styled(motion.div)`
      height: 400px;
-     width: 70%;
+     width: 900px;
      display: flex;
      justify-content: space-around;
      align-items: center;

@@ -70,7 +70,7 @@ const Action = () => {
 const StyledAction = styled(motion.div)`  
     position: relative;
     margin-top: -10px;
-    height: 80vh;
+    min-height: 540px;
     background: white;
     display: flex;
     align-items: center;
