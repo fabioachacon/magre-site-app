@@ -25,10 +25,8 @@ import {InfoList} from '../info';
 
 
 const Action = () => {
-
    const [state, setState] = useState(InfoList);
    const [element, controls] = useScroll();
-
 
    const clickHandler = (id) => {
        const newState = state.map((current) => 
@@ -48,35 +46,36 @@ const Action = () => {
                     <motion.img variants={FadeScale} src={man} alt="man"/>
                     <Points variants={Fade}>
                       <AnimatePresence exitBeforeEnter>
-                       {state.map((current, i) => 
-                        current.active && (
-                        <AnimatedPoint key={i} pointId={current.id}/>))}
+                       {state.map((item, i) => 
+                        item.active && (
+                        <AnimatedPoint key={i} pointId={item.id}/>))}
                       </AnimatePresence>
                     </Points>
                 </ManImage>
                 <RightBox variants={Fade}>
                     <Text>
                       <AnimatePresence exitBeforeEnter>
-                        {state.map((current, i) => 
-                            current.active && (
+                        {state.map((item, i) => 
+                            item.active && (
                             <motion.div
                             variants={TextFade}
                             initial='hidden' 
                             animate='show' 
                             exit='exit'
                             key={i}>
-                             {current.text}
+
+                             {item.text}
                             </motion.div>
                             )
                         )}
                       </AnimatePresence>
                     </Text>
                     <Dots>
-                      {state.map((current, i) => 
+                      {state.map((item, i) => 
                         <Dot
                           onClick={() => clickHandler(i)} 
                           key={i}
-                          style={current.active ? 
+                          style={item.active ? 
                           {'background': '#415740'} : 
                           {'background': 'white'}}  
                         />

@@ -75,10 +75,10 @@ const List = styled(motion.div)`
         content: "";
         display: block;
         height: 2px;
-        top: 0.5px;
+        top: 2px;
         position: relative;
         background: #bcd24c;
-        transition: width 0.5s ease 0s, left 0.3s ease 0s;
+        transition: width 0.2s ease-in-out 0s, left 0.2s ease-in-out 0s;
         width: 0;
     }
     li:hover:after {

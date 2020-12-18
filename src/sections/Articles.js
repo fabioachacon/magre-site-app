@@ -7,63 +7,77 @@ const Articles = () => {
     return (
         <StyledArticles id='articles'>
             <Title>
-              <Text>
-                <h2>NOTÍCIAS &</h2>
-                <h2>ARTIGOS</h2>
-              </Text>
+               <Text>
+                 <h3>NOTÍCIAS &</h3>
+                 <h3>ARTIGOS</h3>
+               </Text>
             </Title>
-            <BoxWrapper>
-               <Stories>
-                  <Circle>
-                     <CircleOut>
-                       <CircleIn>
-                         <p>28</p>
-                         <p>Nov</p>
-                       </CircleIn>
-                     </CircleOut>
-                     <div className="text">
-                       <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, beatae.</h3>
-                     </div>
-                     <Arrow>
-                       <a href="">veja mais</a>
-                       <img src={arrow} alt=""/>
-                     </Arrow>
-                  </Circle>
-                  <Circle>
-                     <CircleOut>
-                       <CircleIn>
-                         <p>28</p>
-                         <p>Nov</p>
-                       </CircleIn>
-                     </CircleOut>
-                     <div className="text">
-                       <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, soluta?</h3>
-                     </div>
-                     <Arrow>
-                       <a href="">veja mais</a>
-                       <img src={arrow} alt=""/>
-                     </Arrow>
-                  </Circle>
-                  <Circle>
-                     <CircleOut>
-                       <CircleIn>
-                          <p>28</p>
-                          <p>Nov</p>
-                       </CircleIn>
-                     </CircleOut>
-                     <div className="text">
-                       <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, commodi.</h3>
-                     </div>
-                     <Arrow>
-                       <a href="">veja mais</a>
-                       <img src={arrow} alt=""/>
-                     </Arrow>
-                  </Circle>
-               </Stories>
-               <Video>
-                  <video controls src="https://firebasestorage.googleapis.com/v0/b/neural-connect-frb.appspot.com/o/v1.mp4?alt=media&token=d70802bb-c503-431d-8bc4-35be854efc18"></video>
-               </Video>
-            </BoxWrapper>
+            <CenterBox>
+               <LeftBox>
+                  <Story>
+                    <CircleOut>
+                      <CircleIn>
+                        <p>28</p>
+                        <p>nov</p>
+                      </CircleIn>
+                    </CircleOut>
+                    <HeadLine>
+                      <News>
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nihil, ea temporibus ipsum eaque quam assumenda est architecto qui distinctio!</h3>
+                      </News>
+                      <Arrow>
+                        <a href="">veja mais</a>
+                        <div className="icon">
+                          <img src={arrow} alt=""/>
+                        </div>
+                      </Arrow>
+                    </HeadLine>
+                  </Story>
+                  <Story>
+                    <CircleOut>
+                      <CircleIn>
+                        <p>28</p>
+                        <p>nov</p>
+                      </CircleIn>
+                    </CircleOut>
+                    <HeadLine>
+                      <News>
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque repellendus deleniti officiis id sed saepe, temporibus quis sequi amet sunt.</h3>
+                      </News>
+                      <Arrow>
+                        <a href="">veja mais</a>
+                        <div className="icon">
+                          <img src={arrow} alt=""/>
+                        </div>
+                      </Arrow>
+                    </HeadLine>
+                  </Story>
+                  <Story>
+                    <CircleOut>
+                      <CircleIn>
+                        <p>28</p>
+                        <p>nov</p>
+                      </CircleIn>
+                    </CircleOut>
+                    <HeadLine>
+                      <News>
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque repellendus deleniti officiis id sed saepe, temporibus quis sequi amet sunt.</h3>
+                      </News>
+                      <Arrow>
+                        <a href="">veja mais</a>
+                        <div className="icon">
+                          <img src={arrow} alt=""/>
+                        </div>
+                      </Arrow>
+                    </HeadLine>
+                  </Story>
+               </LeftBox>
+               <RightBox>
+                 <Video>
+                   <video controls src="https://storage.googleapis.com/muxdemofiles/mux-video-intro.mp4"></video>
+                 </Video>
+               </RightBox>
+            </CenterBox>
         </StyledArticles>
     )
 }
@@ -71,139 +85,164 @@ const Articles = () => {
 const StyledArticles = styled(motion.div)`
     height: 32rem;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
     flex-direction: column;
-    align-items: center;
-  
 `;
 
-const BoxWrapper = styled(motion.div)`
-     height: 25rem;
-     width: 55rem;
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-`;
-
-const CircleOut = styled(motion.div)`
-    height: 6rem;
-    width: 6rem;
-    border: 2px solid #c6d672;
+const CenterBox = styled(motion.div)`
+    height: 25rem;
+    width: 60rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10rem;
- `;
-
- const CircleIn = styled(motion.div)`
-      height: 3.5rem;
-      width: 3.5rem;
-      background: #3f543e;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-radius: 10rem;
-      p:nth-child(1){
-        font-weight: bolder;
-        color: white;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.1rem;
-      }
-      p:nth-child(2){
-        font-weight: 400;
-        color: white;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 0.9rem;
-      }
- `;
-
- const Circle = styled(motion.div)`
-      width: 25rem;
-      height: 20rem;
-      display: flex;
-      margin-top: 1rem;
-      align-items: center;
-      h3{
-        left: 10px;
-        font-size: 0.7rem;
-        color: rgba(95, 95, 95, 255);
-        position: relative;
-        max-width: 200px;
-        font-family: 'Montserrat', sans-serif;
-        text-align: left;
-
-      }
- `;
-
- const Stories = styled(motion.div)`
-     display: flex;
-     flex-direction: column;
-     width: 55%;
-     height: 100%;
-     justify-content: center;
-     margin-left: 2rem;
-     margin-bottom: 2rem;
- `;
-
- const Arrow = styled(motion.div)`
-      display: flex;
-      align-self: flex-end;
-      justify-self: flex-end;
-      width: 21%;
-      height: 30px;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      right: 40px;
-      img{
-        border: 1px solid rgba(181, 202, 74, 255);
-        border-radius: 60%;
-        padding: 7px 5px;
-        width: 27%;
-      }
-      a{
-        text-decoration: none;
-        font-size: 0.72rem;
-        font-family: 'Montserrat', sans-serif;
-        color: rgba(181, 202, 74, 255);
-      }
- `;
-
- const Video = styled(motion.div)`
-       height: 260px;
-       width: 55%;
-       margin-right: 5rem;
-       video {
-         object-fit: cover;
-         width: 100%;
-         height: 100%;
-       }
- `;
+`;
 
 const Title = styled(motion.div)`
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 40px;
+   height: 4rem;
+   margin-top: 3rem;
+   display: flex;
+   justify-content: center;
+   width: 100%;
 `;
 
 const Text = styled(motion.div)`
-    width: 64%;
     height: 100%;
+    width: 60rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.9rem;
-    font-family: "Montserrat", sans-serif;
-    h2:nth-child(1){
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.3rem;
+    h3:nth-child(1){
       color: #415740;
     }
-    h2:nth-child(2){
+    h3:nth-child(2){
       color: #bcd24c;
     }
 `;
+
+const LeftBox = styled(motion.div)`
+    height: 100%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
+const Story = styled(motion.div)`
+    height: 7rem;
+    width: 100%;
+    display: flex;
+    margin-bottom: 0.2rem;
+    align-items: center;
+`;
+
+const CircleOut = styled(motion.div)`
+    width: 6rem;
+    height: 85%;
+    background: none;
+    border: 2px solid #b5ca4a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const CircleIn = styled(motion.div)`
+    width: 68%;
+    height: 68%;
+    background: #3f543e;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    p:nth-child(1){
+      font-weight: bolder;
+      font-size: 1.4rem;
+    }
+    p:nth-child(2){
+      font-size: 1.1rem;
+      position: relative;
+      bottom: 0.3rem;
+    }
+`;
+
+const HeadLine = styled(motion.div)`
+    width: 70%;
+    height: 100%;
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`;
+
+const News = styled(motion.div)`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    justify-self: center;
+    h3{
+      display: flex;
+      align-items: center;
+      height: 90%;
+      position: relative;
+      top: 0.5rem;
+      color: rgba(95, 95, 95, 255);
+      font-size: 0.7rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: lighter;
+    }
+`;
+
+const Arrow = styled(motion.div)`
+   display: flex;
+   align-self: center;
+   align-items: center;
+   position: relative;
+   width: 80%;
+   justify-content: flex-end;
+   .icon{
+     display: flex;
+     align-items: center;
+     padding: 0.3rem 0.2rem;
+     border: 1.4px solid #bacd55;
+     border-radius: 50%;
+     img{
+       width: 0.9rem;
+     }
+   }
+   a{
+     text-decoration: none;
+     margin-right: 0.5rem;
+     font-size: 0.7rem;
+     color: #bacd55;
+     font-family: 'Montserrat', sans-serif;
+   }
+`;
+
+// Right Box
+
+const RightBox = styled(motion.div)`
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+`;
+
+const Video = styled.div`
+   width: 100%;
+   height: 83%;
+   video{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+`;
+  
+
 
 export default Articles;
 
