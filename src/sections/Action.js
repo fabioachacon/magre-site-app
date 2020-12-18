@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
-import man from '../img/man.png';
 
 //Animations
 import {
@@ -11,10 +10,16 @@ import {
     FadePoint, 
     StaggerAnim} from '../animations';
 
+//Images
+import man from '../img/man.png';
+
 //Custom Hooks
 import {useScroll} from '../components/useScroll';
 
+//Components
 import AnimatedPoint from '../components/AnimatedPoint';
+
+//Util
 import {InfoList} from '../info';
 
 
@@ -26,21 +31,21 @@ const Action = () => {
 
 
    const clickHandler = (id) => {
-       const newState = state.map((current) => {
-      return current.id === id ? {...current, active: true} : {...current, active: false}
-    });
+       const newState = state.map((current) => 
+       current.id === id ? {...current, active: true} : {...current, active: false}
+    );
 
     setState(newState);
  }
 
     return (
         <StyledAction id='action' variants={StaggerAnim} ref={element} initial='hidden' animate={controls}>
-             <Title variants={Fade}>
-                 <h3>ATUAÇÃO</h3>
-             </Title>
+            <Title variants={Fade}>
+              <h3>ATUAÇÃO</h3>
+            </Title>
             <CenterBox>
                 <ManImage>
-                    <motion.img variants={FadeScale} src={man} alt=""/>
+                    <motion.img variants={FadeScale} src={man} alt="man"/>
                     <Points variants={Fade}>
                       <AnimatePresence exitBeforeEnter>
                        {state.map((current, i) => 
@@ -49,7 +54,7 @@ const Action = () => {
                       </AnimatePresence>
                     </Points>
                 </ManImage>
-                <LeftBox variants={Fade}>
+                <RightBox variants={Fade}>
                     <Text>
                       <AnimatePresence exitBeforeEnter>
                         {state.map((current, i) => 
@@ -71,11 +76,13 @@ const Action = () => {
                         <Dot
                           onClick={() => clickHandler(i)} 
                           key={i}
-                          style={current.active ? {'background': '#415740'} : {'background': 'white'}}  
+                          style={current.active ? 
+                          {'background': '#415740'} : 
+                          {'background': 'white'}}  
                         />
                        )}
                     </Dots>
-                </LeftBox>
+                </RightBox>
             </CenterBox>
         </StyledAction>
     )
@@ -89,24 +96,24 @@ const StyledAction = styled(motion.div)`
 `;
 
 const CenterBox = styled(motion.div)`
-       width: 55rem;
-       height: 32rem;
-       position: relative;
-       right: 3rem;
-       display: flex;
+     width: 55rem;
+     height: 32rem;
+     position: relative;
+     right: 3rem;
+     display: flex;
 `;
 
 const ManImage = styled(motion.div)`
       height: 100%;
       width: 70%;
       display: flex;
-     img {
+      img {
          width: 100%;
          height: 100%; 
      }
 `;
 
-const LeftBox = styled(motion.div)`
+const RightBox = styled(motion.div)`
     width: 50%;
     display: flex;
     position: relative;
@@ -124,15 +131,14 @@ const Text = styled(motion.div)`
     text-align: right;
     padding-right: 10px;
     color: gray;
+
     &::-webkit-scrollbar{
        width: 0.1rem;
        background-color: #415740
-     }
+    }
     &::-webkit-scrollbar-thumb{
       background-color: #415740;
-      height: 1px;
-
-      
+      height: 1px;  
     }
     &::-webkit-scrollbar-track{
       background-color: white;
@@ -163,24 +169,24 @@ const Points = styled(motion.div)`
      flex-direction: column;
      align-items: center;
      justify-content: center;
-      img {
+     img {
           width: 5rem;
-      }
-      .point0{
-          margin-bottom: 5rem;
-          margin-left: 1.8rem;
-      }
-      .point1{
-          margin-right: 4rem;
-          margin-top: 2rem;
-      }
-      .point2{
-          margin-left: 3rem;
-      }
-      .point3{
-          margin-top: 13rem;
-          margin-left: 2rem;
-      }
+    }
+    .point0{
+        margin-bottom: 5rem;
+        margin-left: 1.8rem;
+    }
+    .point1{
+        margin-right: 4rem;
+        margin-top: 2rem;
+    }
+    .point2{
+        margin-left: 3rem;
+    }
+    .point3{
+        margin-top: 13rem;
+        margin-left: 2rem;
+    }
 `;
 
 const Title = styled(motion.div)`
