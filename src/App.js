@@ -1,6 +1,5 @@
 import React from 'react';
 import {GlobalStyle} from './GlobalStyle';
-import Nav from './components/Nav';
 import Header from './sections/Header';
 import Presentation from './sections/Presentation';
 import Articles from './sections/Articles';
@@ -10,12 +9,13 @@ import Footer from './sections/Footer';
 import SideEffects from './sections/SideEffects';
 import Flask from './sections/Flask';
 import Action from './sections/Action';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Nav />
+      <Navbar />
       <Header />
       <Flask />
       <Action />
