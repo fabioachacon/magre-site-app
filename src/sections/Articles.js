@@ -234,7 +234,9 @@ const RightBox = styled(motion.div)`
 
 const Video = styled.div`
    width: 100%;
-   height: 83%;
+   height: 81%;
+   position: relative;
+   top: 0.4rem;
    video{
      width: 100%;
      height: 100%;
