@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
 
@@ -33,9 +33,10 @@ const Action = () => {
        current.id === id ? {...current, active: true} : {...current, active: false}
     );
     
-    audioRef.current.play();
     setState(newState);
+    audioRef.current.play();
   }
+
     
     return (
         <StyledAction 
