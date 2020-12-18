@@ -111,7 +111,7 @@ export const FadePoint = {
         scale: 1.1,
         transition: {
             ease: 'easeOut', 
-            duration: 0.7,
+            duration: 0.75,
         
         }
     },
@@ -119,7 +119,7 @@ export const FadePoint = {
         opacity: 0,
         transition: { 
             ease: 'easeOut', 
-            duration: 0.3, 
+            duration: 0.35, 
         }
     }
 }

@@ -92,7 +92,7 @@ const StyledArticles = styled(motion.div)`
 
 const CenterBox = styled(motion.div)`
     height: 25rem;
-    width: 60rem;
+    width: 55rem;
     display: flex;
 `;
 
@@ -106,7 +106,7 @@ const Title = styled(motion.div)`
 
 const Text = styled(motion.div)`
     height: 100%;
-    width: 60rem;
+    width: 54.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -189,9 +189,9 @@ const News = styled(motion.div)`
       align-items: center;
       height: 90%;
       position: relative;
-      top: 0.5rem;
+      top: 0.6rem;
       color: rgba(95, 95, 95, 255);
-      font-size: 0.7rem;
+      font-size: 0.74rem;
       font-family: 'Montserrat', sans-serif;
       font-weight: lighter;
     }
@@ -217,9 +217,10 @@ const Arrow = styled(motion.div)`
    a{
      text-decoration: none;
      margin-right: 0.5rem;
-     font-size: 0.7rem;
+     font-size: 0.8rem;
      color: #bacd55;
      font-family: 'Montserrat', sans-serif;
+     font-weight: 400;
    }
 `;
 
@@ -230,10 +231,11 @@ const RightBox = styled(motion.div)`
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 `;
 
 const Video = styled.div`
-   width: 100%;
+   width: 96%;
    height: 81%;
    position: relative;
    top: 0.4rem;
@@ -241,6 +243,7 @@ const Video = styled.div`
      width: 100%;
      height: 100%;
      object-fit: cover;
+     outline: none;
    }
 `;
   

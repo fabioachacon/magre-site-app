@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
 
@@ -23,21 +23,27 @@ import AnimatedPoint from '../components/AnimatedPoint';
 import {InfoList} from '../info';
 
 
-
 const Action = () => {
    const [state, setState] = useState(InfoList);
    const [element, controls] = useScroll();
+   const audioRef = useRef();
 
    const clickHandler = (id) => {
        const newState = state.map((current) => 
        current.id === id ? {...current, active: true} : {...current, active: false}
     );
-
+    
+    audioRef.current.play();
     setState(newState);
- }
-
+  }
+    
     return (
-        <StyledAction id='action' variants={StaggerAnim} ref={element} initial='hidden' animate={controls}>
+        <StyledAction 
+        id='action' 
+        variants={StaggerAnim} 
+        ref={element} initial='hidden' 
+        animate={controls}>
+
             <Title variants={Fade}>
               <h3>ATUAÇÃO</h3>
             </Title>
@@ -48,7 +54,9 @@ const Action = () => {
                       <AnimatePresence exitBeforeEnter>
                        {state.map((item, i) => 
                         item.active && (
-                        <AnimatedPoint key={i} pointId={item.id}/>))}
+                        <AnimatedPoint key={i} pointId={item.id}/>
+                        ))
+                        }
                       </AnimatePresence>
                     </Points>
                 </ManImage>
@@ -80,6 +88,7 @@ const Action = () => {
                           {'background': 'white'}}  
                         />
                        )}
+                       <audio ref={audioRef} preload='auto' src="https://soundsnap-prod.nyc3.digitaloceanspaces.com/files/audio/7s/transcode/420728-Card-Game-UI-General-Click-Shimmer-01.mp3?response-content-disposition=attachment%3B+filename%3D%22420728-Card-Game-UI-General-Click-Shimmer-01.mp3%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AD4PI63EK5AJWZMJZZKH%2F20201218%2Fnyc3%2Fs3%2Faws4_request&X-Amz-Date=20201218T201539Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=7fa7f99a427964063e4683ec907c4523be3f867c71cc2be0dfcde20b5da105a4"></audio>
                     </Dots>
                 </RightBox>
             </CenterBox>
@@ -92,6 +101,7 @@ const StyledAction = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    background: #ffffff;
 `;
 
 const CenterBox = styled(motion.div)`
@@ -108,7 +118,7 @@ const ManImage = styled(motion.div)`
       display: flex;
       img {
          width: 100%;
-         height: 100%; 
+         height: 100%;
      }
 `;
 
@@ -155,9 +165,9 @@ const Dot = styled(motion.div)`
     border: 1.5px solid gray; 
     padding: 2.5px;
     background: white;
-    margin-left: 0.7rem;
+    margin-left: 0.6rem;
     cursor: pointer;
-    transition: all 0.5s ease-in-out; 
+    transition: all 0.3s ease-out; 
 `;
 
 const Points = styled(motion.div)`
@@ -169,7 +179,7 @@ const Points = styled(motion.div)`
      align-items: center;
      justify-content: center;
      img {
-          width: 5rem;
+          width: 4.5rem;
     }
     .point0{
         margin-bottom: 5rem;
