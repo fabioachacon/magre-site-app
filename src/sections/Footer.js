@@ -33,7 +33,7 @@ const StyledFooter = styled(motion.div)`
 `;
 
 const  Logo = styled(motion.div)`
-   
+
 `;
 
 const TextLogo = styled.div`
@@ -45,7 +45,6 @@ const TextLogo = styled.div`
    img {
        width: 15%;
        margin-left: 1.5rem;
-
    }
    p{
        font-size: 0.8rem;

@@ -59,7 +59,6 @@ const Table = styled(motion.div)`
     right: 12.7rem;
     img {
         width: 24rem;
-
     }
 `;
 

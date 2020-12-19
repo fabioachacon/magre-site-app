@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import arrow from '../img/arrow.png';
+import { FiArrowRight } from "react-icons/fi";
 
 const Articles = () => {
     return (
@@ -15,59 +16,53 @@ const Articles = () => {
             <CenterBox>
                <LeftBox>
                   <Story>
-                    <CircleOut>
-                      <CircleIn>
+                    <OuterCircle>
+                      <InnerCircle>
                         <p>28</p>
                         <p>nov</p>
-                      </CircleIn>
-                    </CircleOut>
+                      </InnerCircle>
+                    </OuterCircle>
                     <HeadLine>
                       <News>
                         <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nihil, ea temporibus ipsum eaque quam assumenda est architecto qui distinctio!</h3>
                       </News>
                       <Arrow>
                         <a href="">veja mais</a>
-                        <div className="icon">
-                          <img src={arrow} alt=""/>
-                        </div>
+                        <ArrowIcon />
                       </Arrow>
                     </HeadLine>
                   </Story>
                   <Story>
-                    <CircleOut>
-                      <CircleIn>
+                    <OuterCircle>
+                      <InnerCircle>
                         <p>28</p>
                         <p>nov</p>
-                      </CircleIn>
-                    </CircleOut>
+                      </InnerCircle>
+                    </OuterCircle>
                     <HeadLine>
                       <News>
                         <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque repellendus deleniti officiis id sed saepe, temporibus quis sequi amet sunt.</h3>
                       </News>
                       <Arrow>
                         <a href="">veja mais</a>
-                        <div className="icon">
-                          <img src={arrow} alt=""/>
-                        </div>
+                        <ArrowIcon />
                       </Arrow>
                     </HeadLine>
                   </Story>
                   <Story>
-                    <CircleOut>
-                      <CircleIn>
+                    <OuterCircle>
+                      <InnerCircle>
                         <p>28</p>
                         <p>nov</p>
-                      </CircleIn>
-                    </CircleOut>
+                      </InnerCircle>
+                    </OuterCircle>
                     <HeadLine>
                       <News>
                         <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque repellendus deleniti officiis id sed saepe, temporibus quis sequi amet sunt.</h3>
                       </News>
                       <Arrow>
                         <a href="">veja mais</a>
-                        <div className="icon">
-                          <img src={arrow} alt=""/>
-                        </div>
+                        <ArrowIcon />
                       </Arrow>
                     </HeadLine>
                   </Story>
@@ -132,11 +127,11 @@ const Story = styled(motion.div)`
     height: 7rem;
     width: 100%;
     display: flex;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
     align-items: center;
 `;
 
-const CircleOut = styled(motion.div)`
+const OuterCircle = styled(motion.div)`
     width: 6rem;
     height: 85%;
     background: none;
@@ -147,7 +142,7 @@ const CircleOut = styled(motion.div)`
     align-items: center;
 `;
 
-const CircleIn = styled(motion.div)`
+const InnerCircle = styled(motion.div)`
     width: 68%;
     height: 68%;
     background: #3f543e;
@@ -204,16 +199,6 @@ const Arrow = styled(motion.div)`
    position: relative;
    width: 80%;
    justify-content: flex-end;
-   .icon{
-     display: flex;
-     align-items: center;
-     padding: 0.3rem 0.2rem;
-     border: 1.4px solid #bacd55;
-     border-radius: 50%;
-     img{
-       width: 0.9rem;
-     }
-   }
    a{
      text-decoration: none;
      margin-right: 0.5rem;
@@ -222,6 +207,16 @@ const Arrow = styled(motion.div)`
      font-family: 'Montserrat', sans-serif;
      font-weight: 400;
    }
+`;
+
+const ArrowIcon = styled(FiArrowRight)`
+     display: flex;
+     align-items: center;
+     padding: 0.1rem;
+     border: 1.4px solid #bacd55;
+     color: gray;
+     border-radius: 50%;
+     font-size: 1.5rem;
 `;
 
 // Right Box

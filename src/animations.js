@@ -21,7 +21,8 @@ export const FadeScale = {
         opacity: 0,
         scale: 1.1,
         transition: {
-            duration: 0.75
+            duration: 0.75,
+            ease: 'easeOut'
         }   
      },
     show: {
@@ -29,7 +30,7 @@ export const FadeScale = {
         opacity: 1, 
         transition: { 
             ease: 'easeOut', 
-            duration: 0.75,
+            duration: 0.85,
         
         }
     }
@@ -165,7 +166,8 @@ export const TableAnim = {
         x: 0,
         opacity: 1,
         transition: {
-            duration: 0.75
+            duration: 0.75,
+            ease: "easeOut"
         }
     }
 }

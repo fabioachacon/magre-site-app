@@ -7,6 +7,8 @@ import {animateScroll as scroll} from 'react-scroll';
 //Images
 import wtapp from '../img/wtapp.png';
 import logo_color from '../img/logo-color.png';
+import {FaBars, FaWhatsapp} from 'react-icons/fa';
+
 
 //Animations
 import {buttonAnim} from '../animations';
@@ -36,11 +38,10 @@ const Navbar = () => {
                   <Link to="content-table" smooth={true} offset={-80} duration={900}>COMPOSIÇÃO</Link>
                 </li>
             </List>
+            <Bars />
             <WpButton>
                 <button>
-                    <div className="wp-logo">
-                      <img src={wtapp} alt=""/>
-                    </div>
+                    <WhatAppIcon />
                     <a href="">whatsapp</a>
                 </button>
             </WpButton>
@@ -58,6 +59,9 @@ const Nav = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    @media screen and (max-width: 768px){
+        justify-content: space-between;
+    }
 `;
 
 const List = styled(motion.div)`
@@ -70,8 +74,11 @@ const List = styled(motion.div)`
         cursor: pointer;
         color: rgba(97, 97, 97, 255);
         font-family: Helvetica, sans-serif;
+        transition: all 0.3s ease-in-out;
+    &:hover{
+        opacity: 0.8;
     }
-    li:after{
+    :after{
         content: "";
         display: block;
         height: 2px;
@@ -81,9 +88,14 @@ const List = styled(motion.div)`
         transition: width 0.2s ease-in-out 0s, left 0.2s ease-in-out 0s;
         width: 0;
     }
-    li:hover:after {
+    :hover:after {
         width: 100%;
         left: 0;
+    }
+}
+
+    @media screen and (max-width: 768px){
+        display: none;
     }
 `;
 
@@ -91,6 +103,9 @@ const MagreLogo = styled(motion.div)`
    cursor: pointer;
    img {
        width: 11rem;
+   }
+   @media screen and (max-width: 768px){
+        margin-left: 10rem;
    }
 `;
 
@@ -111,11 +126,25 @@ const WpButton = styled(motion.div)`
         color: white;
         font-family: Helvetica, sans-serif;
       }
-      img{
-          margin-top: 0.2rem;
-          margin-right: 0.4rem;
-          width: 1.2rem;
-      }
+    }
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+`;
+
+const WhatAppIcon = styled(FaWhatsapp)`
+   color: white;
+   font-size: 1.3rem;
+   margin-right: 0.2rem;
+`;
+
+const Bars = styled(FaBars)`
+  display: none;
+
+  @media screen and (max-width: 768px){
+        display: block;
+        font-size: 2.8rem;
+        margin-right: 3rem;
     }
 `;
 

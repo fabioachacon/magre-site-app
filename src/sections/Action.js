@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
+import selected from '../audio/selected.mp3';
 
 //Animations
 import {
@@ -34,10 +35,13 @@ const Action = () => {
     );
     
     setState(newState);
+    
+    if (!audioRef.current.paused){
+       audioRef.current.currentTime = 0;
+    }
     audioRef.current.play();
   }
-
-    
+  
     return (
         <StyledAction 
         id='action' 
@@ -89,7 +93,7 @@ const Action = () => {
                           {'background': 'white'}}  
                         />
                        )}
-                       <audio ref={audioRef} crossOrigin="anonymous" preload='auto' src="https://soundsnap-prod.nyc3.digitaloceanspaces.com/files/audio/7s/transcode/420728-Card-Game-UI-General-Click-Shimmer-01.mp3?response-content-disposition=attachment%3B+filename%3D%22420728-Card-Game-UI-General-Click-Shimmer-01.mp3%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AD4PI63EK5AJWZMJZZKH%2F20201218%2Fnyc3%2Fs3%2Faws4_request&X-Amz-Date=20201218T201539Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=7fa7f99a427964063e4683ec907c4523be3f867c71cc2be0dfcde20b5da105a4"></audio>
+                       <audio ref={audioRef} src={selected} />
                     </Dots>
                 </RightBox>
             </CenterBox>
