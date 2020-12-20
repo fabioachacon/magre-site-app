@@ -16,7 +16,7 @@ import {buttonAnim} from '../animations';
 
 const NavBarResp = () => {
 
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(false);
 
     const toggleSideBar = () => {
         setActive(!active);
@@ -26,12 +26,13 @@ const NavBarResp = () => {
         scroll.scrollToTop();
     }
 
+
     return (
         <Wrapper>
             <MagreLogo onClick={logoClickHandler}>
                 <img src={logo_color} alt=""/>
             </MagreLogo>
-           <NavBar style={(window.innerWidth <= 768) && active ? {'transform': 'translateX(100%)'} : {'transform': 'translateX(0%)'}}> 
+            <NavBar className={`${active ? 'active' : ''}`}> 
               <NavLinks>
                 <li>
                  <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
@@ -76,6 +77,10 @@ const Wrapper = styled.div`
      z-index: 1000;
     @media screen and (max-width: 768px){
         justify-content: space-between;
+        height: 11vh;
+        .active {
+            transform: translateX(0%); 
+        }
     }
 `;
 
@@ -96,7 +101,8 @@ const NavBar = styled.nav`
     background: white;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
+    transform: translateX(100%); 
     transition: all 0.5s ease-in-out;
  }
 `;
@@ -161,6 +167,7 @@ const ButtonWrapper = styled(motion.div)`
       font-family: Helvetica, sans-serif;
       button {
       display: flex;
+      cursor: pointer;
       align-items: center;
       padding: 0.4rem 1.3rem;
       background: #bcd24c;
