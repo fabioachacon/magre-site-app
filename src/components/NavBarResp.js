@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import {Link} from 'react-scroll';
@@ -8,6 +8,7 @@ import {animateScroll as scroll} from 'react-scroll';
 import wtapp from '../img/wtapp.png';
 import logo_color from '../img/logo-color.png';
 import {FaBars, FaWhatsapp} from 'react-icons/fa';
+import {IoMdClose} from 'react-icons/io';
 
 
 //Animations
@@ -15,14 +16,22 @@ import {buttonAnim} from '../animations';
 
 const NavBarResp = () => {
 
-    const [active, setActive] = useState(null);
+    const [active, setActive] = useState(true);
+
+    const toggleSideBar = () => {
+        setActive(!active);
+    }
+
+    const logoClickHandler = () => {
+        scroll.scrollToTop();
+    }
 
     return (
         <Wrapper>
-            <MagreLogo>
+            <MagreLogo onClick={logoClickHandler}>
                 <img src={logo_color} alt=""/>
             </MagreLogo>
-           <NavBar> 
+           <NavBar style={(window.innerWidth <= 768) && active ? {'transform': 'translateX(100%)'} : {'transform': 'translateX(0%)'}}> 
               <NavLinks>
                 <li>
                  <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
@@ -38,13 +47,15 @@ const NavBarResp = () => {
                 </li>
               </NavLinks>
               <ButtonWrapper>
-                 <button>
-                    <WhatsAppIcon />
-                    <a href="">whatsapp</a>
-                  </button>
+                  <a href="">
+                    <button>
+                      <WhatsAppIcon />
+                       whatsapp
+                    </button>
+                  </a>
               </ButtonWrapper>
            </NavBar>
-           <BurgerWrapper>
+           <BurgerWrapper onClick={toggleSideBar}>
               <Burger />
            </BurgerWrapper> 
         </Wrapper>
@@ -86,6 +97,7 @@ const NavBar = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center; 
+    transition: all 0.5s ease-in-out;
  }
 `;
 
@@ -124,7 +136,7 @@ const NavLinks = styled.ul`
 @media screen and (max-width: 768px){
     flex-direction: column;
     align-items: center;
-    height: 70%;
+    height: 60%;
     font-size: 1.6rem;
 }
 `;
@@ -144,24 +156,24 @@ const MagreLogo = styled(motion.div)`
 `;
 
 const ButtonWrapper = styled(motion.div)`
-    button {
+    a{
+      text-decoration: none;
+      font-family: Helvetica, sans-serif;
+      button {
       display: flex;
       align-items: center;
       padding: 0.4rem 1.3rem;
       background: #bcd24c;
+      color: white;
       font-weight: bold;
       border-radius: 10rem;
       border: none;
       outline: none;
-      a{
-        text-decoration: none;
-        color: white;
-        font-family: Helvetica, sans-serif;
-      }
       @media screen and (max-width: 768px){
         padding: 1.4rem 3rem;
         margin-left: 1.3rem;
       }
+    }
     }
 
 `;
@@ -187,7 +199,7 @@ const Burger = styled(FaBars)`
 
 const BurgerWrapper = styled(motion.div)`
      margin-right: 5rem;
-
+     cursor: pointer;
 `;
 
 

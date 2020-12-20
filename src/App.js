@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      {/* <NavBarResp /> */}
-      <Navbar />
+      <NavBarResp />
+      {/* <Navbar /> */}
       <Header />
       <Flask />
       <Action />
