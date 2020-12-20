@@ -51,6 +51,10 @@ const CenterBox = styled.div`
    width: 85%;
    display: flex;
    justify-content: space-around;
+   @media screen and (max-width: 768px){
+     width: 100%;
+     justify-content: space-between;
+   }
   
 `;
 
@@ -60,6 +64,9 @@ const Buttons = styled.div`
    display: flex;
    align-items: center;
    justify-content: space-around;
+   @media screen and (max-width: 768px){
+     width: 35%;
+   }
 `;
 
 const NameLogo = styled.div`
@@ -75,7 +82,14 @@ const NameLogo = styled.div`
      font-weight: lighter;
      color: gray;
      font-family: "Montserrat", sans-serif;
+     @media screen and (max-width: 768px){
+      font-size: 1rem;
+      }
    }
+   @media screen and (max-width: 768px){
+    
+      width: 60%;
+  }
 `;
 
 const Logo = styled.div`
@@ -85,6 +99,10 @@ const Logo = styled.div`
    align-items: center;
     img {
       width: 100%;
+    }
+    @media screen and (max-width: 768px){
+      font-size: 1rem;
+      width: 27%;
     }
 `;
 
@@ -104,8 +122,9 @@ const ButtonWrapper = styled(motion.div)`
       border: none;
       outline: none;
       @media screen and (max-width: 768px){
-        padding: 1.4rem 3rem;
-        margin-left: 1.3rem;
+        padding: 0.9rem 1.3rem;
+        font-size: 1.8rem;
+
       }
     }
     }
@@ -128,7 +147,9 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 1px 3px;
-
+  @media screen and (max-width: 768px){
+    padding: 3px 4px;
+   }
 
 `;
 
@@ -138,6 +159,10 @@ const InstagramLogo = styled(AiOutlineInstagram)`
      color: #acc143;
      position: relative;
      top: 2px;
+     @media screen and (max-width: 768px){
+      font-size: 2.5rem;
+      top: 1px;
+   }
 `;
 
 
