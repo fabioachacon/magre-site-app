@@ -63,16 +63,15 @@ const Caps = styled(motion.div)`
      width: 30rem;
      img { 
          width: 40rem;
+         @media screen and (max-width: 768px){
+              width: 35rem;
+     }
         
      }
-
-     @media (min-width: 2000px){
-        margin-right: 100rem;
-        img{
-            width: 55rem;
-            height: 45rem;
-        }
-     }
+     @media screen and (max-width: 768px){
+        margin-right: 28rem;
+        margin-top: 29rem;
+    }
 
      /* @media screen and (min-width: 1500px){
         margin-right: 1400px;

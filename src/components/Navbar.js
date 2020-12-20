@@ -18,6 +18,8 @@ const Navbar = () => {
     const logoClickHandler = () => {
         scroll.scrollToTop();
     }
+    
+    console.log(window.innerWidth);
 
     return (
         <Nav>
@@ -38,13 +40,14 @@ const Navbar = () => {
                   <Link to="content-table" smooth={true} offset={-80} duration={900}>COMPOSIÇÃO</Link>
                 </li>
             </List>
-            <Bars />
-            <WpButton>
+            <ButtonWrapper>
+              <a href="">
                 <button>
-                    <WhatAppIcon />
-                    <a href="">whatsapp</a>
+                  <WhatsAppIcon />
+                  <p>whatsapp</p>
                 </button>
-            </WpButton>
+              </a>
+            </ButtonWrapper>
         </Nav>
     )
 }
@@ -53,24 +56,31 @@ const Nav = styled(motion.div)`
     height: 6rem;
     width: 100%;
     top: 0;
+    right: 0;
+    left: 0;
     background: #ffffff;
     position: fixed;
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     @media screen and (max-width: 768px){
-        justify-content: space-between;
+        justify-content: space-around;
+        height: 15vh;
     }
 `;
 
 const List = styled(motion.div)`
-    margin-right: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    width: 45%;
+    justify-content: space-around;
+    @media screen and (max-width: 1024px){
+        width: 50%;
+    }
     li {
-        display: inline-block;
         list-style: none;
         font-size: 0.7rem;
-        margin-left: 3rem;
         cursor: pointer;
         color: rgba(97, 97, 97, 255);
         font-family: Helvetica, sans-serif;
@@ -101,41 +111,54 @@ const List = styled(motion.div)`
 
 const MagreLogo = styled(motion.div)`
    cursor: pointer;
+   margin-left: 3rem;
    img {
        width: 11rem;
+       @media screen and (max-width: 768px){
+        width: 20rem;
    }
-   @media screen and (max-width: 768px){
-        margin-left: 10rem;
-   }
+}
 `;
 
-const WpButton = styled(motion.div)`
-    position: relative;
-    right: 3rem;
-    button {
-      display: flex;
-      align-items: center;
-      padding: 0.4rem 1.3rem;
-      background: #bcd24c;
-      font-weight: bold;
-      border-radius: 10rem;
-      border: none;
-      outline: none;
-      a{
-        text-decoration: none;
+const ButtonWrapper = styled(motion.div)`
+      margin-right: 7rem;
+      @media screen and (max-width: 1024px){
+        margin-right: 1rem;
+    }
+     a{
+       text-decoration: none;
+       color: white;
+       font-family: Helvetica, sans-serif;
+
+       button {
+        display: flex;
+        align-items: center;
+        padding: 0.4rem 1.3rem;
+        background: #bcd24c;
+        font-weight: bold;
+        border-radius: 10rem;
+        border: none;
+        outline: none;
         color: white;
-        font-family: Helvetica, sans-serif;
-      }
+        cursor: pointer;
+    
+        @media screen and (max-width: 768px){
+            padding: 1.1rem 1.4rem;
+            margin-left: 1.3rem;
+        }
     }
-    @media screen and (max-width: 768px){
-        display: none;
-    }
+}
+
 `;
 
-const WhatAppIcon = styled(FaWhatsapp)`
+const WhatsAppIcon = styled(FaWhatsapp)`
    color: white;
-   font-size: 1.3rem;
-   margin-right: 0.2rem;
+   font-size: 1.4rem;
+   margin-right: 0.4rem;
+   @media screen and (max-width: 768px){
+       font-size: 3rem;
+       margin-right: 0.8rem;
+    }
 `;
 
 const Bars = styled(FaBars)`

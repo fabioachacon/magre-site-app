@@ -24,7 +24,7 @@ const Articles = () => {
                     </OuterCircle>
                     <HeadLine>
                       <News>
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nihil, ea temporibus ipsum eaque quam assumenda est architecto qui distinctio!</h3>
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reiciendis officiis delectus ad necessitatibus vel culpa nihil consequatur perferendis voluptates?</h3>
                       </News>
                       <Arrow>
                         <a href="">veja mais</a>
@@ -41,7 +41,7 @@ const Articles = () => {
                     </OuterCircle>
                     <HeadLine>
                       <News>
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque repellendus deleniti officiis id sed saepe, temporibus quis sequi amet sunt.</h3>
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, nam!</h3>
                       </News>
                       <Arrow>
                         <a href="">veja mais</a>
@@ -58,7 +58,7 @@ const Articles = () => {
                     </OuterCircle>
                     <HeadLine>
                       <News>
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque repellendus deleniti officiis id sed saepe, temporibus quis sequi amet sunt.</h3>
+                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum earum laboriosam doloribus mollitia vel nam.</h3>
                       </News>
                       <Arrow>
                         <a href="">veja mais</a>
@@ -129,6 +129,10 @@ const Story = styled(motion.div)`
     display: flex;
     margin-bottom: 0.3rem;
     align-items: center;
+    @media screen and (max-width: 768px){
+      margin-bottom: 0.8rem;
+    }
+    
 `;
 
 const OuterCircle = styled(motion.div)`
@@ -171,6 +175,7 @@ const HeadLine = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  
 `;
 
 const News = styled(motion.div)`
@@ -207,6 +212,9 @@ const Arrow = styled(motion.div)`
      font-family: 'Montserrat', sans-serif;
      font-weight: 400;
    }
+   @media screen and (max-width: 768px){
+       top: 0.4rem;
+    }
 `;
 
 const ArrowIcon = styled(FiArrowRight)`

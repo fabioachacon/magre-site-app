@@ -36,11 +36,11 @@ const Action = () => {
     
     setState(newState);
     
-    if (!audioRef.current.paused){
-       audioRef.current.currentTime = 0;
-    }
-    audioRef.current.play();
-  }
+    // if (!audioRef.current.paused){
+    //    audioRef.current.currentTime = 0;
+    // }
+    // audioRef.current.play();
+   }
   
     return (
         <StyledAction 

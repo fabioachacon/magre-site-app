@@ -8,11 +8,13 @@ import SideEffects from './sections/SideEffects';
 import Flask from './sections/Flask';
 import Action from './sections/Action';
 import Navbar from './components/Navbar';
+import NavBarResp from './components/NavBarResp';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
+      {/* <NavBarResp /> */}
       <Navbar />
       <Header />
       <Flask />
