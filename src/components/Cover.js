@@ -32,10 +32,13 @@ const StyledCover = styled(motion.div)`
       background-size: 100% 35rem;
       min-height: 35rem;
       width: 100%;
-      margin-top: 5rem;
+      margin-top: 6rem;
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      @media screen and (max-width: 768px){
+        margin-top: 11rem;
+      }
 `;
 
 const Text = styled(motion.div)`

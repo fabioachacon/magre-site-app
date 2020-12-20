@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
-import selected from '../audio/selected.mp3';
+import trimmed from '../audio/trimmed.mp3';
 
 //Animations
 import {
@@ -36,10 +36,10 @@ const Action = () => {
     
     setState(newState);
     
-    // if (!audioRef.current.paused){
-    //    audioRef.current.currentTime = 0;
-    // }
-    // audioRef.current.play();
+    if (!audioRef.current.paused){
+       audioRef.current.currentTime = 0;
+    }
+    audioRef.current.play();
    }
   
     return (
@@ -93,7 +93,7 @@ const Action = () => {
                           {'background': 'white'}}  
                         />
                        )}
-                       <audio ref={audioRef} src={selected} />
+                       <audio ref={audioRef} src={trimmed} />
                     </Dots>
                 </RightBox>
             </CenterBox>
@@ -145,7 +145,6 @@ const Text = styled(motion.div)`
     text-align: right;
     padding-right: 10px;
     color: gray;
-
     &::-webkit-scrollbar{
        width: 0.1rem;
        background-color: #415740
@@ -163,16 +162,25 @@ const Text = styled(motion.div)`
 const Dots = styled(motion.div)`
    display: flex;
    margin-top: 2rem;
+   width: 4rem;
+   justify-content: space-around;
+   position: relative;
+   left: 0.5rem;
+   @media screen and (max-width: 768px){
+       width: 7.5rem;
+   }
 `;
 
 const Dot = styled(motion.div)`
     border-radius: 50%;
-    border: 1.5px solid gray; 
-    padding: 2.5px;
-    background: white;
-    margin-left: 0.6rem;
+    border: 1.8px solid gray; 
+    padding: 2px;
+    background: #eeeeee;
     cursor: pointer;
-    transition: all 0.3s ease-out; 
+    transition: background 0.3s ease-out; 
+    @media screen and (max-width: 768px){
+        padding: 1.5px;
+   }
 `;
 
 const Points = styled(motion.div)`
@@ -185,6 +193,7 @@ const Points = styled(motion.div)`
      justify-content: center;
      img {
           width: 4.5rem;
+          animation: rotation 11s infinite linear;
     }
     .point0{
         margin-bottom: 5rem;
@@ -200,6 +209,15 @@ const Points = styled(motion.div)`
     .point3{
         margin-top: 13rem;
         margin-left: 2rem;
+    }
+
+   @keyframes rotation {
+       from {
+           transform: rotate(0deg);
+        }
+       to {
+           transform: rotate(359deg);
+        }
     }
 `;
 

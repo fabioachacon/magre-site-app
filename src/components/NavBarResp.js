@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useRef} from 'react'
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import {Link} from 'react-scroll';
@@ -15,11 +15,10 @@ import {IoMdClose} from 'react-icons/io';
 import {buttonAnim} from '../animations';
 
 const NavBarResp = () => {
-
-    const [active, setActive] = useState(false);
+    const navRef = useRef();
 
     const toggleSideBar = () => {
-        setActive(!active);
+        navRef.current.classList.toggle('active');
     }
 
     const logoClickHandler = () => {
@@ -31,7 +30,7 @@ const NavBarResp = () => {
             <MagreLogo onClick={logoClickHandler}>
                 <img src={logo_color} alt=""/>
             </MagreLogo>
-            <NavBar className={`${active ? 'active' : ''}`}> 
+            <NavBar ref={navRef}> 
               <NavLinks>
                 <li>
                  <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
@@ -102,7 +101,7 @@ const NavBar = styled.nav`
     flex-direction: column;
     align-items: center;
     transform: translateX(100%); 
-    transition: all 0.4s ease-in-out;
+    transition: transform 0.4s ease-in;
  }
 `;
 
@@ -154,7 +153,7 @@ const MagreLogo = styled(motion.div)`
    @media screen and (max-width: 768px){
     margin-left: 3rem;
     img {
-       height: 5.5rem;
+       height: 6.5rem;
 
      }
     }
@@ -198,7 +197,7 @@ const Burger = styled(FaBars)`
     display: none;
     @media screen and (max-width: 768px){
         display: block;
-        font-size: 3.8rem;
+        font-size: 3.5rem;
         color: gray;
     }
 `;
