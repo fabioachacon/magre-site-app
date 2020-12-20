@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 import flask from '../img/flask.png';
 import table from '../img/table.png';
 import flask_bg  from '../img/flask_bg.png';
-import {FadeScale, TableAnim, StaggerAnim} from '../animations';
+import {FadeScale, Fade, TableAnim, StaggerAnim} from '../animations';
 import {useScroll} from '../components/useScroll';
  
 const Contents = () => {
@@ -13,15 +13,15 @@ const Contents = () => {
     const [element, controls] = useScroll();
 
     return (
-        <StyledTable ref={element} variants={StaggerAnim} initial='hidden' animate={controls} id='content-table'>
+        <StyledTable id='content-table'>
              <Text>
                  <h3>COMPOSIÇÃO</h3>
              </Text>
             <BoxCenter>
-               <Flask variants={FadeScale}>
+               <Flask>
                  <img src={flask_bg} alt=""/>
                </Flask>
-               <Table variants={TableAnim}>
+               <Table>
                   <img src={table} alt=""/>
                </Table>
             </BoxCenter>
