@@ -26,7 +26,6 @@ const NavBarResp = () => {
         scroll.scrollToTop();
     }
 
-
     return (
         <Wrapper>
             <MagreLogo onClick={logoClickHandler}>
@@ -65,7 +64,7 @@ const NavBarResp = () => {
 
 
 const Wrapper = styled.div`
-     min-height: 15vh;
+     height: 15vh;
      background: white;
      position: fixed;
      top: 0;
@@ -95,15 +94,15 @@ const NavBar = styled.nav`
   @media screen and (max-width: 768px){
     position: absolute;
     right: 0;
-    height: 70vh;
+    height: 50vh;
     width: 55%;
-    top: 14vh;
+    top: 10vh;
     background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     transform: translateX(100%); 
-    transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in-out;
  }
 `;
 
