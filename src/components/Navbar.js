@@ -66,7 +66,7 @@ const Nav = styled(motion.div)`
     justify-content: space-around;
     @media screen and (max-width: 768px){
         justify-content: space-around;
-        height: 15vh;
+        height: 11vh;
     }
 `;
 
