@@ -44,6 +44,9 @@ const StyledFooter = styled.div`
    justify-content: center;
    align-items: center;
    background: #ffffff;
+   @media screen and (max-width: 768px){
+    height: 8vh;
+   }
 `;
 
 const CenterBox = styled.div`
@@ -87,7 +90,6 @@ const NameLogo = styled.div`
       }
    }
    @media screen and (max-width: 768px){
-    
       width: 60%;
   }
 `;
@@ -124,7 +126,6 @@ const ButtonWrapper = styled(motion.div)`
       @media screen and (max-width: 768px){
         padding: 0.9rem 1.3rem;
         font-size: 1.8rem;
-
       }
     }
     }
@@ -146,7 +147,7 @@ const LogoWrapper = styled.div`
   border-radius: 50%;
   display: flex;
   align-items: center;
-  padding: 1px 3px;
+  padding: 1px 3.5px;
   @media screen and (max-width: 768px){
     padding: 3px 4px;
    }
@@ -160,8 +161,8 @@ const InstagramLogo = styled(AiOutlineInstagram)`
      position: relative;
      top: 2px;
      @media screen and (max-width: 768px){
-      font-size: 2.5rem;
-      top: 1px;
+      font-size: 3rem;
+      top: 0.7px;
    }
 `;
 
