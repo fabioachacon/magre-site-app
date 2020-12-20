@@ -24,7 +24,7 @@ const Articles = () => {
                     </OuterCircle>
                     <HeadLine>
                       <News>
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reiciendis officiis delectus ad necessitatibus vel culpa nihil consequatur perferendis voluptates?</h3>
+                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius hic expedita sunt dolorem, tenetur esse!</h3>
                       </News>
                       <Arrow>
                         <a href="">veja mais</a>
