@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react'
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
+import {motion, AnimatePresence} from 'framer-motion';
 import {Link} from 'react-scroll';
 import {animateScroll as scroll} from 'react-scroll';
 
@@ -15,7 +15,7 @@ import {IoMdClose} from 'react-icons/io';
 import {buttonAnim} from '../animations';
 
 const NavBarResp = () => {
-    const navRef = useRef();
+    
     const [activeState, setActiveState] = useState(false);
 
     const toggleSideBar = () => {
@@ -56,7 +56,7 @@ const NavBarResp = () => {
               </ButtonWrapper>
            </NavBar>
            <BurgerWrapper onClick={toggleSideBar}>
-              <Burger />
+              {activeState ? <Close /> : <Burger />}
            </BurgerWrapper> 
         </Wrapper>
     )
@@ -65,13 +65,13 @@ const NavBarResp = () => {
 
 const Wrapper = styled.div`
      height: 15vh;
-     background: white;
+     background:white;
      position: fixed;
      top: 0;
      right: 0;
      left: 0;
      display: flex;
-     justify-content: space-around;
+     justify-content: space-evenly;
      align-items: center;
      z-index: 1000;
     @media screen and (max-width: 768px){
@@ -84,25 +84,26 @@ const Wrapper = styled.div`
 `;
 
 const NavBar = styled.nav`
+   background: white;
    display: flex;
    align-items: center;
-   width: 60%;
+   width: 65%;
    justify-content: space-around;
    @media screen and (max-width: 1024px){
         width: 90%;
     }
-  @media screen and (max-width: 768px){
-    position: absolute;
-    right: 0;
-    height: 50vh;
-    width: 55%;
-    top: 10vh;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: translateX(100%); 
-    transition: transform 0.4s ease-in;
+   @media screen and (max-width: 768px){
+        position: absolute;
+        right: 0;
+        height: 50vh;
+        width: 55%;
+        top: 10vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%); 
+        transition: transform 0.4s ease-in;
  }
 `;
 
@@ -110,8 +111,8 @@ const NavLinks = styled.ul`
      list-style: none;
      display: flex;
      font-size: .7rem;
-     width: 70%;
-     justify-content: space-around;
+     width: 75%;
+     justify-content: space-evenly;
     li {
         cursor: pointer;
         color: rgba(97, 97, 97, 255);
@@ -166,19 +167,19 @@ const ButtonWrapper = styled(motion.div)`
       text-decoration: none;
       font-family: Helvetica, sans-serif;
       button {
-      display: flex;
-      cursor: pointer;
-      align-items: center;
-      padding: 0.4rem 1.3rem;
-      background: #bcd24c;
-      color: white;
-      font-weight: bold;
-      border-radius: 10rem;
-      border: none;
-      outline: none;
-      @media screen and (max-width: 768px){
-        padding: 1.4rem 3rem;
-        margin-left: 1.3rem;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        padding: 0.4rem 1.3rem;
+        background: #bcd24c;
+        color: white;
+        font-weight: bold;
+        border-radius: 10rem;
+        border: none;
+        outline: none;
+        @media screen and (max-width: 768px){
+           padding: 1.4rem 3rem;
+           margin-left: 1.3rem;
       }
     }
     }
@@ -195,6 +196,11 @@ const WhatsAppIcon = styled(FaWhatsapp)`
     }
 `;
 
+const BurgerWrapper = styled(motion.div)`
+     margin-right: 5rem;
+     cursor: pointer;
+`;
+
 const Burger = styled(FaBars)`
     display: none;
     @media screen and (max-width: 768px){
@@ -204,9 +210,13 @@ const Burger = styled(FaBars)`
     }
 `;
 
-const BurgerWrapper = styled(motion.div)`
-     margin-right: 5rem;
-     cursor: pointer;
+const Close = styled(IoMdClose)`
+    display: none;
+    @media screen and (max-width: 768px){
+        display: block;
+        font-size: 4rem;
+        color: gray;
+    }
 `;
 
 

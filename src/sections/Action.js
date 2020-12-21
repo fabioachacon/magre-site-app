@@ -40,7 +40,8 @@ const Action = () => {
        audioRef.current.currentTime = 0;
     }
     audioRef.current.play();
-   }
+
+}
   
     return (
         <StyledAction 
@@ -229,6 +230,10 @@ const Title = styled(motion.div)`
     font-size: 1.1rem;
     margin-top: 3.5rem;
     left: 1rem;
+    @media screen and (max-width: 768px){
+        left: 3rem;
+        margin-top: 3.8rem; 
+    }
 `;
 
 export default Action;
