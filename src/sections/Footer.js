@@ -28,7 +28,7 @@ const Footer = () => {
                 </LogoWrapper>
              </Buttons>
              <NameLogo>
-               <h3>Todos os direitos reservados a MagreCaps.  ©2020</h3>
+               <h3>Todos os direitos reservados a Magrecaps. ©2020</h3>
                <Logo>
                 <img src={logo} alt=""/>
                </Logo>
