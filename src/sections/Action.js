@@ -102,7 +102,7 @@ const Action = () => {
 }
 
 const StyledAction = styled(motion.div)`
-    height: 34rem;
+    height: 33rem;
     display: flex;
     justify-content: center;
     align-items: flex-end;

@@ -77,7 +77,7 @@ const FlaskBG = styled(motion.div)`
     background-repeat: no-repeat;
     background-size: 100% 30rem;
     height: 30rem;
-    margin-top: 0.9rem;
+    margin-top: 0.7rem;
     z-index: -1000;
     display: flex;
     justify-content: center;

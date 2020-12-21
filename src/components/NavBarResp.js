@@ -16,9 +16,10 @@ import {buttonAnim} from '../animations';
 
 const NavBarResp = () => {
     const navRef = useRef();
+    const [activeState, setActiveState] = useState(false);
 
     const toggleSideBar = () => {
-        navRef.current.classList.toggle('active');
+        setActiveState(!activeState);
     }
 
     const logoClickHandler = () => {
@@ -28,9 +29,9 @@ const NavBarResp = () => {
     return (
         <Wrapper>
             <MagreLogo onClick={logoClickHandler}>
-                <img src={logo_color} alt=""/>
+                <img src={logo_color} alt="magre logo"/>
             </MagreLogo>
-            <NavBar ref={navRef}> 
+            <NavBar className={activeState ? 'active': ''}> 
               <NavLinks>
                 <li>
                  <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
@@ -147,6 +148,7 @@ const NavLinks = styled.ul`
 
 const MagreLogo = styled(motion.div)`
    margin-left: 2rem;
+   cursor: pointer;
    img {
        height: 2.6rem;
    }
