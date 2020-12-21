@@ -102,7 +102,7 @@ const Action = () => {
 }
 
 const StyledAction = styled(motion.div)`
-    height: 32rem;
+    height: 34rem;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -110,8 +110,8 @@ const StyledAction = styled(motion.div)`
 `;
 
 const CenterBox = styled(motion.div)`
-     width: 55rem;
-     height: 32rem;
+     width: 56rem;
+     height: 100%;
      position: relative;
      right: 3rem;
      display: flex;
