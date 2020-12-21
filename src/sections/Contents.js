@@ -5,12 +5,8 @@ import {motion} from 'framer-motion';
 import flask from '../img/flask.png';
 import table from '../img/table.png';
 import flask_bg  from '../img/flask_bg.png';
-import {FadeScale, Fade, TableAnim, StaggerAnim} from '../animations';
-import {useScroll} from '../components/useScroll';
  
 const Contents = () => {
-
-    const [element, controls] = useScroll();
 
     return (
         <StyledTable id='content-table'>

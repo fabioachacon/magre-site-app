@@ -8,6 +8,7 @@ import { AiOutlineInstagram } from 'react-icons/ai';
 import {FaWhatsapp} from 'react-icons/fa';
 
 const Footer = () => {
+  
     return (
         <StyledFooter>
            <CenterBox>

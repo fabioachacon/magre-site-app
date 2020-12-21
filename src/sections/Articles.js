@@ -5,6 +5,7 @@ import arrow from '../img/arrow.png';
 import { FiArrowRight } from "react-icons/fi";
 
 const Articles = () => {
+
     return (
         <StyledArticles id='articles'>
             <Title>
