@@ -113,14 +113,13 @@ export const FadePoint = {
         transition: {
             ease: 'easeOut', 
             duration: 0.75,
-        
         }
     },
     exit: {
         opacity: 0,
         transition: { 
             ease: 'easeOut', 
-            duration: 0.35, 
+            duration: .3, 
         }
     }
 }

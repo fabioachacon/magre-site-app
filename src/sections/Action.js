@@ -35,7 +35,7 @@ const Action = () => {
     );
     
     setState(newState);
-    
+
     if (!audioRef.current.paused){
        audioRef.current.currentTime = 0;
     }
