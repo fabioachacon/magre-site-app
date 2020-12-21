@@ -125,8 +125,8 @@ const ButtonWrapper = styled(motion.div)`
       border: none;
       outline: none;
       @media screen and (max-width: 768px){
-        padding: 0.9rem 1.3rem;
-        font-size: 1.8rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 1.4rem;
       }
     }
     }
@@ -150,7 +150,7 @@ const LogoWrapper = styled.div`
   align-items: center;
   padding: 1px 3.5px;
   @media screen and (max-width: 768px){
-    padding: 3px 4px;
+    padding: 2px 3px;
    }
 
 `;
@@ -162,7 +162,7 @@ const InstagramLogo = styled(AiOutlineInstagram)`
      position: relative;
      top: 2px;
      @media screen and (max-width: 768px){
-      font-size: 3rem;
+      font-size: 2.6rem;
       top: 0.7px;
    }
 `;

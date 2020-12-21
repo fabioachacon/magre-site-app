@@ -97,13 +97,14 @@ const NavBar = styled.nav`
         right: 0;
         height: 50vh;
         width: 55%;
-        top: 10vh;
+        top: 10.3vh;
         background: white;
         display: flex;
         flex-direction: column;
         align-items: center;
         transform: translateX(100%); 
-        transition: transform 0.4s ease-in;
+        transition: transform 0.3s ease-in;
+        justify-content: space-evenly;
  }
 `;
 

@@ -139,7 +139,7 @@ const RightBox = styled(motion.div)`
 
 const Text = styled(motion.div)`
     width: 17rem;
-    height: 15.5rem;
+    height: 15rem;
     overflow-y: scroll;
     margin-top: 5rem;
     font-size: 0.9rem;
