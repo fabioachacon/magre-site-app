@@ -82,6 +82,7 @@ const Flask = () => {
 
 const FlaskBG = styled(motion.div)`
     height: 100vh;
+    position: relative;
     background-color: white;
     display: flex;
     justify-content: center;

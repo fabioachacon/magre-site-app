@@ -79,7 +79,8 @@ const Articles = () => {
 }
 
 const StyledArticles = styled(motion.div)`
-    height: 100vh;
+    height: 40rem;
+    background: white;
     display: flex;
     align-items: center;
     flex-direction: column;

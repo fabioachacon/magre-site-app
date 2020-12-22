@@ -30,25 +30,24 @@ const Cover = () => {
 }
 
 const StyledCover = styled(motion.div)`
-      height: 100vh;
+      height:30rem;
       @media screen and (max-width: 768px){
-        height: 33rem;
+        height: 50rem;
+        position: relative;
     }
 `;
 
 const BackGroundImage = styled(motion.div)`
+     width: 100%;
+     height: 100%;
      position: absolute;
-     display: flex;
-     top: 0;
      z-index: -100;
+     object-fit: cover;
+     top: 0;
      img {
+         height: 100%;
          width: 100%;
-         object-fit: contain;
-         @media screen and (max-width: 768px){
-             margin-top: 11rem;
-             object-fit: cover;
-             top: 0;
-      }
+         object-fit: cover;
      }
 
 
