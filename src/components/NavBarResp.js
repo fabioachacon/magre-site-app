@@ -40,7 +40,7 @@ const NavBarResp = () => {
                  <Link to="action" smooth={true} offset={-80} duration={900}>ATUAÇÃO</Link>
                 </li>
                 <li>
-                 <Link to="side-effects" smooth={true} offset={-100} duration={900}>CONTRAINDICAÇÃO</Link>
+                 <Link to="articles" smooth={true} offset={-100} duration={900}>ARTIGOS</Link>
                 </li>
                 <li>
                   <Link to="content-table" smooth={true} offset={-80} duration={900}>COMPOSIÇÃO</Link>
@@ -65,7 +65,7 @@ const NavBarResp = () => {
 
 const Wrapper = styled.div`
      height: 15vh;
-     background:white;
+     background: white;
      position: fixed;
      top: 0;
      right: 0;
@@ -84,10 +84,9 @@ const Wrapper = styled.div`
 `;
 
 const NavBar = styled.nav`
-   background: white;
    display: flex;
    align-items: center;
-   width: 65%;
+   width: 54%;
    justify-content: space-around;
    @media screen and (max-width: 1024px){
         width: 90%;
@@ -150,6 +149,8 @@ const NavLinks = styled.ul`
 
 const MagreLogo = styled(motion.div)`
    margin-left: 2rem;
+   position: relative;
+   left: 2.5rem;
    cursor: pointer;
    img {
        height: 2.6rem;
@@ -158,7 +159,6 @@ const MagreLogo = styled(motion.div)`
     margin-left: 3rem;
     img {
        height: 6.5rem;
-
      }
     }
 `;

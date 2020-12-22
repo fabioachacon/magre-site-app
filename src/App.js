@@ -20,7 +20,7 @@ function App() {
       <Flask />
       <Action />
       <Articles />
-      <SideEffects />
+      {/* <SideEffects /> */}
       <Contents />
       <Footer />
     </div>

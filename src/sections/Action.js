@@ -103,19 +103,27 @@ const Action = () => {
 }
 
 const StyledAction = styled(motion.div)`
-    height: 33rem;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    margin: auto;
     background: #ffffff;
+    @media screen and (max-width: 768px){
+        height: 37rem;
+    }
 `;
 
 const CenterBox = styled(motion.div)`
-     width: 56rem;
-     height: 100%;
+     width: 80%;
+     height: 98%;
      position: relative;
      right: 3rem;
      display: flex;
+     @media screen and (max-width: 768px){
+        height: 90%;
+        width: 100%;
+    }
 `;
 
 const ManImage = styled(motion.div)`
@@ -162,8 +170,9 @@ const Text = styled(motion.div)`
 
 const Dots = styled(motion.div)`
    display: flex;
-   margin-top: 2rem;
+   margin-top: 3rem;
    width: 4rem;
+   height: 0.5rem;
    justify-content: space-around;
    position: relative;
    left: 0.5rem;
@@ -228,11 +237,12 @@ const Title = styled(motion.div)`
     font-family: 'Montserrat', sans-serif;
     color: rgba(65, 87, 64, 255);
     font-size: 1.1rem;
-    margin-top: 3.5rem;
+    margin-top: 4rem;
     left: 1rem;
     @media screen and (max-width: 768px){
         left: 3rem;
-        margin-top: 3.8rem; 
+        margin-top: 7.3rem;
+        font-size: 1.6rem; 
     }
 `;
 

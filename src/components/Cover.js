@@ -15,30 +15,43 @@ const Cover = () => {
 
     return (
         <StyledCover>
+            <BackGroundImage>
+                <img src={cover_bg} alt=""/>
+            </BackGroundImage>
             <Text>
                {/* <h2>TOMAR <span>DUAS</span> CAPSULAS</h2>
                <h2>  AO DIA</h2> */}
             </Text>
-            <Caps variants={FadeScaleCaps} initial='hidden' animate='show' >
+            {/* <Caps variants={FadeScaleCaps} initial='hidden' animate='show' >
                 <img src={caps} alt=""/>
-            </Caps>
+            </Caps> */}
         </StyledCover>
     )
 }
 
 const StyledCover = styled(motion.div)`
-      background-image: url(${cover_bg});
-      background-repeat: no-repeat;
-      background-size: 100% 35rem;
-      min-height: 35rem;
-      width: 100%;
-      margin-top: 6rem;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      height: 100vh;
       @media screen and (max-width: 768px){
-        margin-top: 11rem;
+        height: 33rem;
+    }
+`;
+
+const BackGroundImage = styled(motion.div)`
+     position: absolute;
+     display: flex;
+     top: 0;
+     z-index: -100;
+     img {
+         width: 100%;
+         object-fit: contain;
+         @media screen and (max-width: 768px){
+             margin-top: 11rem;
+             object-fit: cover;
+             top: 0;
       }
+     }
+
+
 `;
 
 const Text = styled(motion.div)`
@@ -60,11 +73,9 @@ const Text = styled(motion.div)`
 `;
 
 const Caps = styled(motion.div)`
-     margin-right: 50rem;
-     margin-top: 25rem;
-     position: absolute;
      width: 30rem;
-     img { 
+     background: red;
+     img {
          width: 40rem;
          @media screen and (max-width: 768px){
               width: 35rem;

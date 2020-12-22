@@ -30,7 +30,7 @@ const Footer = () => {
              <NameLogo>
                <h3>Todos os direitos reservados a Magrecaps. ©2020</h3>
                <Logo>
-                <img src={logo} alt=""/>
+                 <img src={logo} alt=""/>
                </Logo>
              </NameLogo>
            </CenterBox>

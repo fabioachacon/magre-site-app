@@ -26,26 +26,33 @@ const Contents = () => {
 }
 
 const StyledTable = styled(motion.div)`
-    height: 30rem;
+    height: 80vh;
     background: #f6f7f6;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    @media screen and (max-width: 768px){
+        height: 30rem;
+    }
 `;
 
 const BoxCenter = styled(motion.div)`
-     height: 25rem;
-     width: 50rem;
+     height: 80%;
+     width: 60%;
      display: flex;
      justify-content: space-around;
      align-items: flex-end;
+     @media screen and (max-width: 768px){
+        height: 50%;
+        width:80%
+    }
 `;
 
 const Flask = styled(motion.div)`
      z-index: 1;
      img{
          width: 35rem;
-         height: 26rem;
+         height: 100%;
      }
 `;
 
@@ -66,6 +73,9 @@ const Text = styled(motion.div)`
      margin-top: 5rem;
      position: relative;
      left: 1rem;
+     @media screen and (max-width: 768px){
+      
+    }
 `;
 
 

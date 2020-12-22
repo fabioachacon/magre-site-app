@@ -28,7 +28,7 @@ const Articles = () => {
                         <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius hic expedita sunt dolorem, tenetur esse!</h3>
                       </News>
                       <Arrow>
-                        <a href="">veja mais</a>
+                        <a href="">VEJA MAIS</a>
                         <ArrowIcon />
                       </Arrow>
                     </HeadLine>
@@ -45,7 +45,7 @@ const Articles = () => {
                         <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, nam!</h3>
                       </News>
                       <Arrow>
-                        <a href="">veja mais</a>
+                        <a href="">VEJA MAIS</a>
                         <ArrowIcon />
                       </Arrow>
                     </HeadLine>
@@ -62,7 +62,7 @@ const Articles = () => {
                         <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum earum laboriosam doloribus mollitia vel nam.</h3>
                       </News>
                       <Arrow>
-                        <a href="">veja mais</a>
+                        <a href="">VEJA MAIS</a>
                         <ArrowIcon />
                       </Arrow>
                     </HeadLine>
@@ -79,22 +79,29 @@ const Articles = () => {
 }
 
 const StyledArticles = styled(motion.div)`
-    height: 32rem;
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
+    @media screen and (max-width: 768px){
+      height: 40rem;
+    }
 `;
 
 const CenterBox = styled(motion.div)`
-    height: 25rem;
-    width: 55rem;
+    height: 80%;
+    width: 70%;
     display: flex;
+    @media screen and (max-width: 768px){
+      height: 80%;
+      width: 90%;
+  
+    }
 `;
 
 const Title = styled(motion.div)`
    height: 4rem;
-   margin-top: 3rem;
+   margin-top: 6rem;
    display: flex;
    justify-content: center;
    width: 100%;
@@ -102,7 +109,7 @@ const Title = styled(motion.div)`
 
 const Text = styled(motion.div)`
     height: 100%;
-    width: 54.5rem;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,6 +120,11 @@ const Text = styled(motion.div)`
     }
     h3:nth-child(2){
       color: #bcd24c;
+    }
+    @media screen and (max-width: 768px){
+      width: 90%;
+      font-size: 1.6rem;
+
     }
 `;
 
@@ -208,10 +220,11 @@ const Arrow = styled(motion.div)`
    a{
      text-decoration: none;
      margin-right: 0.5rem;
-     font-size: 0.8rem;
-     color: #bacd55;
+     letter-spacing: 1.5px;
+     font-weight: bold;
+     font-size: 0.6rem;
+     color: #a5b64f;
      font-family: 'Montserrat', sans-serif;
-     font-weight: 400;
    }
    @media screen and (max-width: 768px){
        top: 0.4rem;
@@ -240,7 +253,7 @@ const RightBox = styled(motion.div)`
 
 const Video = styled.div`
    width: 96%;
-   height: 81%;
+   height: 68%;
    position: relative;
    top: 0.4rem;
    video{

@@ -28,7 +28,15 @@ const Flask = () => {
    const [element, controls] = useScroll();
 
     return (
-        <FlaskBG variants={StaggerAnim} initial='hidden' animate={controls} ref={element}  id='presentation'>
+        <FlaskBG variants={StaggerAnim} initial='hidden'  animate={controls} ref={element}  id='presentation'>
+           <Cover>
+              <img src={pill_bg} alt=""/>
+           </Cover>
+           <Text>
+               <h3>SENE</h3>
+               <h3>EXTRATO</h3>
+               <h3>SECO</h3>
+           </Text>
            <Pill variants={FadeScale}>
              <img src={pill} alt=""/>
            </Pill>
@@ -73,15 +81,48 @@ const Flask = () => {
 
 
 const FlaskBG = styled(motion.div)`
-    background-image: url(${pill_bg});
-    background-repeat: no-repeat;
-    background-size: 100% 30rem;
-    height: 30rem;
-    margin-top: 0.7rem;
-    z-index: -1000;
+    height: 100vh;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 768px){
+        height: 35rem;
+        margin-top: 3rem;
+    }
+`;
+
+const Cover = styled(motion.div)`
+       position: absolute;
+       height: 98%;
+       width: 100%;
+       img {
+           object-fit: cover;
+           height: 100%;
+           width: 100%;
+           @media screen and (max-width: 768px){
+            height: 35rem;
+            object-fit: cover;
+        }
+
+       }
+       @media screen and (max-width: 768px){
+         height: 32rem;
+        }
+    
+`;
+
+const Text = styled(motion.div)`
+   z-index: 1;
+   position: absolute;
+   align-self: flex-start;
+   left: 8rem;
+   margin-top: 3rem;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 1.4rem;
+   color: white;
+
 `;
 
 const Pill = styled(motion.div)`
@@ -92,7 +133,10 @@ const Pill = styled(motion.div)`
     margin-top: 5rem;
     margin-left: 2rem;
     img {
-        width: 40rem;
+        width: 50rem;
+        @media screen and (max-width: 768px){
+          width: 40rem;
+        }
     }
 `;
 
@@ -129,10 +173,10 @@ const Icon1 = styled(motion.div)`
    position: relative;
    align-items: center;
    align-self: flex-end;
-   right: 3rem;
+   right: 8rem;
    top: 3rem;
    img {
-       width: 5rem;
+       width: 5.5rem;
    }
 `;
 
@@ -142,9 +186,9 @@ const Icon2 = styled(motion.div)`
    align-items: center;
    align-self: flex-start;
    margin-right: 50rem;
-   top: 2rem;
+   right: 3rem;
    img{
-       width: 4rem;
+       width: 5rem;
    }
 `;
 
@@ -153,9 +197,10 @@ const Icon3 = styled(motion.div)`
    align-items: center;
    position: relative;
    margin-top: 9rem;
-   right: 2rem;
+   right: 6rem;
+   top: 1rem;
    img{
-       width: 6rem;
+       width: 6.4rem;
    }
 
 `;
@@ -163,8 +208,10 @@ const Icon3 = styled(motion.div)`
 const Icon4 = styled(motion.div)`
    display: flex;
    align-items: center;
-   margin-right: 3rem;
-   margin-top: 8rem;
+   margin-right: 1rem;
+   margin-top: 9rem;
+   position: relative;
+   top: 1rem;
 `;
 
 
