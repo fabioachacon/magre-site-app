@@ -32,8 +32,9 @@ const StyledTable = styled(motion.div)`
     justify-content: center;
     align-items: flex-end;
     @media screen and (max-width: 768px){
-        height: 30rem;
+        height: 33rem;
     }
+
 `;
 
 const BoxCenter = styled(motion.div)`
@@ -76,6 +77,9 @@ const Text = styled(motion.div)`
      @media screen and (max-width: 768px){
       
     }
+    @media screen and (max-width: 320px){
+       align-self: flex-start;
+   }
 `;
 
 

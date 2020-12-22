@@ -118,10 +118,10 @@ const Text = styled(motion.div)`
    z-index: 1;
    position: absolute;
    align-self: flex-start;
-   left: 8rem;
-   margin-top: 3rem;
+   left: 7rem;
+   margin-top: 4rem;
    font-family: 'Montserrat', sans-serif;
-   font-size: 1.4rem;
+   font-size: 1.5rem;
    color: white;
 
 `;

@@ -28,7 +28,7 @@ const Footer = () => {
                 </LogoWrapper>
              </Buttons>
              <NameLogo>
-               <h3>Todos os direitos reservados a Magrecaps. ©2020</h3>
+               <p>Todos os direitos reservados a Magrecaps. ©2020</p>
                <Logo>
                  <img src={logo} alt=""/>
                </Logo>
@@ -48,6 +48,7 @@ const StyledFooter = styled.div`
    @media screen and (max-width: 768px){
     height: 8vh;
    }
+
 `;
 
 const CenterBox = styled.div`
@@ -58,6 +59,10 @@ const CenterBox = styled.div`
    @media screen and (max-width: 768px){
      width: 100%;
      justify-content: space-between;
+   }
+   @media screen and (max-width: 320px){
+     background: white;
+  
    }
   
 `;
@@ -71,6 +76,9 @@ const Buttons = styled.div`
    @media screen and (max-width: 768px){
      width: 35%;
    }
+   @media screen and (max-width: 320px){
+    width: 40%;
+   }
 `;
 
 const NameLogo = styled.div`
@@ -81,18 +89,19 @@ const NameLogo = styled.div`
    justify-content: space-around;
    justify-self: center;
    margin-right: 3rem;
-   h3{
+   p{
      font-size: 0.8rem;
-     font-weight: lighter;
      color: gray;
      font-family: "Montserrat", sans-serif;
      @media screen and (max-width: 768px){
       font-size: 1rem;
-      }
+    }
    }
    @media screen and (max-width: 768px){
-      width: 60%;
+      width: 90%;
+  
   }
+
 `;
 
 const Logo = styled.div`
@@ -128,8 +137,11 @@ const ButtonWrapper = styled(motion.div)`
         padding: 0.8rem 1.2rem;
         font-size: 1.4rem;
       }
+      @media screen and (max-width: 320px){
+        padding: 0.5rem 0.4rem;
+      }
     }
-    }
+  }
 
 `;
 
@@ -141,6 +153,9 @@ const WhatsAppIcon = styled(FaWhatsapp)`
        font-size: 3rem;
        margin-right: 0.8rem;
     }
+    @media screen and (max-width: 320px){
+      font-size: 2rem;
+    }
 `;
 
 const LogoWrapper = styled.div`
@@ -151,6 +166,9 @@ const LogoWrapper = styled.div`
   padding: 1px 3.5px;
   @media screen and (max-width: 768px){
     padding: 2px 3px;
+   }
+   @media screen and (max-width: 320px){
+    padding: 1px 2px;
    }
 
 `;
@@ -164,7 +182,13 @@ const InstagramLogo = styled(AiOutlineInstagram)`
      @media screen and (max-width: 768px){
       font-size: 2.6rem;
       top: 0.7px;
+    }
+   @media screen and (max-width: 320px){
+      font-size: 2rem;
+      top: 0.7px;
    }
+   
+
 `;
 
 
