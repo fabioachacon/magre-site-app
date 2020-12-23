@@ -87,7 +87,7 @@ const Action = () => {
                     <Dots>
                       {state.map((item, i) => 
                         <Dot
-                          onClick={() => clickHandler(i)} 
+                          onClick={() => clickHandler(item.id)} 
                           key={i}
                           style={item.active ? 
                           {'background': '#415740'} : 

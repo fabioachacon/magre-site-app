@@ -12,7 +12,7 @@ import {IoMdClose} from 'react-icons/io';
 
 
 //Animations
-import {buttonAnim} from '../animations';
+import {buttonAnim, Fade} from '../animations';
 
 const NavBarResp = () => {
     
@@ -56,7 +56,29 @@ const NavBarResp = () => {
               </ButtonWrapper>
            </NavBar>
            <BurgerWrapper onClick={toggleSideBar}>
-              {activeState ? <Close /> : <Burger />}
+              <AnimatePresence exitBeforeEnter>
+                {activeState ? 
+                <motion.div 
+                 variants={{...Fade, 
+                   exit: {opacity: 0, 
+                   transition: {duration: 0.1, ease: 'easeOut'}}}} 
+                 initial='hidden' 
+                 animate='show' 
+                 exit='exit'
+                 key={'modal'}>
+                  <Close />
+                </motion.div> : 
+                <motion.div
+                 variants={{...Fade, exit: 
+                 {opacity: 0, transition: 
+                 {duration: 0.1, ease: 'easeOut'}}}}
+                 initial='hidden'
+                 animate='show' 
+                 exit='exit'
+                 key={'modal1'}>
+                  <Burger />
+                 </motion.div>}
+              </AnimatePresence>
            </BurgerWrapper> 
         </Wrapper>
     )
