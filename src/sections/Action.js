@@ -1,29 +1,18 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
-import trimmed from '../audio/trimmed.mp3';
-
-//Animations
-import {
-    TextFade, 
-    FadeScale, 
-    Fade,
-    FadePoint, 
-    StaggerAnim} from '../animations';
-
-//Images
-import man from '../img/man.png';
-
-//Custom Hooks
 import {useScroll} from '../components/useScroll';
-
-//Components
 import AnimatedPoint from '../components/AnimatedPoint';
-
-//Util
+import trimmed from '../audio/trimmed.mp3';
+import man from '../img/man.png';
 import {InfoList} from '../info';
+import {TextFade, 
+        FadeScale, 
+        Fade, 
+        StaggerAnim} from '../animations';
 
-
+ 
+        
 const Action = () => {
    const [state, setState] = useState(InfoList);
    const [element, controls] = useScroll();
@@ -40,7 +29,6 @@ const Action = () => {
        audioRef.current.currentTime = 0;
     }
     audioRef.current.play();
-
 }
   
     return (
@@ -49,7 +37,6 @@ const Action = () => {
         variants={StaggerAnim} 
         ref={element} initial='hidden' 
         animate={controls}>
-
             <Title variants={Fade}>
               <h3>ATUAÇÃO</h3>
             </Title>
