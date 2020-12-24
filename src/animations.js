@@ -31,7 +31,6 @@ export const FadeScale = {
         transition: { 
             ease: 'easeOut', 
             duration: 0.85,
-        
         }
     }
 }
@@ -74,7 +73,8 @@ export const Fade = {
     exit: {
         opacity: 0,
         transition: {
-            duration: 0.75
+            duration: 0.75,
+            ease: 'easeOut',
         }   
     }
 }

@@ -15,13 +15,6 @@ const Cover = () => {
 
     return (
         <StyledCover>
-            <BackGroundImage>
-                <img src={cover_bg} alt=""/>
-            </BackGroundImage>
-            <Text>
-               {/* <h2>TOMAR <span>DUAS</span> CAPSULAS</h2>
-               <h2>  AO DIA</h2> */}
-            </Text>
             {/* <Caps variants={FadeScaleCaps} initial='hidden' animate='show' >
                 <img src={caps} alt=""/>
             </Caps> */}
@@ -30,7 +23,13 @@ const Cover = () => {
 }
 
 const StyledCover = styled(motion.div)`
-      height:30rem;
+      height:100vh;
+      background-image: url(${cover_bg});
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
       @media screen and (max-width: 768px){
         height: 50rem;
         position: relative;
@@ -40,26 +39,19 @@ const StyledCover = styled(motion.div)`
 const BackGroundImage = styled(motion.div)`
      width: 100%;
      height: 100%;
-     position: absolute;
      z-index: -100;
      object-fit: cover;
-     top: 0;
      img {
          height: 100%;
          width: 100%;
          object-fit: cover;
      }
-
-
 `;
 
 const Text = styled(motion.div)`
-     font-size: 0.8rem;
-     margin-right: 10rem;
      text-align: left;
+     justify-self: flex-end;
      font-family: 'Montserrat', sans-serif;
-     margin-right: 15rem;
-     margin-bottom: 10rem;
      h2 {
          font-weight: lighter;
          color: #415740;

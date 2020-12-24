@@ -37,13 +37,13 @@ const NavBarResp = () => {
                  <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
                 </li>
                  <li>
-                 <Link to="action" smooth={true} offset={-80} duration={900}>ATUAÇÃO</Link>
+                 <Link to="action" smooth={true} offset={-50} duration={900}>ATUAÇÃO</Link>
                 </li>
                 <li>
-                 <Link to="articles" smooth={true} offset={-100} duration={900}>ARTIGOS</Link>
+                 <Link to="articles" smooth={true} offset={-40} duration={900}>ARTIGOS</Link>
                 </li>
                 <li>
-                  <Link to="content-table" smooth={true} offset={-80} duration={900}>COMPOSIÇÃO</Link>
+                  <Link to="content-table" smooth={true} offset={-60} duration={900}>COMPOSIÇÃO</Link>
                 </li>
               </NavLinks>
               <ButtonWrapper>
@@ -60,8 +60,8 @@ const NavBarResp = () => {
                 {activeState ? 
                 <motion.div 
                  variants={{...Fade, 
-                   exit: {opacity: 0, 
-                   transition: {duration: 0.1, ease: 'easeOut'}}}} 
+                   exit: {...Fade.exit, 
+                   transition: {...Fade.exit.transition, duration: 0.1}}}} 
                  initial='hidden' 
                  animate='show' 
                  exit='exit'
@@ -69,9 +69,9 @@ const NavBarResp = () => {
                   <Close />
                 </motion.div> : 
                 <motion.div
-                 variants={{...Fade, exit: 
-                 {opacity: 0, transition: 
-                 {duration: 0.1, ease: 'easeOut'}}}}
+                 variants={{...Fade, 
+                   exit: {...Fade.exit, 
+                   transition: {...Fade.exit.transition, duration: 0.1}}}} 
                  initial='hidden'
                  animate='show' 
                  exit='exit'
@@ -95,7 +95,7 @@ const Wrapper = styled.div`
      display: flex;
      justify-content: space-evenly;
      align-items: center;
-     z-index: 1000;
+     z-index: 999;
     @media screen and (max-width: 768px){
         justify-content: space-between;
         height: 11vh;

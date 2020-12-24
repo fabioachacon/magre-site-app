@@ -54,7 +54,7 @@ const Action = () => {
               <h3>ATUAÇÃO</h3>
             </Title>
             <CenterBox>
-                <ManImage>
+                <LeftBox>
                     <motion.img variants={FadeScale} src={man} alt="man"/>
                     <Points variants={Fade}>
                       <AnimatePresence exitBeforeEnter>
@@ -65,7 +65,7 @@ const Action = () => {
                         }
                       </AnimatePresence>
                     </Points>
-                </ManImage>
+                </LeftBox>
                 <RightBox variants={Fade}>
                     <Text>
                       <AnimatePresence exitBeforeEnter>
@@ -107,7 +107,6 @@ const StyledAction = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin: auto;
     background: #ffffff;
     @media screen and (max-width: 768px){
         height: 37rem;
@@ -126,13 +125,13 @@ const CenterBox = styled(motion.div)`
     }
 `;
 
-const ManImage = styled(motion.div)`
-      height: 100%;
+const LeftBox = styled(motion.div)`
+      height: 96%;
       width: 70%;
       display: flex;
+      align-self: flex-end;
       img {
          width: 100%;
-         height: 100%;
      }
 `;
 
@@ -237,8 +236,8 @@ const Title = styled(motion.div)`
     font-family: 'Montserrat', sans-serif;
     color: rgba(65, 87, 64, 255);
     font-size: 1.1rem;
-    margin-top: 4rem;
-    left: 1rem;
+    margin-top: 6rem;
+    left: 2rem;
     @media screen and (max-width: 768px){
         left: 3rem;
         margin-top: 7.3rem;
