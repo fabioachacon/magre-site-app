@@ -79,7 +79,6 @@ const Flask = () => {
     )
 }
 
-
 const FlaskBG = styled(motion.div)`
     height: 100vh;
     position: relative;
@@ -87,7 +86,6 @@ const FlaskBG = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-
     @media screen and (max-width: 768px){
         height: 35rem;
         margin-top: 3rem;
@@ -102,7 +100,7 @@ const Cover = styled(motion.div)`
            object-fit: cover;
            height: 100%;
            width: 100%;
-           @media screen and (max-width: 768px){
+           @media screen and (max-width: 760px){
             height: 35rem;
             object-fit: cover;
             object-position: center;

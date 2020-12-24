@@ -6,6 +6,13 @@ import { FiArrowRight } from "react-icons/fi";
 
 const Articles = () => {
 
+
+     let headline = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum in voluptas, amet ipsa mollitia dolores. Omnis qui architecto necessitatibus atque repudiandae rerum accusantium placeat esse minima!"
+
+     if (headline.length > 150) {
+       headline = headline.substring(0, 150) + '...';
+      }
+
     return (
         <StyledArticles id='articles'>
             <Title>
@@ -25,7 +32,7 @@ const Articles = () => {
                     </OuterCircle>
                     <HeadLine>
                       <News>
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius hic expedita sunt dolorem, tenetur esse!</h3>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati accusantium eveniet velit, labore impedit aut expedita consequatur deleniti quas vel.</h3>
                       </News>
                       <Arrow>
                         <a href="">VEJA MAIS</a>
@@ -42,7 +49,7 @@ const Articles = () => {
                     </OuterCircle>
                     <HeadLine>
                       <News>
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, nam!</h3>
+                        <h3>{headline}</h3>
                       </News>
                       <Arrow>
                         <a href="">VEJA MAIS</a>
@@ -59,7 +66,7 @@ const Articles = () => {
                     </OuterCircle>
                     <HeadLine>
                       <News>
-                        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum earum laboriosam doloribus mollitia vel nam.</h3>
+                        <h3>{headline}</h3>
                       </News>
                       <Arrow>
                         <a href="">VEJA MAIS</a>
