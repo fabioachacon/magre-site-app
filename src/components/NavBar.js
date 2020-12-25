@@ -14,7 +14,7 @@ import {IoMdClose} from 'react-icons/io';
 //Animations
 import {buttonAnim, Fade} from '../animations';
 
-const NavBarResp = () => {
+const NavBar = () => {
     
     const [activeState, setActiveState] = useState(false);
 
@@ -31,7 +31,7 @@ const NavBarResp = () => {
             <MagreLogo onClick={logoClickHandler}>
                 <img src={logo_color} alt="magre logo"/>
             </MagreLogo>
-            <NavBar className={activeState ? 'active': ''}> 
+            <StyledNav className={activeState ? 'active': ''}> 
               <NavLinks>
                 <li>
                  <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
@@ -54,7 +54,7 @@ const NavBarResp = () => {
                     </button>
                   </a>
               </ButtonWrapper>
-           </NavBar>
+           </StyledNav>
            <BurgerWrapper onClick={toggleSideBar}>
               <AnimatePresence exitBeforeEnter>
                 {activeState ? 
@@ -105,7 +105,7 @@ const Wrapper = styled.div`
     }
 `;
 
-const NavBar = styled.nav`
+const StyledNav = styled.nav`
    display: flex;
    align-items: center;
    width: 54%;
@@ -244,4 +244,4 @@ const Close = styled(IoMdClose)`
 
 
 
-export default NavBarResp;
+export default NavBar;
