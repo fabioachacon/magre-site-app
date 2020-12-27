@@ -1,5 +1,5 @@
-import React, {useState, useRef} from 'react';
-import styled from 'styled-components';
+import React, {useState, useRef, useEffect} from 'react';
+import styled, {css} from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
 import {useScroll} from '../components/useScroll';
 import AnimatedPoint from '../components/AnimatedPoint';
@@ -15,21 +15,16 @@ import {TextFade,
         
 const Action = () => {
    const [state, setState] = useState(InfoList);
+   const [active, setActive] = useState(state[0])
    const [element, controls] = useScroll();
    const audioRef = useRef();
 
-   const clickHandler = (id) => {
-       const newState = state.map((current) => 
-       current.id === id ? {...current, active: true} : {...current, active: false}
-    );
-    
-    setState(newState);
-
-    if (!audioRef.current.paused){
-       audioRef.current.currentTime = 0;
-    }
-    audioRef.current.play();
-}
+    useEffect(() => {
+        if (!audioRef.current.paused){
+            audioRef.current.currentTime = 0;
+         }
+         audioRef.current.play();
+    }, [active])
   
     return (
         <StyledAction 
@@ -46,7 +41,7 @@ const Action = () => {
                     <Points variants={Fade}>
                       <AnimatePresence exitBeforeEnter>
                        {state.map((item, i) => 
-                        item.active && (
+                        item.id === active.id && (
                         <AnimatedPoint key={i} pointId={item.id}/>
                         ))
                         }
@@ -57,7 +52,7 @@ const Action = () => {
                     <Text>
                       <AnimatePresence exitBeforeEnter>
                         {state.map((item, i) => 
-                            item.active && (
+                            item.id === active.id && (
                             <motion.div
                             variants={TextFade}
                             initial='hidden' 
@@ -74,11 +69,9 @@ const Action = () => {
                     <Dots>
                       {state.map((item, i) => 
                         <Dot
-                          onClick={() => clickHandler(item.id)} 
+                          onClick={() => setActive(item)} 
                           key={i}
-                          style={item.active ? 
-                          {'background': '#415740'} : 
-                          {'background': 'white'}}  
+                          active={active.id === item.id}
                         />
                        )}
                        <audio ref={audioRef} src={trimmed} />
@@ -173,7 +166,12 @@ const Dot = styled(motion.div)`
     padding: 2px;
     background: #eeeeee;
     cursor: pointer;
-    transition: background 0.3s ease-out; 
+    transition: background 0.3s ease-out;
+    
+    ${props => props.active && css`
+       background: #415740;
+    `} 
+
     @media screen and (max-width: 768px){
         padding: 1.5px;
    }

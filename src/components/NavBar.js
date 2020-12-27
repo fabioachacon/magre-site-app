@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react'
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
 import {Link} from 'react-scroll';
 import {animateScroll as scroll} from 'react-scroll';
@@ -31,7 +31,7 @@ const NavBar = () => {
             <MagreLogo onClick={logoClickHandler}>
                 <img src={logo_color} alt="magre logo"/>
             </MagreLogo>
-            <StyledNav className={activeState ? 'active': ''}> 
+            <StyledNav activeState={activeState}> 
               <NavLinks>
                 <li>
                  <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
@@ -99,9 +99,6 @@ const Wrapper = styled.div`
     @media screen and (max-width: 768px){
         justify-content: space-between;
         height: 11vh;
-        .active {
-            transform: translateX(0%); 
-        }
     }
 `;
 
@@ -126,6 +123,10 @@ const StyledNav = styled.nav`
         transform: translateX(100%); 
         transition: transform 0.3s ease-in;
         justify-content: space-evenly;
+        ${props => props.activeState && css`
+           transform: translateX(0%); 
+         `
+        }
  }
 `;
 

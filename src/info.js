@@ -13,7 +13,6 @@ export const InfoList = [
               <br/>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, sapiente.
              </>,
-      active: true
     },
     {
       id: 1,
@@ -23,7 +22,7 @@ export const InfoList = [
             <br/>
             Itaque ea recusandae praesentium deleniti magnam perferendis nemo aspernatur natus ab. Et!
            </>,
-      active: false
+  
     },
     {
       id: 2,
@@ -39,13 +38,13 @@ export const InfoList = [
              <br/>
              Explicabo consequuntur ducimus, eos dolor aliquam numquam excepturi iure, modi, labore sed cum nihil repudiandae assumenda dicta ad! Impedit?
             </>,
-      active: false
+      
     },
     {
       id: 3,
       text: <>
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque quae asperiores officiis nemo ratione repudiandae, unde nisi! A, assumenda?
             </>,
-      active: false
+     
     }
 ]
