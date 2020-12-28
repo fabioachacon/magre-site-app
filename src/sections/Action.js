@@ -84,6 +84,7 @@ const Action = () => {
 
 const StyledAction = styled(motion.div)`
     height: 100vh;
+    max-height: 40rem;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -96,6 +97,7 @@ const StyledAction = styled(motion.div)`
 const CenterBox = styled(motion.div)`
      width: 80%;
      height: 98%;
+     max-height: 720px;
      position: relative;
      right: 3rem;
      display: flex;
@@ -127,7 +129,7 @@ const RightBox = styled(motion.div)`
 const Text = styled(motion.div)`
     width: 17rem;
     height: 15rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-top: 5rem;
     font-size: 0.9rem;
     text-align: right;
@@ -164,13 +166,9 @@ const Dot = styled(motion.div)`
     border-radius: 50%;
     border: 1.8px solid gray; 
     padding: 2px;
-    background: #eeeeee;
+    background: ${props => props.active ? '#415740' : '#eeeeee'};
     cursor: pointer;
     transition: background 0.3s ease-out;
-    
-    ${props => props.active && css`
-       background: #415740;
-    `} 
 
     @media screen and (max-width: 768px){
         padding: 1.5px;

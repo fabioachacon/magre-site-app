@@ -28,7 +28,7 @@ const Flask = () => {
    const [element, controls] = useScroll();
 
     return (
-        <FlaskBG variants={StaggerAnim} initial='hidden'  animate={controls} ref={element}  id='presentation'>
+        <FlaskBG variants={StaggerAnim} initial='hidden' animate={controls} ref={element}  id='presentation'>
            <Cover>
               <img src={pill_bg} alt=""/>
            </Cover>
@@ -81,6 +81,7 @@ const Flask = () => {
 
 const FlaskBG = styled(motion.div)`
     height: 100vh;
+    max-height: 40rem;
     position: relative;
     background-color: white;
     display: flex;

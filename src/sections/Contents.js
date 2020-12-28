@@ -26,7 +26,8 @@ const Contents = () => {
 }
 
 const StyledTable = styled(motion.div)`
-    height: 80vh;
+    height: 85vh;
+    max-height: 40rem;
     background: #f6f7f6;
     display: flex;
     justify-content: center;

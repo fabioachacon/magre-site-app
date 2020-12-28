@@ -9,8 +9,8 @@ const Articles = () => {
 
      let headline = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum in voluptas, amet ipsa mollitia dolores. Omnis qui architecto necessitatibus atque repudiandae rerum accusantium placeat esse minima!"
 
-     if (headline.length > 150) {
-       headline = headline.substring(0, 150) + '...';
+     if (headline.length > 110) {
+       headline = headline.substring(0, 110) + '...';
       }
 
     return (
@@ -87,8 +87,8 @@ const Articles = () => {
 
 const StyledArticles = styled(motion.div)`
     height: 40rem;
-    background: white;
     display: flex;
+    padding-top: 4rem;
     align-items: center;
     flex-direction: column;
     @media screen and (max-width: 768px){
@@ -103,13 +103,11 @@ const CenterBox = styled(motion.div)`
     @media screen and (max-width: 768px){
       height: 80%;
       width: 90%;
-  
     }
 `;
 
 const Title = styled(motion.div)`
    height: 4rem;
-   margin-top: 6rem;
    display: flex;
    justify-content: center;
    width: 100%;

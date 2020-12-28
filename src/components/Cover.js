@@ -24,6 +24,7 @@ const Cover = () => {
 
 const StyledCover = styled(motion.div)`
       height:100vh;
+      max-height: 40rem;
       background-image: url(${cover_bg});
       background-size: cover;
       background-position: top;
