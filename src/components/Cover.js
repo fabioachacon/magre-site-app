@@ -11,7 +11,6 @@ import flask from '../img/flask_new.png';
 import {FadeScaleCaps} from '../animations';
 
 
-
 const Cover = () => {
 
     return (
@@ -42,9 +41,10 @@ const StyledCover = styled(motion.div)`
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
-      @media screen and (max-width: 768px){
-        height: 50rem;
+      @media screen and (max-width: 760px){
+        height: 40rem;
         position: relative;
+        top: 4rem;
     }
 `;
 
@@ -58,7 +58,9 @@ const ImageCover = styled(motion.div)`
         width: 100%;
         height: 100%;
         object-position: bottom;
+        object-fit: fill;
     }
+
 `;
 
 const CenterBox = styled(motion.div)`
@@ -68,6 +70,10 @@ const CenterBox = styled(motion.div)`
   z-index: 1;
   @media screen and (min-height: 800px){
     margin-bottom: -10rem;
+  }
+  @media screen and (max-width: 760px){
+    margin-bottom: -10rem;
+    margin-right: 0.5rem;
   }
 `;
 
@@ -82,6 +88,10 @@ const FlaskImage = styled(motion.div)`
          width: 94%;
          height: 96%;
      }
+     @media screen and (max-width: 760px){
+        height: 87%;
+        width: 75%;
+    }
      .text{
          position: absolute;
          right: 0;
@@ -96,7 +106,12 @@ const FlaskImage = styled(motion.div)`
              font-weight: bold;
              color: #415740;
          }
+    @media screen and (max-width: 760px){
+        font-size: 1.2rem;
+        right: -4rem;
+    }
      }
+
 `;
 
 

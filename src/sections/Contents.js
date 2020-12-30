@@ -48,7 +48,7 @@ const StyledTable = styled(motion.div)`
     justify-content: center;
     align-items: flex-end;
     @media screen and (max-width: 768px){
-        height: 33rem;
+        height: 40rem;
     }
 `;
 
@@ -58,21 +58,40 @@ const CenterBox = styled(motion.div)`
     max-width: 80rem;
     display: flex;
     position: relative;
+    @media screen and (max-width: 760px){
+
+        height: 95%;
+        width: 90%;
+    }
 `;
 
 const LeftBox = styled(motion.div)`
      height: 100%;
-     width: 90%;
+     width: 70%;
      display: flex;
      flex-direction: column;
      justify-content: space-between;
-     overflow: hidden;
+     position: relative;
+     @media screen and (max-width: 760px){
+        width: 79%;
+        height:100%;
+     }
      img {
-         width: 75%;
-         height:480px;
+         width: 100%;
+         height:100%;
          object-fit: fill;
+         position: absolute;
+         @media screen and (max-width: 768px){
+           width: 85%;
+           height:90%;
+           bottom: 0;
+           object-fit: fill;
+           position: absolute;
+
+    }
      }
      .text {
+         z-index: 1;
          font-size: 0.9rem;
          position: absolute;
          margin-top: 10rem;

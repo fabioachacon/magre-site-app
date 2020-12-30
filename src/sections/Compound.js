@@ -42,6 +42,9 @@ const StyledSection = styled(motion.div)`
       display: flex;
       justify-content: center;
       align-items: center;
+      @media screen and (max-width: 760px){
+          height: 55rem;
+      }
 
 `;
 
@@ -100,11 +103,15 @@ const TextBox = styled(motion.div)`
 `;
 
 const ButtonWrapper = styled(motion.div)`
+
     a{
         text-decoration: none;
         color: white;
     }
     button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 2.6rem;
         width: 8.5rem;
         border-radius: 1.2rem;
@@ -119,6 +126,12 @@ const ButtonWrapper = styled(motion.div)`
           color: #d0b43f;
           border: 1px solid #d0b43f;
           font-weight: bold;
+        }
+        @media screen and (max-width: 760px){
+            height: 30px;
+            width: 90px;
+            border-radius: 25px;
+            font-size: 1.8rem;
         }
     }
 `;
