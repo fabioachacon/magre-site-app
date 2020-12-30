@@ -147,10 +147,10 @@ const NavLinks = styled.ul`
     :after{
         content: "";
         display: block;
-        height: 2px;
-        top: 2px;
+        height: 3.5px;
+        top: 3px;
         position: relative;
-        background: #bcd24c;
+        background:#d0b43f;
         transition: width 0.2s ease-in-out 0s, left 0.2s ease-in-out 0s;
         width: 0;
     }
@@ -195,7 +195,7 @@ const ButtonWrapper = styled(motion.div)`
         cursor: pointer;
         align-items: center;
         padding: 0.4rem 1.3rem;
-        background: #bcd24c;
+        background: #d0b43f;
         color: white;
         font-weight: bold;
         border-radius: 10rem;

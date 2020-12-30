@@ -7,17 +7,18 @@ import Footer from './sections/Footer';
 import Flask from './sections/Flask';
 import Action from './sections/Action';
 import NavBar from './components/NavBar';
+import Compound from './sections/Compound';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
       <NavBar />
-
       <Header />
-      <Flask />
+      <Compound />
       <Action />
-      <Articles />
+      <Flask />
+      {/* <Articles /> */}
       {/* <SideEffects /> */}
       <Contents />
       <Footer />

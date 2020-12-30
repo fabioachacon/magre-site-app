@@ -7,10 +7,14 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
    }
+   html {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
 
    html, 
    body {
-      min-height: 100vh;
       @media (max-width: 756px) {
          font-size: 40%;
       }

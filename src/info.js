@@ -1,21 +1,16 @@
 export const InfoList = [
     {
       id: 0,
+      title: 'Flora Intestinal',
       text:  <>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis atque totam sit dolore! Est nostrum, 
-              <br/>
-              <br/>
-              et inventore laudantium cum ullam facere, fuga qui aliquam nulla non tempore aut, totam quod?
-              <br/>
-              <br/>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eos cum tempora totam, impedit iste doloremque unde amet quisquam facere officiis ea. Quo reprehenderit expedita recusandae praesentium autem, consequuntur quis!
-              <br/>
-              <br/>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, sapiente.
+              O <span style={{'color': '#054507', 'fontWeight': 'bold'}}>Magre caps</span> tem em sua composição, o extrato de sene,
+              o qual ajuda a acelerar o emagrecimento. O sene traz inúmeros benefícios, entre eles,
+              a optimização do funcionameno da flora intestinal.
              </>,
     },
     {
       id: 1,
+      title: 'Estômago',
       text: <>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quis eius, sed sapiente laboriosam labore obcaecati vel blanditiis.
             <br/>
@@ -26,6 +21,7 @@ export const InfoList = [
     },
     {
       id: 2,
+      title: 'Fígado',
       text: <>
              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere minima tempore corporis ducimus natus, vero, officiis et beatae tempora quo! Asperiores. 
              <br/>
@@ -42,6 +38,7 @@ export const InfoList = [
     },
     {
       id: 3,
+      title: 'Pâncreas',
       text: <>
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque quae asperiores officiis nemo ratione repudiandae, unde nisi! A, assumenda?
             </>,

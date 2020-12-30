@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import {motion} from 'framer-motion';
 
 //Images
-import cover_bg from '../img/cover_bg.png'
 import caps from '../img/flask_caps.png';
+import cover from '../img/cover3.png';
+import flask from '../img/flask_new.png';
 
 //Animation
 import {FadeScaleCaps} from '../animations';
@@ -15,54 +16,86 @@ const Cover = () => {
 
     return (
         <StyledCover>
-            {/* <Caps variants={FadeScaleCaps} initial='hidden' animate='show' >
-                <img src={caps} alt=""/>
-            </Caps> */}
+           <ImageCover>
+               <img src={cover} alt=""/>
+           </ImageCover>
+           <CenterBox>
+              <FlaskImage>
+                  <motion.img src={flask} alt=""/>
+                  <div className="text">
+                      <h3>mais do que</h3>
+                      <h3>um emagrecedor,</h3>
+                      <h3><span>magrecaps</span></h3>
+                      <h3>é energia</h3>
+                      <h3>para a sua vida.</h3>
+                  </div>
+              </FlaskImage>
+           </CenterBox>
         </StyledCover>
     )
 }
 
 const StyledCover = styled(motion.div)`
-      height:100vh;
-      max-height: 40rem;
-      background-image: url(${cover_bg});
-      background-size: cover;
-      background-position: top;
-      background-repeat: no-repeat;
+      height:96vh;
+      background: #e7e9eb;
+      position: relative;
       display: flex;
-      align-items: center;
+      justify-content: flex-end;
+      align-items: flex-end;
       @media screen and (max-width: 768px){
         height: 50rem;
         position: relative;
     }
 `;
 
-const BackGroundImage = styled(motion.div)`
-     width: 100%;
-     height: 100%;
-     z-index: -100;
-     object-fit: cover;
-     img {
-         height: 100%;
-         width: 100%;
-         object-fit: cover;
-     }
+const ImageCover = styled(motion.div)`
+    height: 90%;
+    position: absolute;
+    width: 50%;
+    left: -2rem;
+    margin-top: 3.5rem;
+    img{
+        width: 100%;
+        height: 100%;
+        object-position: bottom;
+    }
 `;
 
-const Text = styled(motion.div)`
-     text-align: left;
-     justify-self: flex-end;
-     font-family: 'Montserrat', sans-serif;
-     h2 {
-         font-weight: lighter;
-         color: #415740;
-         font-size: 1.5rem;
+const CenterBox = styled(motion.div)`
+  height: 95%;
+  width: 56%;
+  margin-bottom: -7rem;
+  z-index: 1;
+`;
+
+const FlaskImage = styled(motion.div)`
+     height: 100%;
+     width:66%;
+     max-width: 60rem;
+     display: flex;
+     align-items: center;
+     position: relative;
+     img {
+         width: 96%;
+         height: 98%;
+     }
+     .text{
+         position: absolute;
+         right: 0;
+         margin-bottom: 15rem;
+         text-transform: uppercase;
+         font-family: 'Montserrat', sans-serif;
+         h3 {
+             color: #917e41;;
+             font-weight: normal;
+         }
          span {
-             color: #415740;
              font-weight: bold;
+             color: #415740;
          }
      }
 `;
+
 
 const Caps = styled(motion.div)`
      width: 30rem;

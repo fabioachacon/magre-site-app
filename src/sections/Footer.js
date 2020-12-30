@@ -11,29 +11,7 @@ const Footer = () => {
   
     return (
         <StyledFooter>
-           <CenterBox>
-             <Buttons>
-                <ButtonWrapper>
-                  <a href="">
-                    <button>
-                     <WhatsAppIcon />
-                     whatsapp
-                    </button>
-                  </a>
-                </ButtonWrapper>
-                <LogoWrapper>
-                  <a href="">
-                    <InstagramLogo />
-                  </a>
-                </LogoWrapper>
-             </Buttons>
-             <NameLogo>
-               <p>Todos os direitos reservados a Magrecaps. ©2020</p>
-               <Logo>
-                 <img src={logo} alt=""/>
-               </Logo>
-             </NameLogo>
-           </CenterBox>
+         
         </StyledFooter>
     )
 }
@@ -68,11 +46,10 @@ const CenterBox = styled.div`
 `;
 
 const Buttons = styled.div`
-   width: 20%;
+   width: 80%;
    height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
+   background: red;
+   
    @media screen and (max-width: 768px){
      width: 35%;
    }
@@ -116,52 +93,15 @@ const Logo = styled.div`
     }
 `;
 
-const ButtonWrapper = styled(motion.div)`
-    a{
-      text-decoration: none;
-      font-family: Helvetica, sans-serif;
-      button {
-      display: flex;
-      cursor: pointer;
-      align-items: center;
-      padding: 0.4rem 1.3rem;
-      background:#BCD24C;
-      color: white;
-      font-weight: bold;
-      border-radius: 10rem;
-      border: none;
-      outline: none;
-      @media screen and (max-width: 768px){
-        padding: 0.8rem 1.2rem;
-        font-size: 1.4rem;
-      }
-      @media screen and (max-width: 320px){
-        padding: 0.5rem 0.4rem;
-      }
-    }
-  }
-
-`;
-
-const WhatsAppIcon = styled(FaWhatsapp)`
-   color: white;
-   font-size: 1.4rem;
-   margin-right: 0.4rem;
-   @media screen and (max-width: 768px){
-       font-size: 3rem;
-       margin-right: 0.8rem;
-    }
-    @media screen and (max-width: 320px){
-      font-size: 2rem;
-    }
-`;
 
 const LogoWrapper = styled.div`
+  height: 30px;
+  width: 30px;
   border: 1px solid #acc143;
   border-radius: 50%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 1px 3.5px;
   @media screen and (max-width: 768px){
     padding: 2px 3px;
    }
@@ -172,7 +112,7 @@ const LogoWrapper = styled.div`
 `;
 
 const InstagramLogo = styled(AiOutlineInstagram)`
-     font-size: 1.2rem;
+     font-size: 1.3rem;
      font-weight: bold;
      color: #acc143;
      position: relative;
@@ -185,8 +125,6 @@ const InstagramLogo = styled(AiOutlineInstagram)`
       font-size: 2rem;
       top: 0.7px;
    }
-   
-
 `;
 
 

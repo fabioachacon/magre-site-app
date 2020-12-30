@@ -1,10 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
 import {useScroll} from '../components/useScroll';
 import AnimatedPoint from '../components/AnimatedPoint';
 import trimmed from '../audio/trimmed.mp3';
 import man from '../img/man.png';
+import mancover from '../img/man_new.png';
+import flask_caps from '../img/flask_caps.png';
 import {InfoList} from '../info';
 import {TextFade, 
         FadeScale, 
@@ -30,42 +32,42 @@ const Action = () => {
         <StyledAction 
         id='action' 
         variants={StaggerAnim} 
-        ref={element} initial='hidden' 
-        animate={controls}>
-            <Title variants={Fade}>
-              <h3>ATUAÇÃO</h3>
-            </Title>
+        initial='hidden'
+        animate={controls}
+        ref={element} 
+      
+        >   
+            <SectionTitle variants={Fade}>
+               <div className="text">
+                  <h2>como atua</h2>
+               </div>
+            </SectionTitle>
             <CenterBox>
-                <LeftBox>
-                    <motion.img variants={FadeScale} src={man} alt="man"/>
-                    <Points variants={Fade}>
-                      <AnimatePresence exitBeforeEnter>
-                       {state.map((item, i) => 
-                        item.id === active.id && (
-                        <AnimatedPoint key={i} pointId={item.id}/>
-                        ))
-                        }
-                      </AnimatePresence>
-                    </Points>
-                </LeftBox>
-                <RightBox variants={Fade}>
-                    <Text>
-                      <AnimatePresence exitBeforeEnter>
-                        {state.map((item, i) => 
-                            item.id === active.id && (
-                            <motion.div
-                            variants={TextFade}
-                            initial='hidden' 
-                            animate='show' 
-                            exit='exit'
-                            key={i}>
-
-                             {item.text}
-                            </motion.div>
-                            )
-                        )}
-                      </AnimatePresence>
-                    </Text>
+                <LeftBox variants={Fade}>
+                     <TextTitle>
+                        <AnimatePresence exitBeforeEnter>
+                            {state.map((item, i) => 
+                            item.id === active.id && 
+                            <motion.h2 
+                              variants={TextFade} 
+                              initial='hidden' 
+                              animate='show'
+                              exit='exit' 
+                              key={i}>{item.title}</motion.h2>)}
+                        </AnimatePresence>
+                        <Text>
+                          <AnimatePresence exitBeforeEnter>
+                            {state.map((item, i) => 
+                                item.id === active.id && 
+                                <motion.div
+                                variants={TextFade}
+                                initial='hidden' 
+                                animate='show' 
+                                exit='exit'
+                                key={i}>{item.text}</motion.div>)}
+                          </AnimatePresence>
+                        </Text>
+                    </TextTitle>
                     <Dots>
                       {state.map((item, i) => 
                         <Dot
@@ -76,6 +78,24 @@ const Action = () => {
                        )}
                        <audio ref={audioRef} src={trimmed} />
                     </Dots>
+                    <FlaskImage>
+                        <motion.img variants={{...FadeScale, 
+                          hidden: {...FadeScale.hidden, scale: 0.9}, 
+                          show: {...FadeScale.show, scale: 1}}} 
+                          src={flask_caps} alt="Frasco magre caps"/>
+                    </FlaskImage>
+                </LeftBox>
+                <RightBox>
+                    <motion.img variants={FadeScale} src={mancover} alt="man"/>
+                    <Points variants={Fade}>
+                      <AnimatePresence exitBeforeEnter>
+                       {state.map((item, i) => 
+                        item.id === active.id && (
+                        <AnimatedPoint key={i} pointId={item.id}/>
+                        ))
+                        }
+                      </AnimatePresence>
+                    </Points>
                 </RightBox>
             </CenterBox>
         </StyledAction>
@@ -83,80 +103,128 @@ const Action = () => {
 }
 
 const StyledAction = styled(motion.div)`
-    height: 100vh;
+    height: 95vh;
     max-height: 40rem;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
     background: #ffffff;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 75%;
+        right: 0;
+        background: #f6f7f6;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 36% 100%);
+    }
     @media screen and (max-width: 768px){
         height: 37rem;
     }
 `;
 
 const CenterBox = styled(motion.div)`
-     width: 80%;
+     width: 90%;
      height: 98%;
      max-height: 720px;
-     position: relative;
-     right: 3rem;
+     max-width: 90rem;
      display: flex;
+     z-index: 1;
+     position: relative;
      @media screen and (max-width: 768px){
         height: 90%;
         width: 100%;
     }
 `;
 
-const LeftBox = styled(motion.div)`
+const RightBox = styled(motion.div)`
       height: 96%;
-      width: 70%;
+      width: 48%;
+      max-height: 40rem;
       display: flex;
+      position: absolute;
+      right: 0;
       align-self: flex-end;
       img {
          width: 100%;
      }
+     @media screen and (max-width: 768px){
+        height: 100%;
+   }
 `;
 
-const RightBox = styled(motion.div)`
-    width: 50%;
+const LeftBox = styled(motion.div)`
+    width: 55%;
+    height: 80%;
     display: flex;
     position: relative;
-    flex-direction: column;
-    right: 4rem;
-    align-items: center;
+    margin-left: 4rem;
+    align-self: flex-end;
+    z-index: 1;
+    justify-content: space-between;
+`;
+
+const TextTitle = styled.div`
+     width: 78%;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     h2 {
+         padding-right: 25px;
+         padding-bottom: 20px;
+         font-family: 'Montserrat', sans-serif;
+         color: #415740;
+     } 
+`;
+
+const FlaskImage = styled(motion.div)`
+      position: absolute;
+      margin-top: 12rem;
+      height: 55%;
+      img {
+        max-width: 680px;
+        max-height: 550px;
+      }
+      @media screen and (max-width: 760px){
+        img {
+          max-width: 250px;
+          max-height: 150px
+        }
+    }
 `;
 
 const Text = styled(motion.div)`
-    width: 17rem;
-    height: 15rem;
+    width: 100%;
+    height: 7rem;
     overflow-y: auto;
-    margin-top: 5rem;
-    font-size: 0.9rem;
-    text-align: right;
+    font-size: 1rem;
+    text-align: left;
     padding-right: 10px;
-    color: gray;
+    color: #054507;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4rem;
     &::-webkit-scrollbar{
-       width: 0.1rem;
-       background-color: #415740
+       width: 0.3rem;
     }
     &::-webkit-scrollbar-thumb{
-      background-color: #415740;
-      height: 1px;  
+      background-color: #d0b43f;
+      height: 6px;
+      width: 6px;  
     }
     &::-webkit-scrollbar-track{
-      background-color: white;
-      height: 1rem;
+      width: 0.2rem;
+
     }
 `;
 
 const Dots = styled(motion.div)`
    display: flex;
-   margin-top: 3rem;
-   width: 4rem;
+   width: 4.5rem;
    height: 0.5rem;
+   margin-top: 3rem;
    justify-content: space-around;
    position: relative;
-   left: 0.5rem;
+   align-self: flex-start;
    @media screen and (max-width: 768px){
        width: 7.5rem;
    }
@@ -164,12 +232,11 @@ const Dots = styled(motion.div)`
 
 const Dot = styled(motion.div)`
     border-radius: 50%;
-    border: 1.8px solid gray; 
+    border: 1.9px solid gray; 
     padding: 2px;
-    background: ${props => props.active ? '#415740' : '#eeeeee'};
+    background: ${props => props.active ? '#d0b43f' : '#eeeeee'};
     cursor: pointer;
     transition: background 0.3s ease-out;
-
     @media screen and (max-width: 768px){
         padding: 1.5px;
    }
@@ -184,16 +251,16 @@ const Points = styled(motion.div)`
      align-items: center;
      justify-content: center;
      img {
-          width: 4.5rem;
+          width: 5rem;
           animation: rotation 11s infinite linear;
     }
     .point0{
-        margin-bottom: 5rem;
-        margin-left: 1.8rem;
+        margin-top: 15rem;
+        margin-left: 3rem;
     }
     .point1{
         margin-right: 4rem;
-        margin-top: 2rem;
+        margin-top: 14rem;
     }
     .point2{
         margin-left: 3rem;
@@ -213,18 +280,24 @@ const Points = styled(motion.div)`
     }
 `;
 
-const Title = styled(motion.div)`
+
+const SectionTitle = styled(motion.div)`
+    max-width: 90rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    position: absolute;
     align-self: flex-start;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    color: rgba(65, 87, 64, 255);
-    font-size: 1.1rem;
-    margin-top: 6rem;
-    left: 2rem;
-    @media screen and (max-width: 768px){
-        left: 3rem;
-        margin-top: 7.3rem;
-        font-size: 1.6rem; 
+    z-index: 1;
+    padding-top: 1rem;
+    .text{
+        text-transform: uppercase;
+        width: 80%;
+        font-family: 'Montserrat', sans-serif;
+        color: #536653;
+        font-size: 0.9rem;
     }
 `;
 

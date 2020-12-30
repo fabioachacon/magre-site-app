@@ -6,6 +6,7 @@ import {useScroll} from '../components/useScroll';
 //Images
 import pill_bg from '../img/pill_bg.png';
 import pill from '../img/pill.png';
+import cover from '../img/pill_bg_new.png';
 
 //Icons
 import icon1 from '../img/icon1.png';
@@ -30,13 +31,8 @@ const Flask = () => {
     return (
         <FlaskBG variants={StaggerAnim} initial='hidden' animate={controls} ref={element}  id='presentation'>
            <Cover>
-              <img src={pill_bg} alt=""/>
+              <img src={cover} alt=""/>
            </Cover>
-           <Text>
-               <h3>SENE</h3>
-               <h3>EXTRATO</h3>
-               <h3>SECO</h3>
-           </Text>
            <Pill variants={FadeScale}>
              <img src={pill} alt=""/>
            </Pill>
@@ -44,8 +40,8 @@ const Flask = () => {
                <Row>
                    <Icon1 variants={Fade}>
                       <div>
-                       <p>AUXILIA NO</p>
-                       <p>EMAGRECIMENTO</p>
+                       <p>SUPLEMENTO</p>
+                       <p>NUTRICIONAL</p>
                       </div>
                      <img src={icon1} alt=""/>
                    </Icon1>
@@ -60,18 +56,18 @@ const Flask = () => {
                <Row>
                    <Icon3 variants={Fade}>
                      <div>
-                       <p>AUXILIA NO</p>
-                       <p>EMAGRECIMENTO</p>
+                       <p>POTENCIALIZA A</p>
+                       <p>AÇÃO E O EFEITO</p>
+                       <p>DA INSULINA</p>
                      </div>
                      <img src={icon3} alt=""/>
                    </Icon3>
                    <Icon4 variants={Fade}>
-                      <div>
-                        <p>PROPRIEDADES</p>
-                        <p>TERAPEUTICAS</p>
-                        <p>LAXATIVAS</p>
-                      </div>
                       <img src={icon4} alt=""/>
+                      <div>
+                        <p>DRENAGEM</p>
+                        <p>LINFÁTICA NATURAL</p>
+                      </div>
                    </Icon4>
                </Row>
            </Icons>
@@ -80,10 +76,10 @@ const Flask = () => {
 }
 
 const FlaskBG = styled(motion.div)`
-    height: 100vh;
-    max-height: 40rem;
+   background:#b69e43;
+    height: 90vh;
+    max-height: 50rem;
     position: relative;
-    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +91,7 @@ const FlaskBG = styled(motion.div)`
 
 const Cover = styled(motion.div)`
        position: absolute;
-       height: 98%;
+       height: 100%;
        width: 100%;
        img {
            object-fit: cover;
@@ -150,11 +146,13 @@ const Icons = styled(motion.div)`
     align-items: center;
     z-index: 1;
     p {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         text-align: right;
         margin-right: 0.2rem;
         color: rgba(97, 97, 97, 255);
-        font-family: Helvetica, sans-serif
+        color: #103b10;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
     }
 `;
 
@@ -166,6 +164,7 @@ const Row = styled(motion.div)`
     width: 40rem;
     img{
         width: 6rem;
+
     }
 `;
 
@@ -178,6 +177,9 @@ const Icon1 = styled(motion.div)`
    top: 3rem;
    img {
        width: 5.5rem;
+   }
+   p {
+     color: white;
    }
 `;
 
@@ -204,15 +206,23 @@ const Icon3 = styled(motion.div)`
        width: 6.4rem;
    }
 
+
 `;
 
 const Icon4 = styled(motion.div)`
    display: flex;
    align-items: center;
-   margin-right: 1rem;
    margin-top: 9rem;
+   left: 5rem;
    position: relative;
    top: 1rem;
+   p {
+       text-align: left;
+       color: #ffff;
+   }
+   img {
+       transform: rotate(45deg);
+   }
 `;
 
 

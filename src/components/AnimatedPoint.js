@@ -2,6 +2,7 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import {FadePoint} from '../animations';
 import point from '../img/point.png'
+import pointnew from '../img/pointgreen.png';
 
 const AnimatedPoint = ({pointId}) => {
     return (
@@ -11,7 +12,7 @@ const AnimatedPoint = ({pointId}) => {
          animate='show' 
          exit='exit' 
          className={`point ${'point'}${pointId}`}>
-            <motion.img src={point} alt="points"/>
+            <motion.img src={pointnew} alt="points"/>
         </motion.div>
 
     )
