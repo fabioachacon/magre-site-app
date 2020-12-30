@@ -63,7 +63,7 @@ const ImageCover = styled(motion.div)`
 
 const CenterBox = styled(motion.div)`
   height: 95%;
-  width: 56%;
+  width: 55%;
   margin-bottom: -7rem;
   z-index: 1;
 `;
@@ -76,8 +76,8 @@ const FlaskImage = styled(motion.div)`
      align-items: center;
      position: relative;
      img {
-         width: 96%;
-         height: 98%;
+         width: 94%;
+         height: 96%;
      }
      .text{
          position: absolute;
