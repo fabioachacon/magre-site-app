@@ -41,8 +41,8 @@ const Contents = () => {
 }
 
 const StyledTable = styled(motion.div)`
-    height: 75vh;
-    max-height: 30rem;
+    height:85vh;
+    max-height: 50rem;
     background: #EAEAEB;
     display: flex;
     justify-content: center;
@@ -59,7 +59,6 @@ const CenterBox = styled(motion.div)`
     display: flex;
     position: relative;
     @media screen and (max-width: 760px){
-
         height: 95%;
         width: 90%;
     }

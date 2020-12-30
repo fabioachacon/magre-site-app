@@ -5,7 +5,7 @@ import {useScroll} from '../components/useScroll';
 
 //Images
 import pill_bg from '../img/pill_bg.png';
-import pill from '../img/pill.png';
+import pill from '../img/pill2.png';
 import cover from '../img/pill_bg_new.png';
 
 //Icons

@@ -2,10 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 
-import whatsapp from '../img/wtapp.png';
 import logo from '../img/logo-color.png'
 import { AiOutlineInstagram } from 'react-icons/ai';
-import {FaWhatsapp} from 'react-icons/fa';
 
 const Footer = () => {
   

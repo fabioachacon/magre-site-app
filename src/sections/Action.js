@@ -6,7 +6,7 @@ import AnimatedPoint from '../components/AnimatedPoint';
 import trimmed from '../audio/trimmed.mp3';
 import man from '../img/man.png';
 import mancover from '../img/man_new.png';
-import flask_caps from '../img/flask_caps.png';
+import flask_caps from '../img/flask_caps2.png';
 import {InfoList} from '../info';
 import {TextFade, 
         FadeScale, 
@@ -138,15 +138,17 @@ const CenterBox = styled(motion.div)`
 `;
 
 const RightBox = styled(motion.div)`
-      height: 96%;
+      height: 100%;
       width: 48%;
       max-height: 40rem;
       display: flex;
       position: absolute;
       right: 0;
       align-self: flex-end;
+      margin-bottom: -0.8rem;
       img {
          width: 100%;
+         
      }
      @media screen and (max-width: 768px){
         height: 100%;
@@ -154,14 +156,15 @@ const RightBox = styled(motion.div)`
 `;
 
 const LeftBox = styled(motion.div)`
-    width: 55%;
+    width: 60%;
     height: 80%;
+    max-width: 70rem;
     display: flex;
     position: relative;
     margin-left: 4rem;
     align-self: flex-end;
     z-index: 1;
-    justify-content: space-between;
+    justify-content: space-around;
 `;
 
 const TextTitle = styled.div`
@@ -181,9 +184,10 @@ const FlaskImage = styled(motion.div)`
       position: absolute;
       margin-top: 12rem;
       height: 55%;
+      max-width: 70rem;
+
       img {
-        max-width: 680px;
-        max-height: 550px;
+       width: 100%;
       }
       @media screen and (max-width: 760px){
         img {

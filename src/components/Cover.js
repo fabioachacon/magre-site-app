@@ -8,7 +8,7 @@ import cover from '../img/cover3.png';
 import flask from '../img/flask_new.png';
 
 //Animation
-import {FadeScaleCaps} from '../animations';
+import {StaggerAnim, TextAnim, FadeScale} from '../animations';
 
 
 const Cover = () => {
@@ -21,13 +21,21 @@ const Cover = () => {
            <CenterBox>
               <FlaskImage>
                   <motion.img src={flask} alt=""/>
-                  <div className="text">
-                      <h3>mais do que</h3>
-                      <h3>um emagrecedor,</h3>
-                      <h3><span>magrecaps</span></h3>
-                      <h3>é energia</h3>
-                      <h3>para a sua vida.</h3>
-                  </div>
+                  <Text variants={{...StaggerAnim, show: {...StaggerAnim.show, transition: {staggerChildren: 0.3}}}}>
+                      <Hide>
+                       <motion.h3 variants={TextAnim}>mais do que</motion.h3>
+                      </Hide>
+                      <Hide>
+                       <motion.h3 variants={TextAnim}>um emagrecedor,</motion.h3>
+                      </Hide>
+                       <motion.h3 variants={FadeScale}><span>magrecaps</span></motion.h3>
+                      <Hide>
+                       <motion.h3 variants={TextAnim}>é energia</motion.h3>
+                      </Hide>
+                      <Hide>
+                       <motion.h3 variants={TextAnim}>para a sua vida.</motion.h3>
+                      </Hide>
+                  </Text>
               </FlaskImage>
            </CenterBox>
         </StyledCover>
@@ -92,12 +100,15 @@ const FlaskImage = styled(motion.div)`
         height: 87%;
         width: 75%;
     }
-     .text{
-         position: absolute;
+`;
+
+const Text = styled(motion.div)`
+    position: absolute;
          right: 0;
          margin-bottom: 15rem;
          text-transform: uppercase;
          font-family: 'Montserrat', sans-serif;
+         font-size: 1.2rem;
          h3 {
              color: #917e41;;
              font-weight: normal;
@@ -110,7 +121,10 @@ const FlaskImage = styled(motion.div)`
         font-size: 1.2rem;
         right: -4rem;
     }
-     }
+`;
+
+const Hide = styled(motion.div)`
+   overflow: hidden;
 
 `;
 

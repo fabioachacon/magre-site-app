@@ -37,7 +37,7 @@ const NavBar = () => {
                  <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
                 </li>
                  <li>
-                 <Link to="action" smooth={true} offset={-50} duration={900}>ATUAÇÃO</Link>
+                 <Link to="action" smooth={true} offset={-70} duration={900}>ATUAÇÃO</Link>
                 </li>
                 <li>
                  <Link to="articles" smooth={true} offset={-40} duration={900}>ARTIGOS</Link>
