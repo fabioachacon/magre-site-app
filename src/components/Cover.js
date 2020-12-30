@@ -66,6 +66,9 @@ const CenterBox = styled(motion.div)`
   width: 55%;
   margin-bottom: -7rem;
   z-index: 1;
+  @media screen and (min-height: 800px){
+    margin-bottom: -10rem;
+  }
 `;
 
 const FlaskImage = styled(motion.div)`
