@@ -38,12 +38,14 @@ const Compound = () => {
 
 const StyledSection = styled(motion.div)`
       height: 100vh;
+      max-height: 50rem;
       background: #ffff;
       display: flex;
       justify-content: center;
       align-items: center;
       @media screen and (max-width: 760px){
-          height: 55rem;
+          height: 44rem;
+          overflow: hidden;
       }
 
 `;
@@ -51,11 +53,13 @@ const StyledSection = styled(motion.div)`
 const CenterBox = styled(motion.div)`
      height: 60%;
      width: 80%;
-     max-width:70rem;
-     max-height: 30rem;
-     display: flex;
+     max-width: 80rem;
      position: relative;
      margin-bottom: 5rem;
+     @media screen and (max-width: 760px){
+         width: 95%;
+         margin-bottom: 0;
+     }
 `;
 
 const LeftBox = styled(motion.div)`
@@ -65,6 +69,10 @@ const LeftBox = styled(motion.div)`
      flex-direction: column;
      justify-content: space-between;
      text-align: left;
+     @media screen and (max-width: 760px){
+          height: 100%;
+          width: 52%;
+      }
 `;
 
 const Rightbox = styled(motion.div)`
@@ -76,6 +84,10 @@ const Rightbox = styled(motion.div)`
       img {
           width:100%;
           object-fit: cover;
+          @media screen and (max-width: 760px){
+            width:90%;
+
+          }
       }
 `;
 
@@ -89,7 +101,10 @@ const TextBox = styled(motion.div)`
        h2{
         font-size: 1.5rem;
         color: #928032;
-    }
+        @media screen and (max-width: 760px){
+            font-size: 2rem;
+      }
+        }
     }
     .text {
         h3 {
@@ -97,9 +112,12 @@ const TextBox = styled(motion.div)`
         }
         p{
             color: rgba(5, 69, 7, 255);
-        
             text-align: left;
             width: 110%;
+            @media screen and (max-width: 760px){
+             width: 100%;
+             font-size: 1rem;
+         }
         }
         span{
             font-weight: bold;
@@ -124,6 +142,7 @@ const ButtonWrapper = styled(motion.div)`
         outline: none;
         background-color: #d0b43f;
         color: white;
+        font-family: sans-serif;
         transition: all 0.5s ease-in-out;
         cursor: pointer;
         &:hover{
@@ -133,10 +152,10 @@ const ButtonWrapper = styled(motion.div)`
           font-weight: bold;
         }
         @media screen and (max-width: 760px){
-            height: 30px;
-            width: 90px;
+            height:25px;
+            width: 85px;
             border-radius: 25px;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
         }
     }
 `;

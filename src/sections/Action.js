@@ -124,7 +124,6 @@ const StyledAction = styled(motion.div)`
     @media screen and (max-width: 370px){
         height: 37rem;
         overflow: hidden;
-       
     }
 `;
 
@@ -304,7 +303,7 @@ const SectionTitle = styled(motion.div)`
     padding-top: 1rem;
     .text{
         text-transform: uppercase;
-        width: 80%;
+        width: 77%;
         font-family: 'Montserrat', sans-serif;
         color: #536653;
         font-size: 0.9rem;
