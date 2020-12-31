@@ -55,6 +55,7 @@ const CenterBox = styled(motion.div)`
      max-height: 30rem;
      display: flex;
      position: relative;
+     margin-bottom: 5rem;
 `;
 
 const LeftBox = styled(motion.div)`
@@ -70,10 +71,10 @@ const Rightbox = styled(motion.div)`
       height: 100%;
       width: 50%;
       position: absolute;
-      right: -2rem;
-      bottom: 5rem;
+      right: -4rem;
+      bottom:7rem;
       img {
-          width:95%;
+          width:100%;
           object-fit: cover;
       }
 `;
@@ -86,6 +87,7 @@ const TextBox = styled(motion.div)`
         font-weight: 200;
        }
        h2{
+        font-size: 1.5rem;
         color: #928032;
     }
     }
@@ -95,6 +97,9 @@ const TextBox = styled(motion.div)`
         }
         p{
             color: rgba(5, 69, 7, 255);
+        
+            text-align: left;
+            width: 110%;
         }
         span{
             font-weight: bold;

@@ -47,6 +47,9 @@ const CenterBox = styled.div`
     width: 75%;
     display: flex;
     max-width: 70rem;
+    @media screen and (max-width: 760px){
+      width: 100%;
+    }
 `;
 
 const SocialMedia = styled.div`
@@ -61,6 +64,9 @@ const SocialMedia = styled.div`
       text-transform: uppercase;
       font-weight: normal;
       color: #998853;
+      @media screen and (max-width: 760px){
+        font-size: 1rem;
+      }
     }
 `;
 
@@ -70,12 +76,14 @@ const Magre = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   .text{
     padding-right:1rem;
     font-family: 'Montserrat', sans-serif;
     color: rgba(135, 136, 139, 255);
     font-size: small;
+    @media screen and (max-width: 760px){
+       font-size: 1.2rem;
+    }
   }
 `;
 
@@ -100,12 +108,19 @@ const LogoWrapper = styled.div`
    border-radius: 50%;
    border: 1px solid #acc142;
    margin-left: 0.5rem;
+   @media screen and (max-width: 760px){
+       height: 25px;
+       width:26px;
+    }
 `;
 
 const IntagramLogo = styled(AiOutlineInstagram)`
       font-size: 1.6rem;
       color: #acc142;
       cursor: pointer;
+      @media screen and (max-width: 760px){
+       font-size: 2.5rem;
+      }
 `;
 
 

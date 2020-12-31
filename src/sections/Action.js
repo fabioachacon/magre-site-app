@@ -121,6 +121,11 @@ const StyledAction = styled(motion.div)`
     @media screen and (max-width: 768px){
         height: 37rem;
     }
+    @media screen and (max-width: 370px){
+        height: 37rem;
+        overflow: hidden;
+       
+    }
 `;
 
 const CenterBox = styled(motion.div)`
