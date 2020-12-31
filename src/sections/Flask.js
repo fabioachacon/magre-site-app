@@ -97,6 +97,7 @@ const Cover = styled(motion.div)`
            object-fit: cover;
            height: 100%;
            width: 100%;
+           position: absolute;
            @media screen and (max-width: 760px){
             height: 35rem;
             object-fit: cover;

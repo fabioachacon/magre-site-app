@@ -217,6 +217,7 @@ const Text = styled(motion.div)`
     }
     &::-webkit-scrollbar-track{
       width: 0.2rem;
+      background-color: #e2e2e2;
 
     }
 `;

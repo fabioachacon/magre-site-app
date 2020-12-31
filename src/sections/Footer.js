@@ -9,7 +9,24 @@ const Footer = () => {
   
     return (
         <StyledFooter>
-         
+            <CenterBox>
+              <SocialMedia>
+                <div className="text">
+                  <h2>siga o nosso instagram</h2>
+                </div>
+                <LogoWrapper>
+                 <IntagramLogo />
+                </LogoWrapper>
+              </SocialMedia>
+              <Magre>
+                <div className="text">
+                  Todos os direitos reservados a Magrecaps. &copy;2020
+                </div>
+                <MagreLogo>
+                  <img src={logo} alt=""/>
+                </MagreLogo>
+              </Magre>
+            </CenterBox>
         </StyledFooter>
     )
 }
@@ -19,112 +36,77 @@ const StyledFooter = styled.div`
    height: 10vh;
    display: flex;
    justify-content: center;
-   align-items: center;
    background: #ffffff;
    @media screen and (max-width: 768px){
-    height: 8vh;
+    height: 7vh;
    }
-
 `;
 
 const CenterBox = styled.div`
-   height: 80%;
-   width: 85%;
-   display: flex;
-   justify-content: space-around;
-   @media screen and (max-width: 768px){
-     width: 100%;
-     justify-content: space-between;
-   }
-   @media screen and (max-width: 320px){
-     background: white;
-  
-   }
-  
+    height: 100%;
+    width: 75%;
+    display: flex;
+    max-width: 70rem;
 `;
 
-const Buttons = styled.div`
-   width: 80%;
-   height: 100%;
-   background: red;
-   
-   @media screen and (max-width: 768px){
-     width: 35%;
-   }
-   @media screen and (max-width: 320px){
-    width: 40%;
-   }
-`;
-
-const NameLogo = styled.div`
-   height: 100%;
-   width: 45%;
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-   justify-self: center;
-   margin-right: 3rem;
-   p{
-     font-size: 0.8rem;
-     color: gray;
-     font-family: "Montserrat", sans-serif;
-     @media screen and (max-width: 768px){
-      font-size: 1rem;
+const SocialMedia = styled.div`
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-size: 1.2rem;
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      font-weight: normal;
+      color: #998853;
     }
-   }
-   @media screen and (max-width: 768px){
-      width: 90%;
+`;
+
+const Magre = styled.div`
+  height: 100%;
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .text{
+    padding-right:1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(135, 136, 139, 255);
+    font-size: small;
   }
 `;
 
-const Logo = styled.div`
-   width: 25%;
-   height: 100%;
+const MagreLogo = styled.div`
+   height: 50%;
+   width: 20%;
    display: flex;
    align-items: center;
-    img {
-      width: 100%;
-    }
-    @media screen and (max-width: 768px){
-      font-size: 1rem;
-      width: 27%;
-    }
+   justify-content: center;
+   img {
+     width: 100%;
+     height: 100%
+   }
 `;
-
 
 const LogoWrapper = styled.div`
-  height: 30px;
-  width: 30px;
-  border: 1px solid #acc143;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media screen and (max-width: 768px){
-    padding: 2px 3px;
-   }
-   @media screen and (max-width: 320px){
-    padding: 1px 2px;
-   }
-
+   height: 35px;
+   width: 36px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   border: 1px solid #acc142;
+   margin-left: 0.5rem;
 `;
 
-const InstagramLogo = styled(AiOutlineInstagram)`
-     font-size: 1.3rem;
-     font-weight: bold;
-     color: #acc143;
-     position: relative;
-     top: 2px;
-     @media screen and (max-width: 768px){
-      font-size: 2.6rem;
-      top: 0.7px;
-    }
-   @media screen and (max-width: 320px){
-      font-size: 2rem;
-      top: 0.7px;
-   }
+const IntagramLogo = styled(AiOutlineInstagram)`
+      font-size: 1.6rem;
+      color: #acc142;
+      cursor: pointer;
 `;
-
 
 
 

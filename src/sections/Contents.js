@@ -54,7 +54,7 @@ const StyledTable = styled(motion.div)`
 
 const CenterBox = styled(motion.div)`
     height: 100%;
-    width: 80%;
+    width: 85%;
     max-width: 80rem;
     display: flex;
     position: relative;
@@ -66,7 +66,7 @@ const CenterBox = styled(motion.div)`
 
 const LeftBox = styled(motion.div)`
      height: 100%;
-     width: 70%;
+     width: 75%;
      display: flex;
      flex-direction: column;
      justify-content: space-between;
@@ -76,12 +76,12 @@ const LeftBox = styled(motion.div)`
         height:100%;
      }
      img {
-         width: 100%;
+         width:97%;
          height:100%;
          object-fit: fill;
          position: absolute;
          @media screen and (max-width: 768px){
-           width: 85%;
+           width: 87%;
            height:90%;
            bottom: 0;
            object-fit: fill;
@@ -91,10 +91,10 @@ const LeftBox = styled(motion.div)`
      }
      .text {
          z-index: 1;
-         font-size: 0.9rem;
+         font-size: 1.1rem;
          position: absolute;
          margin-top: 10rem;
-         margin-left: 7rem;
+         margin-left: 9rem;
          font-family: 'Montserrat', sans-serif;
          h2 {
              color: #917e41;
@@ -109,10 +109,10 @@ const LeftBox = styled(motion.div)`
 
 const RightBox = styled(motion.div)`
    height: 100%;
-   width: 40%;
-   max-width: 30rem;
+   width: 38%;
+   max-width: 40rem;
    position: absolute;
-   right: 0;
+   right: -2.5rem;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -124,11 +124,16 @@ const RightBox = styled(motion.div)`
         width: 84%;
         position: absolute;
         right: 0;
+        left: 2rem;
+        margin-left: 2rem;
         font-style: italic;
         text-align: left;
         font-size: 0.8rem;
         color: #054507;
         font-family: 'Montserrat', sans-serif;
+    }
+    @media screen and (max-width: 760px){
+        right: 0rem;
     }
 `;
 
@@ -137,8 +142,8 @@ const Title = styled(motion.div)`
    align-self: flex-start;
    position: absolute;
    z-index: 1;
-   margin-top: 3rem;
-   font-size: 0.9rem;
+   margin-top: 3.5rem;
+   font-size: 1rem;
    font-family: 'Montserrat', sans-serif;
    font-weight: bold;
    color: #415740;
