@@ -43,7 +43,7 @@ const Cover = () => {
 }
 
 const StyledCover = styled(motion.div)`
-      height:96vh;
+      height:95vh;
       background: #e7e9eb;
       position: relative;
       display: flex;
@@ -60,7 +60,7 @@ const ImageCover = styled(motion.div)`
     height: 90%;
     position: absolute;
     width: 50%;
-    left: -2rem;
+    left: -1rem;
     margin-top: 3.5rem;
     img{
         width: 100%;
@@ -104,11 +104,11 @@ const FlaskImage = styled(motion.div)`
 
 const Text = styled(motion.div)`
     position: absolute;
-         right: 0;
-         margin-bottom: 15rem;
-         text-transform: uppercase;
-         font-family: 'Montserrat', sans-serif;
-         font-size: 1.2rem;
+    right: -2rem;
+    margin-bottom: 15rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
          h3 {
              color: #917e41;;
              font-weight: normal;

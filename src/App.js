@@ -8,6 +8,7 @@ import Flask from './sections/Flask';
 import Action from './sections/Action';
 import NavBar from './components/NavBar';
 import Compound from './sections/Compound';
+import Benefits from './sections/Benefits';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Compound />
       <Action />
       <Flask />
+      <Benefits />
       {/* <Articles /> */}
       {/* <SideEffects /> */}
       <Contents />

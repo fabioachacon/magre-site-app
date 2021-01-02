@@ -6,7 +6,7 @@ import leaf from '../img/powder_bg.png';
 
 const Compound = () => {
     return (
-        <StyledSection>
+        <StyledSection id='compounds'>
            <CenterBox>
              <LeftBox>
                 <TextBox>
@@ -19,7 +19,7 @@ const Compound = () => {
                       <h3>Decidimos unir esses dois poderosos SENE e PICOLINATO DE CROMO para mudar sua saúde e sua vida.</h3>
                       <br/>
                       <p>Quando iniciamos o processo de emagrecimento, muitas vezes 
-                      passamos por carências nutricionais e vitamínicas, principalmente quem segue uma dieta restritiva. Diante dessa necessidade, o <span>MAGRE CAPS</span>, irá te auxiliar enquanto você emagrece porém sem deixar seu organismo debilitado, pois temos a função de suplementar seu organismo enquanto você emagrece de modo saudável.</p>
+                      passamos por carências nutricionais e vitamínicas, principalmente quem segue uma dieta restritiva. Diante dessa necessidade, o <span>MAGRE CAPS</span>, irá te auxiliar enquanto você emagrece, porém sem deixar seu organismo debilitado, pois temos a função de suplementar seu organismo enquanto você emagrece de modo saudável.</p>
                     </div>
                 </TextBox>
                 <ButtonWrapper>
@@ -101,6 +101,7 @@ const TextBox = styled(motion.div)`
        h2{
         font-size: 1.5rem;
         color: #928032;
+
         @media screen and (max-width: 760px){
             font-size: 2rem;
       }
@@ -112,7 +113,7 @@ const TextBox = styled(motion.div)`
         }
         p{
             color: rgba(5, 69, 7, 255);
-            text-align: left;
+            text-align: justify;
             width: 110%;
             @media screen and (max-width: 760px){
              width: 100%;
@@ -126,7 +127,6 @@ const TextBox = styled(motion.div)`
 `;
 
 const ButtonWrapper = styled(motion.div)`
-
     a{
         text-decoration: none;
         color: white;

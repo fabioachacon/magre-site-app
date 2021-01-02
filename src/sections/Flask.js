@@ -76,7 +76,6 @@ const Flask = () => {
 }
 
 const FlaskBG = styled(motion.div)`
-   background:#b69e43;
     height: 90vh;
     max-height: 50rem;
     position: relative;
@@ -86,6 +85,7 @@ const FlaskBG = styled(motion.div)`
     @media screen and (max-width: 768px){
         height: 35rem;
         margin-top: 3rem;
+        position: relative;
     }
 `;
 
@@ -107,6 +107,8 @@ const Cover = styled(motion.div)`
        }
        @media screen and (max-width: 768px){
          height: 32rem;
+         position: absolute;
+         top: 0;
         }
     
 `;

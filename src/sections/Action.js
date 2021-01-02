@@ -133,6 +133,7 @@ const CenterBox = styled(motion.div)`
      max-height: 720px;
      max-width: 90rem;
      display: flex;
+     justify-content: flex-end;
      z-index: 1;
      position: relative;
      @media screen and (max-width: 768px){
@@ -146,8 +147,7 @@ const RightBox = styled(motion.div)`
       width: 48%;
       max-height: 40rem;
       display: flex;
-      position: absolute;
-      right: 0;
+      position: relative;
       align-self: flex-end;
       margin-bottom: -0.8rem;
       img {
@@ -164,8 +164,9 @@ const LeftBox = styled(motion.div)`
     height: 80%;
     max-width: 70rem;
     display: flex;
-    position: relative;
+    position: absolute;
     margin-left: 4rem;
+    left: 0;
     align-self: flex-end;
     z-index: 1;
     justify-content: space-around;
@@ -177,7 +178,7 @@ const TextTitle = styled.div`
      flex-direction: column;
      align-items: flex-end;
      h2 {
-         padding-right: 25px;
+         padding-right: 10px;
          padding-bottom: 20px;
          font-family: 'Montserrat', sans-serif;
          color: #415740;
@@ -211,6 +212,7 @@ const Text = styled(motion.div)`
     color: #054507;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.4rem;
+    text-align: justify;
     &::-webkit-scrollbar{
        width: 0.3rem;
     }
@@ -222,7 +224,6 @@ const Text = styled(motion.div)`
     &::-webkit-scrollbar-track{
       width: 0.2rem;
       background-color: #e2e2e2;
-
     }
 `;
 
@@ -253,12 +254,13 @@ const Dot = styled(motion.div)`
 
 const Points = styled(motion.div)`
      position: absolute;
-     width: 30rem;
-     height: 31rem;
+     width: 25rem;
+     height: 60%;
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
+     transform: translate(20%, 40%);
      img {
           width: 5rem;
           animation: rotation 11s infinite linear;

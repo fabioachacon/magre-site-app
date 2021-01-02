@@ -34,13 +34,13 @@ const NavBar = () => {
             <StyledNav activeState={activeState}> 
               <NavLinks>
                 <li>
-                 <Link to="presentation" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
+                 <Link to="compounds" smooth={true} offset={-80} duration={900}>SENE EXTRATO SECO</Link>
                 </li>
                  <li>
                  <Link to="action" smooth={true} offset={-70} duration={900}>ATUAÇÃO</Link>
                 </li>
                 <li>
-                 <Link to="articles" smooth={true} offset={-40} duration={900}>ARTIGOS</Link>
+                 <Link to="benefits" smooth={true} offset={-40} duration={900}>BENEFÍCIOS</Link>
                 </li>
                 <li>
                   <Link to="content-table" smooth={true} offset={-60} duration={900}>COMPOSIÇÃO</Link>
