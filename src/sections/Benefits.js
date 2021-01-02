@@ -62,7 +62,7 @@ const StyledSection = styled.div`
 
 const CenterBox = styled.div`
    height: 80%;
-   width: 75%;
+   width: 70%;
    max-width: 80rem;
    display: flex;
    margin-bottom: 1rem;
