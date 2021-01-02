@@ -65,6 +65,7 @@ const CenterBox = styled(motion.div)`
 const LeftBox = styled(motion.div)`
      height: 100%;
      width: 50%;
+     max-height: 25rem;
      display: flex;
      flex-direction: column;
      justify-content: space-between;
