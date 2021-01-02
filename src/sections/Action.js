@@ -113,7 +113,7 @@ const StyledAction = styled(motion.div)`
         content: "";
         position: absolute;
         height: 100%;
-        width: 75%;
+        width: 68%;
         right: 0;
         background: #f6f7f6;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 36% 100%);
