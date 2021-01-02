@@ -51,7 +51,7 @@ const Benefits = () => {
 }
 
 const StyledSection = styled.div`
-   height: 90vh;
+   height: 95vh;
    max-height: 40rem;
    display: flex;
    flex-direction: column;
