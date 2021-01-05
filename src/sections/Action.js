@@ -32,7 +32,8 @@ const Action = () => {
         <StyledAction 
         id='action' 
         variants={StaggerAnim} 
-  
+        initial='hidden'
+        animate={controls}
         ref={element} 
       
         >   
