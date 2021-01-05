@@ -138,7 +138,7 @@ const CenterBox = styled(motion.div)`
      position: relative;
      @media screen and (max-width: 768px){
         height: 90%;
-        width: 100%;
+        width: 95%;
     }
 `;
 
@@ -152,7 +152,6 @@ const RightBox = styled(motion.div)`
       align-self: flex-end;
       img {
          width: 100%;
-         
      }
      @media screen and (max-width: 768px){
         height: 100%;
@@ -165,13 +164,15 @@ const LeftBox = styled(motion.div)`
     max-width: 70rem;
     display: flex;
     position: absolute;
-    margin-left: 4rem;
     left: 0;
     align-self: flex-end;
     z-index: 1;
-    justify-content: space-around;
-    @media screen and(max-width: 760px){
-        width: 100%;
+    gap: 3rem;
+    margin-left: 3rem;
+    @media screen and (max-width: 760px){
+        width: 60%;        
+        justify-content: space-between;
+        margin-left: 2rem;
     }
 `;
 
@@ -180,12 +181,17 @@ const TextTitle = styled.div`
      display: flex;
      flex-direction: column;
      align-items: flex-end;
+
      h2 {
          padding-right: 10px;
          padding-bottom: 20px;
          font-family: 'Montserrat', sans-serif;
          color: #415740;
-     } 
+         @media screen and (max-width: 760px){
+           font-size: 1.8rem;
+           padding-bottom: 8px;
+        }
+    } 
 `;
 
 const FlaskImage = styled(motion.div)`
@@ -193,7 +199,6 @@ const FlaskImage = styled(motion.div)`
       margin-top: 12rem;
       height: 55%;
       max-width: 70rem;
-
       img {
        width: 100%;
       }
@@ -228,10 +233,13 @@ const Text = styled(motion.div)`
       width: 0.2rem;
       background-color: #e2e2e2;
     }
+    @media screen and (max-width: 760px){
+        font-size: 1.1rem;
+    }
 `;
 
 const Dots = styled(motion.div)`
-   display: flex;
+  display: flex;
    width: 4.5rem;
    height: 0.5rem;
    margin-top: 3rem;
@@ -244,14 +252,17 @@ const Dots = styled(motion.div)`
 `;
 
 const Dot = styled(motion.div)`
+    border: 2px solid gray; 
+    height: 9px;
+    width: 9px;
     border-radius: 50%;
-    border: 1.9px solid gray; 
-    padding: 2px;
     background: ${props => props.active ? '#d0b43f' : '#eeeeee'};
     cursor: pointer;
     transition: background 0.3s ease-out;
     @media screen and (max-width: 768px){
-        padding: 1.5px;
+        border: 1.5px solid gray; 
+        height: 7px;
+        width: 7px;
    }
 `;
 
@@ -264,10 +275,12 @@ const Points = styled(motion.div)`
      flex-direction: column;
      align-items: center;
      justify-content: center;
-
      img {
           width: 5rem;
           animation: rotation 11s infinite linear;
+          @media screen and (max-width: 760px){
+            width: 4rem;
+          }
     }
     .point0{
         margin-top: auto;
