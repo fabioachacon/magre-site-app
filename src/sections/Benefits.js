@@ -2,17 +2,34 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Benefits = () => {
-
-    const scrollHandlerRight = (e) => {
-        const leftBox = document.querySelector('.left-box');
-        leftBox.scrollTop = e.target.scrollTop;
-    }
     
-    const scrollHandlerLeft = (e) => {
-      const rightBox = document.querySelector('.right-box');
-      rightBox.scrollTop = e.target.scrollTop;
-    }
+    const scrollHandlerRight = (e) => {
+      const element = e.target;
+      const elementClasses = element.classList;
+      if(elementClasses.contains('scrollable') && elementClasses.contains('right-box')){
+         const leftBox = document.querySelector('.left-box');
+         leftBox.scrollTop = element.scrollTop;
+      }
+   }
 
+   const scrollHandlerLeft = (e) => {
+      const element = e.target;
+      if(element.classList.contains('scrollable')){
+         const rightBox = document.querySelector('.right-box');
+         rightBox.scrollTop = element.scrollTop;
+      }
+   }
+
+   const toggleHandler = (e) => {
+      const element = e.target.parentNode;
+      if (element.classList.contains('right-box')){
+         element.classList.toggle('scrollable');
+      }else if(element.classList.contains('left-box')){
+         element.classList.toggle('scrollable');
+      }
+   }
+
+    
     return (
         <StyledSection id='benefits'>
           <Title>
@@ -21,7 +38,7 @@ const Benefits = () => {
              </Text>
           </Title>
           <CenterBox>
-            <BoxLeft onScroll={scrollHandlerLeft} className='left-box'>
+            <BoxLeft onMouseOver={toggleHandler} onMouseLeave={toggleHandler} onScroll={scrollHandlerLeft} className='left-box'>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ad quidem natus distinctio quas esse, qui nesciunt culpa inventore alias modi magnam ipsam quisquam illo sunt possimus minima necessitatibus quam ea vel voluptatibus odio dolor. Sapiente adipisci vero consequatur fugit numquam a similique odit assumenda dolores quas
                <br/>
                <br/>
@@ -33,7 +50,7 @@ const Benefits = () => {
                <br/> 
                ipsum placeat blanditiis, temporibus enim, dolor commodi! Deleniti sequi ipsa amet quia perferendis modi cumque alias dicta, quam facere reprehenderit rerum non itaque perspiciatis voluptas ducimus adipisci! Voluptatum, hic!</p>
             </BoxLeft>
-            <BoxRight className='right-box' >
+            <BoxRight onMouseOver={toggleHandler} onMouseLeave={toggleHandler} onScroll={scrollHandlerRight} className='right-box' >
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates sunt minus aspernatur cupiditate vero explicabo eaque blanditiis aperiam consequatur, a, ipsam magni similique pariatur officiis repellat, expedita sequi magnam iste ducimus? Itaque deleniti id ex eos omnis
                 <br/>
                 <br/>
@@ -88,6 +105,7 @@ const BoxLeft = styled.div`
     text-align: justify;
     &::-webkit-scrollbar{
        width: 0.4rem;
+       display: none;
     
     }
     &::-webkit-scrollbar-thumb{
@@ -113,7 +131,7 @@ const BoxRight = styled.div`
    padding-left: .5rem;
    &::-webkit-scrollbar{
        width: 0.3rem;
-       display: none;
+  
     }
     &::-webkit-scrollbar-thumb{
       background-color: #d0b43f;

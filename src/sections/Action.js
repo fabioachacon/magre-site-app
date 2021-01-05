@@ -32,8 +32,7 @@ const Action = () => {
         <StyledAction 
         id='action' 
         variants={StaggerAnim} 
-        initial='hidden'
-        animate={controls}
+  
         ref={element} 
       
         >   
@@ -107,6 +106,7 @@ const StyledAction = styled(motion.div)`
     max-height: 40rem;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     background: #ffffff;
     position: relative;
     &::after{
@@ -123,7 +123,7 @@ const StyledAction = styled(motion.div)`
     }
     @media screen and (max-width: 370px){
         height: 37rem;
-        overflow: hidden;
+       
     }
 `;
 
@@ -147,9 +147,9 @@ const RightBox = styled(motion.div)`
       width: 48%;
       max-height: 40rem;
       display: flex;
+      justify-content: center;
       position: relative;
       align-self: flex-end;
-      margin-bottom: -0.8rem;
       img {
          width: 100%;
          
@@ -170,6 +170,9 @@ const LeftBox = styled(motion.div)`
     align-self: flex-end;
     z-index: 1;
     justify-content: space-around;
+    @media screen and(max-width: 760px){
+        width: 100%;
+    }
 `;
 
 const TextTitle = styled.div`
@@ -254,31 +257,30 @@ const Dot = styled(motion.div)`
 
 const Points = styled(motion.div)`
      position: absolute;
-     width: 25rem;
-     height: 60%;
+     width: 20rem;
+     height: 70%;
+     bottom: 0;
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     transform: translate(20%, 40%);
+
      img {
           width: 5rem;
           animation: rotation 11s infinite linear;
     }
     .point0{
-        margin-top: 15rem;
-        margin-left: 3rem;
+        margin-top: auto;
+        margin-bottom: 9rem;
     }
     .point1{
-        margin-right: 4rem;
-        margin-top: 14rem;
+        margin-bottom: 4rem;
     }
     .point2{
-        margin-left: 3rem;
+      
     }
     .point3{
-        margin-top: 13rem;
-        margin-left: 2rem;
+       
     }
 
    @keyframes rotation {
