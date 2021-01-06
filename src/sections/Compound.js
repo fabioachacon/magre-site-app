@@ -98,7 +98,6 @@ const Rightbox = styled(motion.div)`
         bottom: 0;
         width: 38%;
         right: 0;
-
       }
 `;
 
