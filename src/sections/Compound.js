@@ -57,9 +57,11 @@ const CenterBox = styled(motion.div)`
      position: relative;
      margin-bottom: 5rem;
      @media screen and (max-width: 760px){
-         width: 95%;
+         width: 100%;
          margin-bottom: 0;
+         height: 70%;
          padding: 0 1.1rem;
+
      }
 `;
 
@@ -73,7 +75,8 @@ const LeftBox = styled(motion.div)`
      text-align: left;
      @media screen and (max-width: 760px){
           height: 100%;
-          width: 55%;
+          width: 60%;
+          max-height: 26rem;
       }
 `;
 
@@ -87,9 +90,15 @@ const Rightbox = styled(motion.div)`
           width:100%;
           object-fit: cover;
           @media screen and (max-width: 760px){
-            width:95%;
+            width:100%;
 
           }
+      }
+      @media screen and (max-width: 760px){
+        bottom: 0;
+        width: 38%;
+        right: 0;
+
       }
 `;
 
