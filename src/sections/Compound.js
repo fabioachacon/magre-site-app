@@ -44,7 +44,7 @@ const StyledSection = styled(motion.div)`
       justify-content: center;
       align-items: center;
       @media screen and (max-width: 760px){
-          height: 44rem;
+          height: 40rem;
           overflow: hidden;
       }
 
@@ -58,10 +58,11 @@ const CenterBox = styled(motion.div)`
      margin-bottom: 5rem;
      @media screen and (max-width: 760px){
          width: 100%;
+         margin-top: 2rem;
          margin-bottom: 0;
          height: 70%;
-         padding: 0 1.1rem;
-
+         padding: 0 1.6rem;
+         margin-bottom: 0px;
      }
 `;
 
@@ -91,13 +92,14 @@ const Rightbox = styled(motion.div)`
           object-fit: cover;
           @media screen and (max-width: 760px){
             width:100%;
-
           }
       }
       @media screen and (max-width: 760px){
         bottom: 0;
-        width: 38%;
+        width: 35%;
         right: 0;
+        height: 95%;
+
       }
 `;
 
