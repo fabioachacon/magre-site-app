@@ -84,7 +84,6 @@ const FlaskBG = styled(motion.div)`
     align-items: center;
     @media screen and (max-width: 768px){
         height: 35rem;
-        margin-top: 3rem;
         position: relative;
     }
 `;

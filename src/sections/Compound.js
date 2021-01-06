@@ -63,7 +63,7 @@ const CenterBox = styled(motion.div)`
          height: 70%;
          padding: 0 1.6rem;
          margin-bottom: 0px;
-     }
+    }
 `;
 
 const LeftBox = styled(motion.div)`

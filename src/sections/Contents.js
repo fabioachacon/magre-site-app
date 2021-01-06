@@ -59,8 +59,8 @@ const CenterBox = styled(motion.div)`
     display: flex;
     position: relative;
     @media screen and (max-width: 760px){
-        height: 95%;
-        width: 90%;
+        height: 100%;
+        width: 100%;
     }
 `;
 
@@ -72,8 +72,9 @@ const LeftBox = styled(motion.div)`
      justify-content: space-between;
      position: relative;
      @media screen and (max-width: 760px){
-        width: 79%;
+        width: 75%;
         height:100%;
+
      }
      img {
          width:97%;
@@ -81,12 +82,11 @@ const LeftBox = styled(motion.div)`
          object-fit: fill;
          position: absolute;
          @media screen and (max-width: 768px){
-           width: 87%;
-           height:90%;
+           width: 95%;
+           height:100%;
            bottom: 0;
            object-fit: fill;
            position: absolute;
-
     }
      }
      .text {
@@ -118,6 +118,9 @@ const RightBox = styled(motion.div)`
    justify-content: center;
    img {
        width: 100%;
+       @media screen and (max-width:760px){
+           width: 90%;
+       }
     }
     h3 {
         padding-top: 0.3rem;
@@ -131,6 +134,9 @@ const RightBox = styled(motion.div)`
         font-size: 0.8rem;
         color: #054507;
         font-family: 'Montserrat', sans-serif;
+        @media screen and (max-width:760px){
+            left: 0;
+        }
     }
     @media screen and (max-width: 760px){
         right: 0rem;

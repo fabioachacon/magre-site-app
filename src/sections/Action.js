@@ -32,9 +32,9 @@ const Action = () => {
         <StyledAction 
         id='action' 
         variants={StaggerAnim} 
-  
+        initial='hidden'
+        animate={controls}
         ref={element} 
-      
         >   
             <SectionTitle variants={Fade}>
                <div className="text">
@@ -235,12 +235,13 @@ const Text = styled(motion.div)`
 `;
 
 const Dots = styled(motion.div)`
-  display: flex;
+   display: flex;
    width: 4.5rem;
-   height: 0.5rem;
+   height: 1.5rem;
    margin-top: 3rem;
    justify-content: space-around;
    position: relative;
+   overflow: hidden;
    align-self: flex-start;
    @media screen and (max-width: 768px){
        width: 7.5rem;
