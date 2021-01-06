@@ -32,8 +32,7 @@ const Action = () => {
         <StyledAction 
         id='action' 
         variants={StaggerAnim} 
-        initial='hidden'
-        animate={controls}
+  
         ref={element} 
       
         >   
@@ -129,10 +128,7 @@ const StyledAction = styled(motion.div)`
 `;
 
 const CenterBox = styled(motion.div)`
-     width: 90%;
-     height: 98%;
-     max-height: 720px;
-     max-width: 90rem;
+     flex-basis: 70rem;
      display: flex;
      justify-content: flex-end;
      z-index: 1;
@@ -169,11 +165,10 @@ const LeftBox = styled(motion.div)`
     align-self: flex-end;
     z-index: 1;
     gap: 3rem;
-    margin-left: 3rem;
+    margin-left: 2rem;
     @media screen and (max-width: 760px){
         width: 60%;        
         justify-content: space-between;
-        margin-left: 2rem;
     }
 `;
 
@@ -235,7 +230,7 @@ const Text = styled(motion.div)`
       background-color: #e2e2e2;
     }
     @media screen and (max-width: 760px){
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 `;
 
@@ -276,12 +271,10 @@ const Points = styled(motion.div)`
      flex-direction: column;
      align-items: center;
      justify-content: center;
+
      img {
           width: 5rem;
           animation: rotation 11s infinite linear;
-          @media screen and (max-width: 760px){
-            width: 4rem;
-          }
     }
     .point0{
         margin-top: auto;
