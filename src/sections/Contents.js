@@ -74,7 +74,6 @@ const LeftBox = styled(motion.div)`
      @media screen and (max-width: 760px){
         width: 75%;
         height:100%;
-
      }
      img {
          width:97%;
