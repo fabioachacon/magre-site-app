@@ -193,7 +193,7 @@ export const PopUp = {
         opacity: 1,
         scale: 1,
         transition: {
-            duration: 0.5,
+            duration: 0.6,
             ease: 'easeOut'
         }
     },

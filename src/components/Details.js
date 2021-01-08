@@ -12,7 +12,7 @@ const Details = ({showDetail, setShowDetail}) => {
     }
 
     return (
-        <AnimatePresence key='detail-popup' exitBeforeEnter>
+        <AnimatePresence key='detail-popup'>
           {showDetail && ( 
             <DetailBox
             active={showDetail}
