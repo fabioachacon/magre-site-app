@@ -21,6 +21,7 @@ const Cover = () => {
            <CenterBox>
               <FlaskImage>
                   <motion.img src={flask} alt=""/>
+                  <img className='ticker' src={ticker} alt=""/>
                   <Text variants={{...StaggerAnim, show: {...StaggerAnim.show, transition: {staggerChildren: 0.3}}}}>
                       <Hide>
                        <motion.h3 variants={TextAnim}>mais do que</motion.h3>
@@ -37,7 +38,6 @@ const Cover = () => {
                       </Hide>
                   </Text>
               </FlaskImage>
-              <img className='ticker' src={ticker} alt=""/>
            </CenterBox>
         </StyledCover>
     )
@@ -86,17 +86,6 @@ const CenterBox = styled(motion.div)`
     margin-bottom: -10rem;
     margin-right: 0.5rem;
   }
-  .ticker{
-      position: absolute;
-      height: 7rem;
-      width: 7rem;
-      right: 1rem;
-      bottom: 0;
-      margin-bottom: 8rem;
-      @media screen and (max-width: 760px){
-        margin-bottom: 10rem;
-      }
-  }
 `;
 
 const FlaskImage = styled(motion.div)`
@@ -114,12 +103,23 @@ const FlaskImage = styled(motion.div)`
         height: 87%;
         width: 75%;
     }
+    .ticker{
+      height: 5.5rem;
+      width: 5.5rem;
+      align-self: flex-start;
+      position: absolute;
+      margin-left: 14rem;
+      margin-top: 0.5rem;
+      @media screen and (max-width: 760px){
+        margin-bottom: 10rem;
+      }
+  }
 `;
 
 const Text = styled(motion.div)`
     position: absolute;
-    right: -2rem;
-    margin-bottom: 15rem;
+    right: -1.5rem;
+    margin-bottom: 14rem;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
@@ -132,8 +132,9 @@ const Text = styled(motion.div)`
              color: #415740;
          }
     @media screen and (max-width: 760px){
-        font-size: 1.2rem;
-        right: -4rem;
+        font-size: 1.1rem;
+        right: -3rem;
+        margin-top: 4rem;
     }
 `;
 
