@@ -6,13 +6,13 @@ import {motion} from 'framer-motion';
 import caps from '../img/flask_caps.png';
 import cover from '../img/cover3.png';
 import flask from '../img/flask_new.png';
+import ticker from '../img/tick.png'
+
 
 //Animation
 import {StaggerAnim, TextAnim, FadeScale} from '../animations';
 
-
 const Cover = () => {
-
     return (
         <StyledCover>
            <ImageCover>
@@ -37,6 +37,7 @@ const Cover = () => {
                       </Hide>
                   </Text>
               </FlaskImage>
+              <img className='ticker' src={ticker} alt=""/>
            </CenterBox>
         </StyledCover>
     )
@@ -74,14 +75,27 @@ const ImageCover = styled(motion.div)`
 const CenterBox = styled(motion.div)`
   height: 95%;
   width: 55%;
+  display: flex;
   margin-bottom: -7rem;
   z-index: 1;
+  position: relative;
   @media screen and (min-height: 800px){
     margin-bottom: -10rem;
   }
   @media screen and (max-width: 760px){
     margin-bottom: -10rem;
     margin-right: 0.5rem;
+  }
+  .ticker{
+      position: absolute;
+      height: 7rem;
+      width: 7rem;
+      right: 1rem;
+      bottom: 0;
+      margin-bottom: 8rem;
+      @media screen and (max-width: 760px){
+        margin-bottom: 10rem;
+      }
   }
 `;
 

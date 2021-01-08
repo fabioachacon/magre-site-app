@@ -6,7 +6,7 @@ import AnimatedPoint from '../components/AnimatedPoint';
 import trimmed from '../audio/trimmed.mp3';
 import man from '../img/man.png';
 import mancover from '../img/man_new.png';
-import flask_caps from '../img/flask_caps2.png';
+import flask_caps from '../img/flask_gold.png';
 import {InfoList} from '../info';
 import {TextFade, 
         FadeScale, 
