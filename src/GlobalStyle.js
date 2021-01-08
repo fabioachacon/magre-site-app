@@ -7,11 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
    }
-   html {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-   }
 
    html, 
    body {

@@ -184,3 +184,25 @@ export const StaggerAnim = {
     }
 }
 
+export const PopUp = {
+    hidden: {
+        opacity: 0,
+        scale: 0.5,
+    },
+    show: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            duration: 0.5,
+            ease: 'easeOut'
+        }
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.2,
+            ease: 'easeOut',
+        }
+    }
+}
+

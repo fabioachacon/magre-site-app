@@ -131,7 +131,7 @@ const CenterBox = styled(motion.div)`
      flex-basis: 70rem;
      display: flex;
      justify-content: flex-end;
-     z-index: 1;
+     z-index: 2;
      position: relative;
      @media screen and (max-width: 768px){
         height: 90%;

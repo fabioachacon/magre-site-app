@@ -4,7 +4,13 @@ import {motion} from 'framer-motion';
 import leaf from '../img/powder_bg.png';
 
 
-const Compound = () => {
+const Compound = ({setShowDetail}) => {
+
+    const openHandler = () => {
+        setShowDetail(true);
+        document.body.style.overflow='hidden';
+    }
+
     return (
         <StyledSection id='compounds'>
            <CenterBox>
@@ -23,9 +29,7 @@ const Compound = () => {
                     </div>
                 </TextBox>
                 <ButtonWrapper>
-                    <a href="">
-                        <button>Leia Mais</button>
-                    </a>
+                    <button onClick={openHandler}>Leia Mais</button>
                 </ButtonWrapper>
              </LeftBox>
              <Rightbox>
