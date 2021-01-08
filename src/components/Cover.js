@@ -104,11 +104,11 @@ const FlaskImage = styled(motion.div)`
         width: 75%;
     }
     .ticker{
-      height: 5.5rem;
-      width: 5.5rem;
+      height: 6rem;
+      width: 6rem;
       align-self: flex-start;
       position: absolute;
-      margin-left: 14rem;
+      margin-left: 14.5rem;
       margin-top: 0.5rem;
       @media screen and (max-width: 760px){
         margin-bottom: 10rem;
