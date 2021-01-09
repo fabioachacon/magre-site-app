@@ -5,8 +5,7 @@ import arrow from '../img/arrow.png';
 import { FiArrowRight } from "react-icons/fi";
 
 const Articles = () => {
-
-
+  
      let headline = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum in voluptas, amet ipsa mollitia dolores. Omnis qui architecto necessitatibus atque repudiandae rerum accusantium placeat esse minima!"
 
      if (headline.length > 110) {

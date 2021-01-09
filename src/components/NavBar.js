@@ -87,8 +87,8 @@ const NavBar = () => {
 
 const Wrapper = styled.div`
      height: 15vh;
-     background: white;
-     position: fixed;
+     background: #FFF;
+     position: sticky;
      top: 0;
      right: 0;
      left: 0;
@@ -96,9 +96,11 @@ const Wrapper = styled.div`
      justify-content: space-evenly;
      align-items: center;
      z-index: 999;
+     box-shadow: 0 4px 4px -3px gray;
     @media screen and (max-width: 768px){
         justify-content: space-between;
         height: 11vh;
+        position: fixed;
     }
 `;
 

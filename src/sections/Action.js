@@ -6,7 +6,7 @@ import AnimatedPoint from '../components/AnimatedPoint';
 import trimmed from '../audio/trimmed.mp3';
 import man from '../img/man.png';
 import mancover from '../img/man_new.png';
-import flask_caps from '../img/flask_gold.png';
+import flask_caps from '../img/flask_corrected.png';
 import {InfoList} from '../info';
 import {TextFade, 
         FadeScale, 
@@ -14,7 +14,6 @@ import {TextFade,
         StaggerAnim} from '../animations';
 
  
-        
 const Action = () => {
    const [state, setState] = useState(InfoList);
    const [active, setActive] = useState(state[0])
@@ -59,11 +58,11 @@ const Action = () => {
                             {state.map((item, i) => 
                                 item.id === active.id && 
                                 <motion.div
-                                variants={TextFade}
-                                initial='hidden' 
-                                animate='show' 
-                                exit='exit'
-                                key={i}>{item.text}</motion.div>)}
+                                 variants={TextFade}
+                                 initial='hidden' 
+                                 animate='show' 
+                                 exit='exit'
+                                 key={i}>{item.text}</motion.div>)}
                           </AnimatePresence>
                         </Text>
                     </TextTitle>
@@ -113,7 +112,7 @@ const StyledAction = styled(motion.div)`
         content: "";
         position: absolute;
         height: 100%;
-        width: 68%;
+        width: 70%;
         right: 0;
         background: #f6f7f6;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 36% 100%);
@@ -122,8 +121,7 @@ const StyledAction = styled(motion.div)`
         height: 37rem;
     }
     @media screen and (max-width: 370px){
-        height: 37rem;
-       
+        height: 37rem; 
     }
 `;
 
@@ -149,7 +147,7 @@ const RightBox = styled(motion.div)`
       align-self: flex-end;
       img {
          width: 100%;
-     }
+    }
      @media screen and (max-width: 768px){
         height: 100%;
    }
@@ -157,15 +155,15 @@ const RightBox = styled(motion.div)`
 
 const LeftBox = styled(motion.div)`
     width: 60%;
-    height: 80%;
+    height: 82%;
     max-width: 70rem;
     display: flex;
     position: absolute;
     left: 0;
     align-self: flex-end;
     z-index: 1;
-    gap: 3rem;
-    margin-left: 2rem;
+    gap: 3.8rem;
+    margin-left: 2.1rem;
     @media screen and (max-width: 760px){
         width: 60%;        
         justify-content: space-between;
@@ -177,8 +175,7 @@ const TextTitle = styled.div`
      display: flex;
      flex-direction: column;
      align-items: flex-end;
-
-     h2 {
+     h2{
          padding-right: 10px;
          padding-bottom: 20px;
          font-family: 'Montserrat', sans-serif;
@@ -195,12 +192,12 @@ const FlaskImage = styled(motion.div)`
       margin-top: 12rem;
       height: 55%;
       max-width: 70rem;
-      img {
+      img{
        width: 100%;
       }
       @media screen and (max-width: 760px){
-        img {
-          max-width: 250px;
+        img{
+          max-width: 240px;
           max-height: 150px
         }
     }
@@ -209,6 +206,7 @@ const FlaskImage = styled(motion.div)`
 const Text = styled(motion.div)`
     width: 100%;
     height: 7rem;
+    padding-left: 1.8rem;
     overflow-y: auto;
     font-size: 1rem;
     text-align: left;
@@ -272,7 +270,6 @@ const Points = styled(motion.div)`
      flex-direction: column;
      align-items: center;
      justify-content: center;
-
      img {
           width: 5rem;
           animation: rotation 11s infinite linear;
@@ -301,7 +298,6 @@ const Points = styled(motion.div)`
     }
 `;
 
-
 const SectionTitle = styled(motion.div)`
     max-width: 90rem;
     display: flex;
@@ -315,7 +311,7 @@ const SectionTitle = styled(motion.div)`
     padding-top: 1rem;
     .text{
         text-transform: uppercase;
-        width: 77%;
+        width: 76%;
         font-family: 'Montserrat', sans-serif;
         color: #536653;
         font-size: 0.9rem;

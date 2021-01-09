@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion';
 import {IoMdClose} from 'react-icons/io';
-import {PopUp} from '../animations';
+import {PopUp, Fade} from '../animations';
 
 const Details = ({showDetail, setShowDetail}) => {
 
@@ -11,35 +11,48 @@ const Details = ({showDetail, setShowDetail}) => {
         document.body.style.overflow='auto';
     }
 
+    const outerCloseHandler = (e) => {
+        if (e.target.classList.contains('shadow'))
+            closeHandler(); 
+    }
+    
+  
     return (
         <AnimatePresence key='detail-popup'>
           {showDetail && ( 
             <DetailBox
-            active={showDetail}
-            initial='hidden'
-            animate='show'
-            exit='exit'
-            onClick={closeHandler}
-            >
-                <Containt variants={PopUp}>
+             className="shadow"
+             onClick={outerCloseHandler}
+             active={showDetail}
+             variants={Fade}
+             initial='hidden'
+             animate='show'
+             exit='exit'>
+                <Content variants={PopUp}>
                 <Head>
-                    <div onClick={closeHandler} className="close-btn">
-                        <IoMdClose />
-                    </div>
+                  <div onClick={closeHandler} className="close-btn">
+                    <IoMdClose />
+                  </div>
                 </Head>
                 <TextArea>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores dolor ipsam rerum placeat tenetur, id temporibus ad cum delectus error?
+                    O Magre Caps tem em sua composição, o extrato de  sene, qual ajuda a acelerar o emagrecimento. O sene, traz inúmeros benefícios a flora intestinal, otimizando seu funcionamento. O corpo passa pelo processo de desinchar. Sene é ótima também por ser um verdadeiro antioxidante natural.
                     <br/>
                     <br/>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi voluptas impedit quidem et itaque inventore nesciunt deleniti beatae unde quae, dolorum voluptate expedita repudiandae ea possimus cum commodi tempore veritatis illo sit nihil iure eius maiores ipsam? Rerum temporibus veritatis nemo, ut, minima asperiores earum numquam velit id neque doloremque.
+                    O papel dos antioxidantes é proteger as células sadias do organismo contra a ação oxidante dos radicais livres. Tem propriedades anti-inflamatórias.
                     <br/>
                     <br/>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat velit a, similique veniam tempora fugiat in illo distinctio doloremque saepe molestiae autem beatae nam? Assumenda perferendis, est perspiciatis odio voluptatum beatae eius eligendi deserunt! Optio temporibus libero sit labore, accusantium laboriosam non voluptatem provident, odit explicabo officiis iste alias cupiditate maiores iure aspernatur odio perferendis? Nam impedit rerum labore tempora rem ipsa doloremque alias, obcaecati quibusdam ea officia reiciendis unde iste doloribus perspiciatis explicabo minus blanditiis dolorem quis nulla omnis eligendi. Expedita dolore vel amet quis neque eos doloribus facere, sequi ullam. Optio suscipit eius facilis nesciunt odio mollitia autem!
+                    O Magre Caps tem como um dos seu principais ativos o Picolinato de cromo que é um suplemento alimentar e termogênico. O Magre Caps atuará como um inibidor de apetite, permitindo que você acelere de forma praticamente natural o seu metabolismo. O cromo atua no metabolismo dos carboidratos incitando a captação da glicose no seu corpo.
                     <br/>
                     <br/>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt tempore autem odit et. Eligendi voluptatem fugiat natus dolore illum placeat reiciendis commodi dolorem quidem atque possimus vitae officia quis debitis architecto qui consequuntur dicta eaque labore id autem, maiores rerum! Ipsum corrupti facilis nemo ex vitae maxime quibusdam iste dolorum at illum et fugit est nostrum cupiditate dolores, dolore id similique esse. Sit, vero earum animi repellat dicta temporibus laborum reprehenderit, illo repellendus nostrum corrupti consequuntur beatae. Veritatis accusantium, asperiores perferendis possimus expedita dolores, inventore accusamus sunt perspiciatis eum sed repellat ducimus non corporis assumenda repudiandae et temporibus. Aliquam, porro, modi assumenda laborum dolorum unde perspiciatis sint animi autem officiis necessitatibus cupiditate ex deserunt? Dolorem debitis inventore, ducimus, ab rem illum vel dolore repudiandae fuga, ullam iusto. Deleniti quaerat iusto aut quis dolorem optio quo, dicta autem eveniet tempore. Laborum hic ipsa vero repudiandae eius quas numquam recusandae minus laboriosam odio officia sit tenetur assumenda quibusdam magnam consequuntur totam, doloremque voluptatum ea cumque qui voluptatem nesciunt. Magnam tenetur, maiores minus praesentium velit magni tempora dignissimos sint, necessitatibus, voluptates ratione incidunt explicabo architecto iusto ullam. Officiis doloremque pariatur deserunt aut dolorem necessitatibus. Cupiditate ut dolor, dignissimos placeat iste omnis unde, et tempora illo iusto necessitatibus enim officia pariatur, laudantium in quibusdam non suscipit. Aut, quidem vel? Quae, reprehenderit iusto iste ducimus ex excepturi at placeat aliquid minus non, eos quo perferendis quisquam esse nihil voluptates recusandae cum odio quibusdam dolores libero? Sint maxime ullam sapiente exercitationem odio voluptatum praesentium distinctio adipisci. Quo blanditiis tempore animi obcaecati quia qui, hic optio rem. Cumque, enim eveniet pariatur asperiores magnam debitis iste et quia quas voluptatem optio doloribus reprehenderit fugiat voluptatibus, aliquid molestias! Accusantium iste sit recusandae distinctio ipsum quo, reiciendis excepturi. Ad, incidunt? Vero temporibus minus nostrum voluptate alias maxime. Excepturi, dolorum iure.
+                    O picolinato de cromo existe naturalmente no nosso corpo, em órgãos como o baço, os rins e o coração. Sua principal função é a de potencializar a ação e o efeito da insulina. Dessa forma, compreendemos que ele é muito importante no metabolismo da glicose, e então ele encontra os lipídios, aumentando a quantidade de HDL (colesterol bom) no corpo, da mesma forma que diminui o LDL (colesterol ruim).
+                    <br/>
+                    <br/>
+                    O picolinato de cromo é um composto orgânico utilizado como suplemento nutricional, que oferece diversos benefícios ao corpo. O cromo aumenta a sensibilidade à insulina, fato que o torna importante para aqueles que sofrem especialmente de diabetes tipo 2, por exemplo, além de aumentar a energia do corpo, fazendo com que a gordura se transforme em massa muscular. É um dos melhores nutrientes para os praticantes de atividade física, o que o torna um grande aliado na dieta daqueles que possuem uma rotina ativa e saudável.
+                    <br/>
+                    <br/>
+                    Além disso, o picolinato de cromo também aumenta a sensibilidade dos músculos em relação à insulina, o que auxilia na regulação dos níveis glicêmicos. Sendo assim, é causado um efeito chamado de termogênico, que ajuda na hora de aumentar a massa muscular, assim como diminui a massa gorda, em conjunto com treinos e alimentação saudável.
                 </TextArea>
-                </Containt>
+                </Content>
             </DetailBox>)}
         </AnimatePresence>
         
@@ -50,23 +63,27 @@ const DetailBox = styled(motion.div)`
     height: 100vh;
     width: 100%;
     position: fixed;
+    top: 0;
     display: flex;
-    z-index: 999;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    z-index: 999;
+    background: ${props => props.active ? 'rgba(0, 0, 0, 0.4)' : ''};
+    @media screen and (max-width: 760px){
+        align-items: center;
+    }
 `;
 
-const Containt = styled(motion.div)`
+const Content = styled(motion.div)`
    background: #FFF;
    width: 50rem;
    height: 32rem;
-   margin-top: 6rem;
    display: none;
+   margin-bottom: 1rem;
    display: flex;
    flex-direction: column;
    border-radius: 10px;
    overflow: hidden;
-   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
    @media screen and (max-width: 760px){
        height: 50%;
        width: 80%;
@@ -99,11 +116,14 @@ const Head = styled(motion.div)`
             font-size: 2.5rem;
        }
     }
+    @media screen and (max-width: 760px){
+        height: 4rem;
+    }
 `;
 
 const TextArea = styled(motion.div)`
      flex: 1;
-     padding: 4rem;
+     padding: 6rem;
      padding-top: 2rem;
      padding-bottom: 0.5rem;
      text-align: justify;
@@ -125,7 +145,6 @@ const TextArea = styled(motion.div)`
     }
     @media screen and (max-width: 760px){
         font-size: 1.1rem;
-
     }
 `;
 

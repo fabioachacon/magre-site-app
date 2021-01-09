@@ -183,6 +183,12 @@ const Icon1 = styled(motion.div)`
    p {
      color: white;
    }
+   @media screen and (max-width: 360px){
+      right: 6rem;
+   }
+   @media screen and (max-width: 320px){
+      right: 4rem;
+   }
 `;
 
 const Icon2 = styled(motion.div)` 
@@ -207,8 +213,9 @@ const Icon3 = styled(motion.div)`
    img{
        width: 6.4rem;
    }
-
-
+   @media screen and (max-width: 320px){
+       right: 3.5rem;
+   }
 `;
 
 const Icon4 = styled(motion.div)`

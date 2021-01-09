@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
+import {motion, AnimateSharedLayout} from 'framer-motion';
 import leaf from '../img/powder_bg.png';
+import Details from '../components/Details';
 
 
-const Compound = ({setShowDetail}) => {
+const Compound = () => {
+    
+    const [showDetail, setShowDetail] = useState(false);
 
     const openHandler = () => {
         setShowDetail(true);
@@ -13,6 +16,7 @@ const Compound = ({setShowDetail}) => {
 
     return (
         <StyledSection id='compounds'>
+           <Details setShowDetail={setShowDetail} showDetail={showDetail} />
            <CenterBox>
              <LeftBox>
                 <TextBox>
@@ -51,7 +55,6 @@ const StyledSection = styled(motion.div)`
           height: 40rem;
           overflow: hidden;
       }
-
 `;
 
 const CenterBox = styled(motion.div)`
@@ -161,7 +164,8 @@ const ButtonWrapper = styled(motion.div)`
         font-family: sans-serif;
         transition: all 0.5s ease-in-out;
         cursor: pointer;
-        &:hover{
+        &:hover, 
+        &:focus{
           background-color: white;
           color: #d0b43f;
           border: 1px solid #d0b43f;

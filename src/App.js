@@ -9,27 +9,20 @@ import Action from './sections/Action';
 import NavBar from './components/NavBar';
 import Compound from './sections/Compound';
 import Benefits from './sections/Benefits';
-import Details from './components/Details';
-
-import styled from 'styled-components';
 
 
 function App() {
 
-  const [showDetail, setShowDetail] = useState(false);
-
   return (
     <div className="App">
       <GlobalStyle />
-      <Details setShowDetail={setShowDetail} showDetail={showDetail} />
       <NavBar />
       <Header />
-      <Compound setShowDetail={setShowDetail}/>
+      <Compound/>
       <Action />
       <Flask />
       <Benefits />
       {/* <Articles /> */}
-      {/* <SideEffects /> */}
       <Contents />
       <Footer />
     </div>

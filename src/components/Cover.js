@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 //Images
 import caps from '../img/flask_caps.png';
 import cover from '../img/cover3.png';
-import flask from '../img/flask_new.png';
+import flask from '../img/flask_new_mod.png';
 import ticker from '../img/tick.png'
 
 
@@ -29,7 +29,7 @@ const Cover = () => {
                       <Hide>
                        <motion.h3 variants={TextAnim}>um emagrecedor,</motion.h3>
                       </Hide>
-                       <motion.h3 variants={FadeScale}><span>magrecaps</span></motion.h3>
+                       <motion.h3 variants={FadeScale}><span>magre caps</span></motion.h3>
                       <Hide>
                        <motion.h3 variants={TextAnim}>é energia</motion.h3>
                       </Hide>
@@ -44,7 +44,7 @@ const Cover = () => {
 }
 
 const StyledCover = styled(motion.div)`
-      height:95vh;
+      height:85vh;
       background: #e7e9eb;
       position: relative;
       display: flex;
@@ -58,58 +58,56 @@ const StyledCover = styled(motion.div)`
 `;
 
 const ImageCover = styled(motion.div)`
-    height: 90%;
+    height: 100%;
     position: absolute;
-    width: 50%;
-    left: -1rem;
-    margin-top: 3.5rem;
+    width: 60%;
+    left: 0;
     img{
-        width: 100%;
-        height: 100%;
-        object-position: bottom;
-        object-fit: fill;
+      width: 100%;
+      height: 100%;
+      object-position: -5rem;
+      object-fit: fill;
     }
-
 `;
 
 const CenterBox = styled(motion.div)`
-  height: 95%;
-  width: 55%;
+  height: 100%;
+  width: 53%;
   display: flex;
-  margin-bottom: -7rem;
   z-index: 1;
   position: relative;
-  @media screen and (min-height: 800px){
+  /* @media screen and (min-height: 800px){
     margin-bottom: -10rem;
-  }
+  } */
   @media screen and (max-width: 760px){
-    margin-bottom: -10rem;
+    margin-bottom: -5rem;
     margin-right: 0.5rem;
+    width: 56%;
   }
 `;
 
 const FlaskImage = styled(motion.div)`
      height: 100%;
-     width:66%;
+     width: 68%;
      max-width: 60rem;
      display: flex;
-     align-items: center;
+     align-items: flex-end;
      position: relative;
+     margin-top: 4rem;
      img {
-         width: 94%;
-         height: 96%;
+         width: 90%;
+         height: 100%;
      }
      @media screen and (max-width: 760px){
         height: 87%;
         width: 75%;
     }
     .ticker{
-      height: 6rem;
-      width: 6rem;
-      align-self: flex-start;
-      position: absolute;
-      margin-left: 14.5rem;
-      margin-top: 0.5rem;
+        height: 6rem;
+        width: 6rem;
+        align-self: flex-start;
+        position: absolute;
+        margin-left: 15rem;
       @media screen and (max-width: 760px){
         margin-bottom: 10rem;
       }
@@ -118,11 +116,13 @@ const FlaskImage = styled(motion.div)`
 
 const Text = styled(motion.div)`
     position: absolute;
-    right: -1.5rem;
-    margin-bottom: 14rem;
+    right: -2rem;
+    top: 0;
+    margin-top: 7.5rem;
     text-transform: uppercase;
+    z-index: 1;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
          h3 {
              color: #917e41;;
              font-weight: normal;
@@ -134,7 +134,6 @@ const Text = styled(motion.div)`
     @media screen and (max-width: 760px){
         font-size: 1.1rem;
         right: -3rem;
-        margin-top: 4rem;
     }
 `;
 
@@ -142,41 +141,6 @@ const Hide = styled(motion.div)`
    overflow: hidden;
 
 `;
-
-
-const Caps = styled(motion.div)`
-     width: 30rem;
-     background: red;
-     img {
-         width: 40rem;
-         @media screen and (max-width: 768px){
-              width: 35rem;
-     }
-        
-     }
-     @media screen and (max-width: 768px){
-        margin-right: 28rem;
-        margin-top: 29rem;
-    }
-
-     /* @media screen and (min-width: 1500px){
-        margin-right: 1400px;
-        img{
-            width: 800px;
-            height: 700px;
-        }
-     } */
-
-     /* @media screen and (max-width: 1600px){
-        margin-right: 700px;
-        img{
-            width: 800px;
-            height: 700px;
-        }
-     } */
-
-`;
-
 
 
 export default Cover;

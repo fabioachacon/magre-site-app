@@ -39,6 +39,7 @@ const StyledFooter = styled.div`
    background: #ffffff;
    @media screen and (max-width: 768px){
     height: 7vh;
+    padding: 0 1rem;
    }
 `;
 

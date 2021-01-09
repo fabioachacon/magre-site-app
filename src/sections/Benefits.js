@@ -29,8 +29,8 @@ const Benefits = () => {
       }
    }
 
-    
-    return (
+
+   return (
         <StyledSection id='benefits'>
           <Title>
              <Text>
