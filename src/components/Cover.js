@@ -135,7 +135,7 @@ const Text = styled(motion.div)`
              color: #415740;
          }
     @media screen and (max-width: 760px){
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         right: -3rem;
     }
 `;
