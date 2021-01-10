@@ -67,6 +67,9 @@ const ImageCover = styled(motion.div)`
       height: 100%;
       object-position: -5rem;
       object-fit: fill;
+      @media screen and (max-width: 760px){
+        object-position: -5rem 4rem;
+      }
     }
 `;
 
@@ -76,13 +79,13 @@ const CenterBox = styled(motion.div)`
   display: flex;
   z-index: 1;
   position: relative;
-  /* @media screen and (min-height: 800px){
+  @media screen and (min-height: 800px){
     margin-bottom: -10rem;
-  } */
+  }
   @media screen and (max-width: 760px){
-    margin-bottom: -5rem;
-    margin-right: 0.5rem;
-    width: 56%;
+    height: 90%;
+    width: 54%;
+    margin-bottom: -3rem;
   }
 `;
 
@@ -99,8 +102,8 @@ const FlaskImage = styled(motion.div)`
          height: 100%;
      }
      @media screen and (max-width: 760px){
-        height: 87%;
-        width: 75%;
+        height: 100%;
+        width: 80%;
     }
     .ticker{
         height: 6rem;
