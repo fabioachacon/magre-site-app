@@ -39,28 +39,18 @@ const Benefits = () => {
           </Title>
           <CenterBox>
             <BoxLeft onMouseOver={toggleHandler} onMouseLeave={toggleHandler} onScroll={scrollHandlerLeft} className='left-box'>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ad quidem natus distinctio quas esse, qui nesciunt culpa inventore alias modi magnam ipsam quisquam illo sunt possimus minima necessitatibus quam ea vel voluptatibus odio dolor. Sapiente adipisci vero consequatur fugit numquam a similique odit assumenda dolores quas
+               <p>Ajudar a regular o açúcar no sangue, já que aumenta a sensibilidade à insulina, um hormônio responsável pelo controle da glicose no sangue, e, por isso, poderia ter benefícios para as pessoas que possuem diabetes e resistência à insulina;
                <br/>
                <br/>
-               nemo veritatis recusandae et, iusto consectetur impedit? Laborum quibusdam exercitationem nam error voluptatem, vel reiciendis ut facilis veritatis voluptate blanditiis pariatur, laboriosam ex nemo eveniet voluptatibus aliquid, ipsa similique alias! Sequi, atque. Eos laborum voluptates pariatur molestiae iste veniam praesentium ratione consectetur, cupiditate vitae, numquam voluptatibus obcaecati temporibus veritatis inventore error 
                <br/>
                <br/>
-               similique commodi voluptas reiciendis nisi, minima adipisci? Vitae ut debitis quaerat ab animi maxime doloremque deleniti culpa voluptate laboriosam explicabo dolores veniam dolor neque eos, dolorum quisquam nemo modi reprehenderit nulla. Quaerat iure odio inventore deleniti harum facere quasi voluptate iste libero numquam quibusdam, tempora, error animi tempore autem esse laboriosam placeat, ex vitae et deserunt blanditiis corporis minima repellendus. Hic quam adipisci illo eum doloribus magnam accusantium facere odio sunt unde minus
                <br/>
-               <br/> 
-               ipsum placeat blanditiis, temporibus enim, dolor commodi! Deleniti sequi ipsa amet quia perferendis modi cumque alias dicta, quam facere reprehenderit rerum non itaque perspiciatis voluptas ducimus adipisci! Voluptatum, hic!</p>
+               <br/>
+               Manter a saúde do coração, já que foi demonstrado em alguns estudos, que o picolinato de cromo ajuda a regular os níveis de colesterol e triglicerídeos, diminuindo o risco de formação das placas ateromatosas e, consequentemente, o risco de desenvolver doenças cardíacas, principalmente em pessoas diabéticas. Apesar disso, esse mecanismo ainda não está totalmente claro;
+              </p>
             </BoxLeft>
             <BoxRight onMouseOver={toggleHandler} onMouseLeave={toggleHandler} onScroll={scrollHandlerRight} className='right-box' >
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates sunt minus aspernatur cupiditate vero explicabo eaque blanditiis aperiam consequatur, a, ipsam magni similique pariatur officiis repellat, expedita sequi magnam iste ducimus? Itaque deleniti id ex eos omnis
-                <br/>
-                <br/>
-                reprehenderit cum excepturi, ratione officiis ad aut, quaerat aspernatur voluptates quibusdam nihil provident debitis ut minima amet necessitatibus ipsam eum accusantium. Similique ullam rem ducimus minima possimus qui alias quae soluta obcaecati minus, odio ea consectetur
-                <br/>
-                <br/>
-                numquam error neque laboriosam commodi fuga. Adipisci veritatis placeat voluptates cumque, enim nostrum quibusdam sequi similique quod facere earum assumenda praesentium fugiat harum amet fugit dolor alias distinctio libero eligendi dignissimos doloremque aut obcaecati. Autem sint assumenda, odio reprehenderit nemo, numquam qui asperiores officiis possimus ex sunt quos voluptatibus aliquam impedit, doloremque 
-                <br/>
-                <br/>
-                nihil. Non quidem libero eligendi rem quaerat, a at deleniti error quod nam odio, odit quae ipsa esse. Ullam doloremque excepturi ea? Rerum qui magnam natus eum. Doloremque delectus, nostrum nemo, eos alias voluptas blanditiis laudantium esse atque deserunt aperiam cupiditate dolor soluta facilis reiciendis! Quaerat ipsam debitis iste. Porro, natus facere sint consequuntur quaerat quos cumque repellat accusantium reiciendis dolorem magnam possimus aliquam facilis quasi ipsa? Vel, maiores? Atque dolor perferendis amet ratione soluta.</p>
+                <p>Favorecer a perda de peso, já que pode também interferir no metabolismo dos carboidratos, gorduras e proteínas. No entanto, os resultados sobre esse benefício ainda não são conclusivos, já que indicam que a perda de peso não foi significativa</p>
             </BoxRight>
           </CenterBox>
         </StyledSection>
@@ -73,14 +63,16 @@ const StyledSection = styled.div`
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: flex-end;
+   justify-content: center;
    position: relative;
+   background: #FFFF;
 `;
 
 const CenterBox = styled.div`
    height: 80%;
    width: 70%;
    max-width: 80rem;
+   max-height: 25rem;
    display: flex;
    margin-bottom: 1rem;
    p{
@@ -104,8 +96,8 @@ const BoxLeft = styled.div`
     padding-right: 0.7rem;
     text-align: justify;
     &::-webkit-scrollbar{
-       width: 0.4rem;
-       display: none;
+       width: 0.3rem;
+       display: block;
     
     }
     &::-webkit-scrollbar-thumb{
@@ -131,6 +123,7 @@ const BoxRight = styled.div`
    padding-left: .5rem;
    &::-webkit-scrollbar{
        width: 0.3rem;
+       display: none;
   
     }
     &::-webkit-scrollbar-thumb{
@@ -142,6 +135,9 @@ const BoxRight = styled.div`
       width: 0.2rem;
       background-color: #e2e2e2;
     }
+    p{
+       color:#d0b43f;
+    }
 `;
 
 const Title = styled.div`
@@ -149,7 +145,7 @@ const Title = styled.div`
    width: 100%;
    display: flex;
    justify-content: center;
-   padding-bottom: 4rem;
+   padding-bottom: 2rem;
 `;
 
 const Text = styled.div`

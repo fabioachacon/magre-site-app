@@ -21,18 +21,9 @@ export const InfoList = [
     },
     {
       id: 2,
-      title: 'Fígado',
+      title: 'Coração',
       text: <>
-             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam facere minima tempore corporis ducimus natus, vero, officiis et beatae tempora quo! Asperiores. 
-             <br/>
-             <br/>
-             Explicabo eum accusamus nulla iure libero quam iusto laudantium qui minus ad similique corrupti, expedita distinctio tempore, eos ullam sit! Velit sint quo odio praesentium quas obcaecati cupiditate id excepturi accusamus?
-             <br/>
-             <br/>
-             Laudantium quibusdam praesentium voluptatem natus dolores soluta nisi earum magnam nulla. Maxime maiores reiciendis iste vero deleniti laudantium modi, facere voluptatibus voluptatem iure incidunt eaque voluptas porro consequuntur! 
-             <br/>
-             <br/>
-             Explicabo consequuntur ducimus, eos dolor aliquam numquam excepturi iure, modi, labore sed cum nihil repudiandae assumenda dicta ad! Impedit?
+             Foi demonstrado em alguns estudos, que o picolinato de cromo ajuda a regular os níveis de colesterol e triglicerídeos, diminuindo o risco de formação das placas ateromatosas e, consequentemente, o risco de desenvolver doenças cardíacas, principalmente em pessoas diabéticas. Apesar disso, esse mecanismo ainda não está totalmente claro.
             </>,
       
     },

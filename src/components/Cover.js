@@ -138,11 +138,18 @@ const Text = styled(motion.div)`
         font-size: 1.4rem;
         right: -3rem;
     }
+    @media screen and (max-width: 360px){
+        font-size: 1.4rem;
+        right: -4.5rem;
+    }
+    @media screen and (max-width: 385px){
+        font-size: 1.4rem;
+        right: -4.5rem;
+    }
 `;
 
 const Hide = styled(motion.div)`
    overflow: hidden;
-
 `;
 
 

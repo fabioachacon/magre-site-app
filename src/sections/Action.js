@@ -4,7 +4,6 @@ import {motion, AnimatePresence} from 'framer-motion';
 import {useScroll} from '../components/useScroll';
 import AnimatedPoint from '../components/AnimatedPoint';
 import trimmed from '../audio/trimmed.mp3';
-import man from '../img/man.png';
 import mancover from '../img/man_new.png';
 import flask_caps from '../img/flask_corrected.png';
 import {InfoList} from '../info';
@@ -206,7 +205,7 @@ const FlaskImage = styled(motion.div)`
 const Text = styled(motion.div)`
     width: 100%;
     height: 7rem;
-    padding-left: 1.8rem;
+    padding-left: 1.5rem;
     overflow-y: auto;
     font-size: 1rem;
     text-align: left;
@@ -282,6 +281,7 @@ const Points = styled(motion.div)`
         margin-bottom: 4rem;
     }
     .point2{
+        margin-bottom: 15rem;
       
     }
     .point3{

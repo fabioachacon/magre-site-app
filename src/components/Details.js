@@ -68,7 +68,7 @@ const DetailBox = styled(motion.div)`
     justify-content: center;
     align-items: flex-end;
     z-index: 999;
-    background: ${props => props.active ? 'rgba(0, 0, 0, 0.4)' : ''};
+    background: ${props => props.active ? 'rgba(0, 0, 0, 0.6)' : ''};
     @media screen and (max-width: 760px){
         align-items: center;
     }
