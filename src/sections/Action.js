@@ -45,7 +45,8 @@ const Action = () => {
                         <AnimatePresence exitBeforeEnter>
                             {state.map((item, i) => 
                             item.id === active.id && 
-                            <motion.h2 
+                            <motion.h2
+                              className='title' 
                               variants={TextFade} 
                               initial='hidden' 
                               animate='show'
@@ -275,10 +276,11 @@ const Points = styled(motion.div)`
     }
     .point0{
         margin-top: auto;
-        margin-bottom: 9rem;
+        margin-bottom: 8rem;
     }
     .point1{
-        margin-bottom: 4rem;
+        margin-bottom: 5rem;
+        margin-right: 2rem;
     }
     .point2{
         margin-bottom: 15rem;

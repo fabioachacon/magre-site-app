@@ -8,7 +8,7 @@ const Details = ({showDetail, setShowDetail}) => {
 
     const closeHandler = () => {
         setShowDetail(false);
-        document.body.style.overflow='auto';
+        // document.body.style.overflow='auto';
     }
 
     const outerCloseHandler = (e) => {

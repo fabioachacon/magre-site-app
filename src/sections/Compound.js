@@ -11,7 +11,7 @@ const Compound = () => {
 
     const openHandler = () => {
         setShowDetail(true);
-        
+        // document.body.style.overflow='hidden';
     }
 
     return (
