@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
-import arrow from '../img/arrow.png';
 import { FiArrowRight } from "react-icons/fi";
 
 const Articles = () => {

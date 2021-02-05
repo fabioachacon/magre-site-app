@@ -47,7 +47,7 @@ const NavBar = () => {
                 </li>
               </NavLinks>
               <ButtonWrapper>
-                  <a href="">
+                  <a href="https://api.whatsapp.com/send?phone=558386675997">
                     <button>
                       <WhatsAppIcon />
                        whatsapp

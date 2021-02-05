@@ -100,7 +100,7 @@ const Benefits = () => {
                 <p>Diminui retenção líquida</p>
                 <br/>
                 <br/>
-                <p>Sensação de saciedade.</p>
+                <p>Sensação de saciedade</p>
                 <br/>
                 <br/>
                 <p>Redução dos níveis de LDL (colesterol ruim)</p>
@@ -137,15 +137,18 @@ const CenterBox = styled.div`
    max-height: 25rem;
    display: flex;
    margin-bottom: 1rem;
-   p{
+
+   p {
      font-size: 1rem;
      letter-spacing: 0.5px;
+     font-weight: bold;
      font-family: "Montserrat", sans-serif;
      color: rgba(5, 69, 7, 255);
      @media screen and (max-width: 760px){
        font-size: 1.6rem;
+    }
    }
-   }
+   
    @media screen and (max-width: 760px){
       height: 70%;
       width: 85%;
